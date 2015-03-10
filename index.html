@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SelfCoders</title>
+		<link rel="stylesheet" type="text/css" href="/files/style.css"/>
+
+		<style type="text/css">
+			body
+			{
+				font: Verdana;
+				zoom: 1.2;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function()
+			{
+				var ageDiff = Date.now() - new Date("1991-04-19").getTime();
+				var ageDate = new Date(ageDiff);
+				document.getElementById("age").innerText = Math.abs(ageDate.getUTCFullYear() - 1970);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Welcome</h1>
+				<p>on my little website.</p>
+
+				<ul>
+					<li><a href="https://www.facebook.com/programie" target="_blank"><strong>Facebook</strong></a></li>
+					<li><a href="https://github.com/Programie" target="_blank"><strong>GitHub</strong></a></li>
+					<li><a href="https://plus.google.com/107495902883140079852" target="_blank"><strong>Google+</strong></a></li>
+					<li><a href="http://www.last.fm/user/Programie" target="_blank"><strong>Last.fm</strong></a></li>
+					<li><a href="https://twitter.com/Programie" target="_blank"><strong>Twitter</strong></a></li>
+				</ul>
+			</header>
+			<section>
+				<h1>About me</h1>
+
+				<p>My name is Michael a.k.a. Programie. I'm <span id="age"></span> years old and live in Germany.</p>
+
+				<p>I work at <a href="http://www.1and1.com" target="_blank">1&amp;1 Internet AG</a> and are responsible for the availability of the <a href="http://www.1and1.com" target="_blank">1&amp;1 Shops</a> and the <a href="http://my.1and1.com" target="_blank">Control Center</a>.</p>
+
+				<h1>Software development</h1>
+
+				<p>I started to write my first programs in 2005 in the programming language <a href="http://purebasic.com" target="_blank">PureBasic</a>.</p>
+
+				<p>I'm a hobby developer. But I also develop at work, regardless of my actual job title.</p>
+
+				<h2>Known languages</h2>
+
+				<ul>
+					<li><a href="http://www.gnu.org/software/bash" target="_blank">Bash</a></li>
+					<li><a href="http://msdn.microsoft.com/en-us/vstudio/hh388566" target="_blank">C#</a></li>
+					<li>C++</li>
+					<li><a href="http://www.w3.org/Style/CSS" target="_blank">CSS</a></li>
+					<li>HTML</li>
+					<li>Java</li>
+					<li>JavaScript</li>
+					<li><a href="http://www.lua.org" target="_blank">Lua</a></li>
+					<li>Objective-C</li>
+					<li><a href="http://www.compuphase.com/pawn/pawn.htm" target="_blank">Pawn</a></li>
+					<li><a href="http://www.php.net" target="_blank">PHP</a></li>
+					<li><a href="http://www.purebasic.com" target="_blank">PureBasic</a></li>
+					<li><a href="http://www.mysql.com" target="_blank">(My)SQL</a></li>
+					<li><a href="http://www.squirrel-lang.org" target="_blank">Squirrel</a></li>
+				</ul>
+
+				<h2>Used Frameworks</h2>
+
+				<ul>
+					<li><a href="http://jquery.com" target="_blank">jQuery</a></li>
+					<li><a href="http://qooxdoo.org" target="_blank">qooxdoo</a></li>
+				</ul>
+
+				<h2>Developed stuff</h2>
+
+				<p>I developed tools like the <a href="https://github.com/Programie/GTASAToolBox" target="_blank">GTA San Andreas ToolBox</a> and <a href="https://github.com/Programie/Capture2Net" target="_blank">Capture2Net</a>.</p>
+
+				<p>Take a look at <a href="https://github.com/Programie" target="_blank">GitHub</a> to see all the stuff.</p>
+
+				<p>You may also check out my <a href="/downloads">downloads</a>.</p>
+			</section>
+		</div>
+
+		<footer>
+			<p>Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+		</footer>
+		<script src="/files/scale.fix.js"></script>
+	</body>
+</html>
