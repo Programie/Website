@@ -1,61 +1,52 @@
-body
-{
-	background-color: #333;
-	color: #fff;
+body {
+    background-color: #333;
+    color: #fff;
 }
 
-.content
-{
-	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+.content {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
 
 a,
-a:hover
-{
-	color: orange;
+a:hover {
+    color: orange;
 }
 
-.social-icon
-{
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	border: 2px solid #fff;
-	border-radius: 100%;
-	text-align: center;
-	font-size: 20px;
-	line-height: 45px;
-	margin-top: 15px;
-	color: #fff;
-	background: 0 0;
-	transition: all .3s ease-in-out;
+.social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 45px;
+    margin-top: 15px;
+    color: #fff;
+    background: 0 0;
+    transition: all .3s ease-in-out;
 }
 
 .social-icon:hover,
 .social-icon:focus,
 .social-icon:active,
-.social-icon.active
-{
-	border: solid 2px #fff;
-	background: #fff;
+.social-icon.active {
+    border: solid 2px #fff;
+    background: #fff;
 }
 
-footer
-{
-	padding-top: 50px;
-	padding-bottom: 50px;
-	text-align: center;
+footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
 }
 
-@media (min-width: 768px)
-{
-	.container
-	{
-		max-width: 750px;
-	}
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
 }
 
-#main-message
-{
-	background-color: #444;
+#main-message {
+    background-color: #444;
 }
