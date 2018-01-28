@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/programie
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://selfcoders.com
+  * I am programie (https://keybase.io/programie) on keybase.
+  * I have a public key ASBmbyHLO3xvgZYCnEny3p86ytEeOvVqot0UQk3M8ZbUdwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101b8c2294c75904840f4f4ca85c6b927a52b00598581381b5a3a487c39a81649e10a",
+      "host": "keybase.io",
+      "kid": "0120666f21cb3b7c6f8196029c49f2de9f3acad11e3af56aa2dd14424dccf196d4770a",
+      "uid": "c536e66c3981ecc3d665dbfc095fba19",
+      "username": "programie"
+    },
+    "merkle_root": {
+      "ctime": 1505907534,
+      "hash": "60778910acba435fea94b5c19e188c42490663dc810a5a8230268d79ef72b642041e48a049287dc8100b993138a28a712cba6f60f3d598265549271150279c07",
+      "hash_meta": "2c3151c65f6148bad682af39f90d45caec7d44d228e39cecdc68cf557c53c824",
+      "seqno": 1428032
+    },
+    "service": {
+      "hostname": "selfcoders.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.30"
+  },
+  "ctime": 1505907566,
+  "expire_in": 504576000,
+  "prev": "ea015dbba64fdce61bf893208253b11749fce6d03fab5cc7701319e13be31360",
+  "seqno": 19,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgZm8hyzt8b4GWApxJ8t6fOsrRHjr1aqLdFEJNzPGW1HcKp3BheWxvYWTFA0h7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxYjhjMjI5NGM3NTkwNDg0MGY0ZjRjYTg1YzZiOTI3YTUyYjAwNTk4NTgxMzgxYjVhM2E0ODdjMzlhODE2NDllMTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjY2ZjIxY2IzYjdjNmY4MTk2MDI5YzQ5ZjJkZTlmM2FjYWQxMWUzYWY1NmFhMmRkMTQ0MjRkY2NmMTk2ZDQ3NzBhIiwidWlkIjoiYzUzNmU2NmMzOTgxZWNjM2Q2NjVkYmZjMDk1ZmJhMTkiLCJ1c2VybmFtZSI6InByb2dyYW1pZSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwNTkwNzUzNCwiaGFzaCI6IjYwNzc4OTEwYWNiYTQzNWZlYTk0YjVjMTllMTg4YzQyNDkwNjYzZGM4MTBhNWE4MjMwMjY4ZDc5ZWY3MmI2NDIwNDFlNDhhMDQ5Mjg3ZGM4MTAwYjk5MzEzOGEyOGE3MTJjYmE2ZjYwZjNkNTk4MjY1NTQ5MjcxMTUwMjc5YzA3IiwiaGFzaF9tZXRhIjoiMmMzMTUxYzY1ZjYxNDhiYWQ2ODJhZjM5ZjkwZDQ1Y2FlYzdkNDRkMjI4ZTM5Y2VjZGM2OGNmNTU3YzUzYzgyNCIsInNlcW5vIjoxNDI4MDMyfSwic2VydmljZSI6eyJob3N0bmFtZSI6InNlbGZjb2RlcnMuY29tIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMzAifSwiY3RpbWUiOjE1MDU5MDc1NjYsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiZWEwMTVkYmJhNjRmZGNlNjFiZjg5MzIwODI1M2IxMTc0OWZjZTZkMDNmYWI1Y2M3NzAxMzE5ZTEzYmUzMTM2MCIsInNlcW5vIjoxOSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxED2s11WdsfXMRwLA5hp1Ec095zl/0QXaknwHDkn2rE2DB6Ru7ePVBlrdOYYGhuKmUXcqUXZEkz238h+pQ3dPWILqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQga9Eme0QW+FLJFjlw7I1CPcRzoRBtx0sQp9B++l3JQsWjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/programie
+
+==================================================================
