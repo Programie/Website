@@ -1,0 +1,62 @@
+{% extends "page.twig" %}
+
+{% block content %}
+    <div class="carousel slide" data-ride="carousel" id="home-carousel">
+        <ol class="carousel-indicators">
+            {% for project in projects.latest(3) %}
+                <li data-target="home-carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for project in projects.latest(3) %}
+                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
+                    <div class="carousel-image">
+                        <img src="{{ project.coverImage }}" class="d-block w-100" alt="{{ project.title }}"/>
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ project.title }}</h5>
+                        <p>{{ project.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#home-carousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#home-carousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron" id="main-message">
+            <h2>Hi!</h2>
+
+            <p>My name is Michael a.k.a. Programie. I'm {{ age }} years old and live in Germany.</p>
+
+            <p>I work at <a href="https://www.ionos.com" target="_blank">1&amp;1 IONOS SE</a> and are responsible for the availability of the <a href="https://www.ionos.com" target="_blank">Shops</a> and the <a href="https://my.ionos.com" target="_blank">Control Center</a>.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Software development</h3>
+
+                <p>I started to write my first programs in 2005 in the programming language <a href="https://www.purebasic.com" target="_blank">PureBasic</a>.</p>
+
+                <p>I'm a hobby developer. But I also develop at work, regardless of my actual job title.</p>
+            </div>
+
+            <div class="col-lg-6">
+                <h3>Developed stuff</h3>
+
+                <p>I developed tools like the <a href="/projects/gta-sa-toolbox" target="_blank">GTA San Andreas ToolBox</a> and <a href="/projects/capture2net" target="_blank">Capture2Net</a> a while ago. But they are no longer maintained. :(</p>
+
+                <p>But I also developed some PHP libraries like <a href="/projects/pini" target="_blank">Pini</a> (a library for reading and writing Ini files in PHP), <a href="/projects/phpcurl" target="_blank">PHPCurl</a> (a PHP OOP wrapper for Curl with some additional features) or <a href="/projects/phputils" target="_blank">PHPUtils</a> (a collection of useful utility functions).</p>
+
+                <p>A few years ago I started to write Bukkit plugins (Minecraft), then lost the interest in Minecraft. And now, 4 or 5 years later, I decided to continue maintaining them.</p>
+
+                <p>You can find all my projects on the <a href="/projects">projects page</a>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
