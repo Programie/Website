@@ -1,5 +1,5 @@
 <?php
-use com\selfcoders\website\routes\Home;
+use com\selfcoders\website\controller\HomeController;
 use com\selfcoders\website\TwigRenderer;
 
 require_once __DIR__ . "/../bootstrap.php";
@@ -8,7 +8,7 @@ TwigRenderer::init();
 
 $router = new AltoRouter;
 
-$router->map("GET", "/", [Home::class, "getContent"]);
+$router->map("GET", "/", [HomeController::class, "getContent"]);
 
 $match = $router->match();
 

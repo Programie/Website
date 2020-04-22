@@ -1,5 +1,5 @@
 <?php
-namespace com\selfcoders\website\models;
+namespace com\selfcoders\website\model;
 
 use ArrayObject;
 use Exception;

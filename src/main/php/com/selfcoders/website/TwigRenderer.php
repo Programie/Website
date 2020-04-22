@@ -1,7 +1,7 @@
 <?php
 namespace com\selfcoders\website;
 
-use com\selfcoders\website\models\Projects;
+use com\selfcoders\website\model\Projects;
 use Exception;
 use Twig\Environment;
 use Twig\Error\Error;

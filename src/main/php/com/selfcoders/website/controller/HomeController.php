@@ -1,10 +1,10 @@
 <?php
-namespace com\selfcoders\website\routes;
+namespace com\selfcoders\website\controller;
 
 use com\selfcoders\website\TwigRenderer;
 use DateTime;
 
-class Home
+class HomeController
 {
     public function getContent()
     {
