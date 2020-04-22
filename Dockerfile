@@ -1,11 +1,14 @@
 FROM node AS webpack
 
-COPY package.json package-lock.json webpack.config.js /app/
-
 WORKDIR /app
 
+COPY package.json package-lock.json /app/
 RUN npm install
+
+COPY webpack.config.js /app/
+COPY src/main/resources/assets /app/src/main/resources/assets
 RUN npm run build
+
 
 FROM composer AS composer
 
