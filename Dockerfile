@@ -28,6 +28,7 @@ RUN sed -ri -e 's!/var/www/html!/app/httpdocs!g' /etc/apache2/sites-available/*.
     chown www-data: /app/twig-cache
 
 COPY --from=composer /app/vendor /app/vendor
+COPY --from=webpack /app/httpdocs/assets /app/httpdocs/assets
 
 COPY bootstrap.php /app/
 COPY httpdocs /app/httpdocs
