@@ -1,16 +1,13 @@
 @import "~bootswatch/dist/darkly/variables";
+
+$link-color: $yellow;
+
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/darkly/bootswatch";
 
 
 body {
     padding-top: 3rem;
-    background-color: #333;
-    color: #fff;
-}
-
-a, a:hover {
-    color: orange;
 }
 
 .carousel-image {
@@ -31,9 +28,8 @@ a, a:hover {
 
 .social-icon:hover,
 .social-icon:focus,
-.social-icon:active,
-.social-icon.active {
-    color: orange;
+.social-icon:active {
+    color: $link-color;
 }
 
 footer {
@@ -41,10 +37,9 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    background-color: #222;
+    background-color: $gray-800;
 }
 
 #main-message {
     margin-top: 20px;
-    background-color: #444;
 }
