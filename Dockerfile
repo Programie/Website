@@ -1,4 +1,4 @@
-FROM nodejs AS webpack
+FROM node AS webpack
 
 COPY package.json package-lock.json webpack.config.js /app/
 
