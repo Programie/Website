@@ -11,11 +11,6 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
-
-body {
-    padding-top: 3rem;
-}
-
 .carousel-image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,6 +38,10 @@ body {
     color: $link-color;
 }
 
+main {
+    padding-top: 70px;
+}
+
 footer {
     margin-top: 30px;
     padding-top: 20px;
@@ -51,6 +50,6 @@ footer {
     background-color: $gray-800;
 }
 
-#main-message {
+main > .container {
     margin-top: 20px;
 }
