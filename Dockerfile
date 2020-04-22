@@ -5,7 +5,7 @@ COPY package.json package-lock.json webpack.config.js /app/
 WORKDIR /app
 
 RUN npm install
-RUN webpack --mode production
+RUN npm run build
 
 FROM composer AS composer
 
