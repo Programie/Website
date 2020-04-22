@@ -10,12 +10,11 @@
         <div class="carousel-inner">
             {% for project in projects.latest(3) %}
                 <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-                    <div class="carousel-image">
-                        <img src="{{ project.coverImage }}" class="d-block w-100" alt="{{ project.title }}"/>
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>{{ project.title }}</h5>
+                    <div class="carousel-image" style="background-image: url({{ project.coverImage }})"></div>
+                    <div class="carousel-caption text-left">
+                        <h2>{{ project.title }}</h2>
                         <p>{{ project.description }}</p>
+                        <a class="btn btn-lg btn-primary" href="/projects/{{ project.name }}">Go to project page</a>
                     </div>
                 </div>
             {% endfor %}

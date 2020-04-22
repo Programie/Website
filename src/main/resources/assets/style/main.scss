@@ -11,7 +11,12 @@ body {
 }
 
 .carousel-image {
-    max-height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    min-height: 400px;
+    min-width: 100%;
 }
 
 .social-icon {
