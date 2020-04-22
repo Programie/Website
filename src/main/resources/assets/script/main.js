@@ -1,3 +1,3 @@
-import "bootstrap";
-import "@fortawesome/fontawesome-free/js/all";
+import "bootstrap/js/src/carousel";
+import "bootstrap/js/src/dropdown";
 import "../style/main.scss";
