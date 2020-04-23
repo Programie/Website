@@ -19,13 +19,13 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="{{ html_classes("nav-item", {"active": isActivePage("/")}) }}"><a class="nav-link" href="/">Home</a></li>
                         {% for category in projects.getTypes() %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ category[1] }}</a>
                                 <div class="dropdown-menu">
                                     {% for project in projects.ofType(category[0]) %}
-                                        <a class="dropdown-item" href="/projects/{{ project.name }}">{{ project.title }}</a>
+                                        <a class="{{ html_classes("dropdown-item", {"active": isActivePage("/projects/" ~ project.name )}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a>
                                     {% endfor %}
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/projects#{{ category[0] }}">Show all</a>

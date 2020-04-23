@@ -5,6 +5,7 @@ use com\selfcoders\website\model\Projects;
 use Exception;
 use Twig\Environment;
 use Twig\Error\Error;
+use Twig\Extra\Html\HtmlExtension;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFunction;
 
@@ -35,6 +36,8 @@ class TwigRenderer
         self::$twig = new Environment($loader);
 
         $projects = Projects::load();
+
+        self::$twig->addExtension(new HtmlExtension);
 
         self::$twig->addGlobal("currentYear", date("Y"));
         self::$twig->addGlobal("path", $path);
