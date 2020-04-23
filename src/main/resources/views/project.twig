@@ -1,9 +1,21 @@
 {% extends "page.twig" %}
 
 {% block content %}
-    <div class="container">
-        {% set project = projects.byName(name) %}
+    {% set project = projects.byName(name) %}
 
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-image" style="background-image: url({{ project.coverImage }})"></div>
+                <div class="carousel-caption text-left">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         {{ project.content|raw }}
 
         <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
