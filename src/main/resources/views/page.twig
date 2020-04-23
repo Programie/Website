@@ -20,13 +20,15 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        {% for category in [["application", "Applications & Tools"], ["minecraft-plugin", "Minecraft plugins"], ["php-library", "PHP libraries"]] %}
+                        {% for category in projects.getTypes() %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ category[1] }}</a>
                                 <div class="dropdown-menu">
                                     {% for project in projects.ofType(category[0]) %}
                                         <a class="dropdown-item" href="/projects/{{ project.name }}">{{ project.title }}</a>
                                     {% endfor %}
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/projects#{{ category[0] }}">Show all</a>
                                 </div>
                             </li>
                         {% endfor %}

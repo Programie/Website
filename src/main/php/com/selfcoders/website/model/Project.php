@@ -12,6 +12,7 @@ class Project
     public $lastUpdate;
     public $coverImage;
     public $description;
+    public $repoName;
 
     /**
      * @param array $data
@@ -28,7 +29,18 @@ class Project
         $project->lastUpdate = new DateTime($data["lastUpdate"]);
         $project->coverImage = $data["coverImage"];
         $project->description = $data["description"];
+        $project->repoName = $data["repoName"];
 
         return $project;
+    }
+
+    public function content()
+    {
+        $filename = sprintf("%s/projects/%s.html", RESOURCES_ROOT, $this->name);
+        if (!file_exists($filename)) {
+            return null;
+        }
+
+        return file_get_contents($filename);
     }
 }

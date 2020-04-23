@@ -1,0 +1,23 @@
+{% extends "page.twig" %}
+
+{% block content %}
+    <div class="container">
+        {% for category in projects.getTypes() %}
+            <a id="{{ category[0] }}"></a>
+            <h3>{{ category[1] }}</h3>
+            {% for project in projects.ofType(category[0]) %}
+                <div class="card mb-4">
+                    <img src="{{ project.coverImage }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated {{ project.lastUpdate.format("D, d M Y") }}</small>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "page.twig" %}
+
+{% block content %}
+    <div class="container">
+        {% set project = projects.byName(name) %}
+
+        {{ project.content|raw }}
+
+        <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
+    </div>
+{% endblock %}

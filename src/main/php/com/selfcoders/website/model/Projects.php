@@ -8,6 +8,18 @@ use Symfony\Component\Yaml\Yaml;
 class Projects extends ArrayObject
 {
     /**
+     * @return string[][]
+     */
+    public static function getTypes()
+    {
+        return [
+            ["application", "Applications & Tools"],
+            ["minecraft-plugin", "Minecraft plugins"],
+            ["php-library", "PHP libraries"]
+        ];
+    }
+
+    /**
      * @return Projects
      * @throws Exception
      */
@@ -45,6 +57,24 @@ class Projects extends ArrayObject
         }
 
         return $projects;
+    }
+
+    /**
+     * @param string $name
+     * @return Project|null
+     */
+    public function byName(string $name)
+    {
+        /**
+         * @var $project Project
+         */
+        foreach ($this as $project) {
+            if ($project->name === $name) {
+                return $project;
+            }
+        }
+
+        return null;
     }
 
     public function latest(int $limit)
