@@ -18,6 +18,14 @@
     <div class="container">
         {{ project.content|raw }}
 
+        {% if project.downloads %}
+            <ul>
+                {% for download in project.downloads %}
+                    <li><a href="{{ download.url }}" target="_blank">{{ download.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
         <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
     </div>
 {% endblock %}

@@ -13,6 +13,10 @@ class Project
     public $coverImage;
     public $description;
     public $repoName;
+    public $gitlabCIUseArtifacts;
+    public $gitlabCIArtifactPath;
+    public $gitlabCIJob;
+    public $downloads = [];
 
     /**
      * @param array $data
@@ -30,13 +34,17 @@ class Project
         $project->coverImage = $data["coverImage"];
         $project->description = $data["description"];
         $project->repoName = $data["repoName"];
+        $project->gitlabCIUseArtifacts = $data["gitlabCI"]["useArtifacts"] ?? false;
+        $project->gitlabCIArtifactPath = $data["gitlabCI"]["artifactPath"] ?? null;
+        $project->gitlabCIJob = $data["gitlabCI"]["job"] ?? null;
+        $project->downloads = $data["downloads"] ?? [];
 
         return $project;
     }
 
     public function content()
     {
-        $filename = sprintf("%s/projects/%s.html", RESOURCES_ROOT, $this->name);
+        $filename = sprintf("%s/projects-html/%s.html", CACHE_ROOT, $this->name);
         if (!file_exists($filename)) {
             return null;
         }

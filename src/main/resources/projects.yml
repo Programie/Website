@@ -5,6 +5,10 @@
   lastUpdate: "2020-04-20"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/NearbyRespawner.jar"
+    job: release
 
 - name: screenshot-manager
   repoName: ScreenshotManager
@@ -13,6 +17,10 @@
   lastUpdate: "2020-04-18"
   coverImage: "http://placekitten.com/1920/500"
   description: "A simple manager and editor for screenshots"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "screenshot-manager.py"
+    job: release
 
 - name: telegram2elastic
   repoName: Telegram2Elastic
@@ -21,6 +29,10 @@
   lastUpdate: "2020-03-18"
   coverImage: "http://placekitten.com/1920/500"
   description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "telegram2elastic.py"
+    job: release
 
 - name: keyboard-mapper
   repoName: KeyboardMapper
@@ -29,6 +41,10 @@
   lastUpdate: "2020-01-31"
   coverImage: "http://placekitten.com/1920/500"
   description: "A tool for Linux desktops to map keys of dedicated keyboards to specific actions"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "dist/keyboard-mapper.py"
+    job: release
 
 - name: matterbukkit
   repoName: MatterBukkit
@@ -37,6 +53,10 @@
   lastUpdate: "2019-10-30"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/MatterBukkit.jar"
+    job: release
 
 - name: minestats
   repoName: MineStats
@@ -45,6 +65,10 @@
   lastUpdate: "2019-10-30"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which sends statistics to InfluxDB"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/MineStats.jar"
+    job: release
 
 - name: team-planer
   repoName: TeamPlaner
@@ -53,6 +77,9 @@
   lastUpdate: "2019-12-02"
   coverImage: "http://placekitten.com/1920/500"
   description: "A simple calendar allowing to plan recurring events in teams (e.g. shift planing)"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
 - name: phpdyndns
   repoName: PHPDynDNS
@@ -61,6 +88,9 @@
   lastUpdate: "2019-09-19"
   coverImage: "http://placekitten.com/1920/500"
   description: "A simple DynDNS Service written in PHP"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
 - name: signwarper
   repoName: SignWarper
@@ -69,6 +99,10 @@
   lastUpdate: "2019-08-27"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin to warp using signs"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/SignWarper.jar"
+    job: release
 
 - name: parallelprocesses
   repoName: ParallelProcesses
@@ -93,6 +127,10 @@
   lastUpdate: "2019-08-22"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/XPKeeper.jar"
+    job: release
 
 - name: phputils
   repoName: PHPUtils
@@ -109,6 +147,9 @@
   lastUpdate: "2019-09-08"
   coverImage: "http://placekitten.com/1920/500"
   description: "A showcase and download page for albums (music)"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
 - name: ejabberd-archive-viewer
   repoName: EjabberdArchiveViewer
@@ -117,6 +158,9 @@
   lastUpdate: "2019-07-14"
   coverImage: "http://placekitten.com/1920/500"
   description: "A simple frontend for viewing ejabberd archive entries"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
 - name: pini
   repoName: Pini
@@ -133,6 +177,9 @@
   lastUpdate: "2019-09-08"
   coverImage: "http://placekitten.com/1920/500"
   description: "KRunner SSH Backend"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
 - name: loxonestats2influxdb
   repoName: LoxoneStats2InfluxDB
@@ -141,6 +188,9 @@
   lastUpdate: "2019-08-03"
   coverImage: "http://placekitten.com/1920/500"
   description: "Import statistics collected by the Loxone Miniserver into InfluxDB"
+  downloads:
+    - url: https://gitlab.com/Programie/LoxoneStats2InfluxDB/-/archive/master/LoxoneStats2InfluxDB-master.tar.gz
+      title: "Latest version"
 
 - name: phpcurl
   repoName: PHPCurl
@@ -165,6 +215,10 @@
   lastUpdate: "2019-07-19"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/DoorCloser.jar"
+    job: release
 
 - name: explosivemobs
   repoName: ExplosiveMobs
@@ -173,6 +227,10 @@
   lastUpdate: "2019-09-08"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/ExplosiveMobs.jar"
+    job: release
 
 - name: talkingmobs
   repoName: TalkingMobs
@@ -181,6 +239,10 @@
   lastUpdate: "2019-09-08"
   coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/TalkingMobs.jar"
+    job: release
 
 - name: chromescreens
   repoName: ChromeScreens
@@ -189,6 +251,9 @@
   lastUpdate: "2017-02-17"
   coverImage: "http://placekitten.com/1920/500"
   description: "Run a fullscreen chrome instance on each display"
+  downloads:
+    - url: https://gitlab.com/Programie/ChromeScreens/-/archive/master/ChromeScreens-master.tar.gz
+      title: "Latest version"
 
 - name: capture2net
   repoName: Capture2Net

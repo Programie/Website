@@ -35,7 +35,7 @@ class TwigRenderer
 
         self::$twig = new Environment($loader);
 
-        $projects = Projects::load();
+        $projects = Projects::loadSerialized();
 
         self::$twig->addExtension(new HtmlExtension);
 

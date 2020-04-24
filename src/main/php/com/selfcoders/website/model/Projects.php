@@ -3,6 +3,8 @@ namespace com\selfcoders\website\model;
 
 use ArrayObject;
 use Exception;
+use RuntimeException;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Yaml;
 
 class Projects extends ArrayObject
@@ -37,6 +39,32 @@ class Projects extends ArrayObject
         });
 
         return $projects;
+    }
+
+    /**
+     * @return Projects
+     * @throws Exception
+     */
+    public static function loadSerialized()
+    {
+        $filename = CACHE_ROOT . "/projects.serialized";
+        if (!file_exists($filename)) {
+            return self::load();
+        }
+
+        $data = unserialize(file_get_contents($filename));
+        if ($data instanceof self) {
+            return $data;
+        }
+
+        throw new RuntimeException(sprintf("Data is not an instance of %s", self::class));
+    }
+
+    public function saveSerialized()
+    {
+        $filesystem = new Filesystem;
+
+        $filesystem->dumpFile(CACHE_ROOT . "/projects.serialized", serialize($this));
     }
 
     /**
