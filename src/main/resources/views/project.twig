@@ -10,6 +10,17 @@
                 <div class="carousel-caption text-left">
                     <h2>{{ project.title }}</h2>
                     <p>{{ project.description }}</p>
+                    {% if project.downloads %}
+                        <div class="dropdown d-inline">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
+                            <div class="dropdown-menu">
+                                {% for download in project.downloads %}
+                                    <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    <a class="btn btn-secondary" href="https://gitlab.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-gitlab"></i> View on GitLab</a>
                 </div>
             </div>
         </div>
@@ -17,15 +28,5 @@
 
     <div class="container">
         {{ project.content|raw }}
-
-        {% if project.downloads %}
-            <ul>
-                {% for download in project.downloads %}
-                    <li><a href="{{ download.url }}" target="_blank">{{ download.title }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-        <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
     </div>
 {% endblock %}
