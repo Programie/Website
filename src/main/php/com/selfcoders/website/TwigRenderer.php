@@ -3,6 +3,7 @@ namespace com\selfcoders\website;
 
 use com\selfcoders\website\model\Projects;
 use Exception;
+use Symfony\Component\Asset\Package;
 use Twig\Environment;
 use Twig\Error\Error;
 use Twig\Extra\Html\HtmlExtension;
@@ -17,9 +18,10 @@ class TwigRenderer
     public static $twig;
 
     /**
+     * @param Package $assetsPackage
      * @throws Exception
      */
-    public static function init()
+    public static function init(Package $assetsPackage)
     {
         if (self::$twig !== null) {
             return;
@@ -42,6 +44,10 @@ class TwigRenderer
         self::$twig->addGlobal("currentYear", date("Y"));
         self::$twig->addGlobal("path", $path);
         self::$twig->addGlobal("projects", $projects);
+
+        self::$twig->addFunction(new TwigFunction("asset", function (string $path) use ($assetsPackage) {
+            return $assetsPackage->getUrl($path);
+        }));
 
         self::$twig->addFunction(new TwigFunction("isActivePage", function (string $url) use ($path) {
             $urlParts = explode("/", trim($url, "/"));

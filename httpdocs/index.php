@@ -2,10 +2,14 @@
 use com\selfcoders\website\controller\HomeController;
 use com\selfcoders\website\controller\ProjectsController;
 use com\selfcoders\website\TwigRenderer;
+use Symfony\Component\Asset\Package;
+use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
 
 require_once __DIR__ . "/../bootstrap.php";
 
-TwigRenderer::init();
+$assetsPackage = new Package(new JsonManifestVersionStrategy(APP_ROOT . "/webpack.assets.json"));
+
+TwigRenderer::init($assetsPackage);
 
 $router = new AltoRouter;
 
