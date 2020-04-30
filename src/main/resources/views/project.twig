@@ -1,8 +1,10 @@
 {% extends "page.twig" %}
 
-{% block content %}
-    {% set project = projects.byName(name) %}
+{% set project = projects.byName(name) %}
 
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
     <div class="carousel">
         <div class="carousel-inner project-carousel-inner">
             <div class="carousel-item active">
