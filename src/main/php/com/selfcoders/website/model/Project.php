@@ -44,7 +44,7 @@ class Project
 
     public function content()
     {
-        $filename = sprintf("%s/projects-html/%s.html", CACHE_ROOT, $this->name);
+        $filename = sprintf("%s/projects-html/%s/index.html", CACHE_ROOT, $this->name);
         if (!file_exists($filename)) {
             return null;
         }

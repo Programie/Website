@@ -1,6 +1,7 @@
 .idea
 /cache/
 /httpdocs/assets/
+/httpdocs/projects/
 /node_modules/
 /vendor/
 /webpack.assets.json
