@@ -1,38 +1,83 @@
-- name: nearbyrespawner
-  repoName: NearbyRespawner
-  title: "NearbyRespawner"
+- name: albumshowcase
+  repoName: AlbumShowcase
+  title: "AlbumShowcase"
+  type: application
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A showcase and download page for albums (music)"
+  gitlabCI:
+    useArtifacts: true
+    job: release
+
+- name: capture2net
+  repoName: Capture2Net
+  title: "Capture2Net"
+  type: application
+  lastUpdate: "2019-01-20"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "Upload screenshots with just a single shortcut"
+
+- name: chromescreens
+  repoName: ChromeScreens
+  title: "ChromeScreens"
+  type: application
+  lastUpdate: "2017-02-17"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "Run a fullscreen chrome instance on each display"
+  downloads:
+    - url: https://gitlab.com/Programie/ChromeScreens/-/archive/master/ChromeScreens-master.tar.gz
+      title: "Latest version"
+
+- name: doorcloser
+  repoName: DoorCloser
+  title: "DoorCloser"
   type: minecraft-plugin
-  lastUpdate: "2020-04-20"
+  lastUpdate: "2019-07-19"
   coverImage: "http://placekitten.com/1920/500"
-  description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
+  description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
   gitlabCI:
     useArtifacts: true
-    artifactPath: "target/NearbyRespawner.jar"
+    artifactPath: "target/DoorCloser.jar"
     job: release
 
-- name: screenshot-manager
-  repoName: ScreenshotManager
-  title: "Screenshot Manager"
+- name: ejabberd-archive-viewer
+  repoName: EjabberdArchiveViewer
+  title: "Ejabberd Archive Viewer"
   type: application
-  lastUpdate: "2020-04-18"
+  lastUpdate: "2019-07-14"
   coverImage: "http://placekitten.com/1920/500"
-  description: "A simple manager and editor for screenshots"
+  description: "A simple frontend for viewing ejabberd archive entries"
   gitlabCI:
     useArtifacts: true
-    artifactPath: "screenshot-manager.py"
     job: release
 
-- name: telegram2elastic
-  repoName: Telegram2Elastic
-  title: "Telegram 2 Elastic"
-  type: application
-  lastUpdate: "2020-03-18"
+- name: explosivemobs
+  repoName: ExplosiveMobs
+  title: "ExplosiveMobs"
+  type: minecraft-plugin
+  lastUpdate: "2019-09-08"
   coverImage: "http://placekitten.com/1920/500"
-  description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
+  description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
   gitlabCI:
     useArtifacts: true
-    artifactPath: "telegram2elastic.py"
+    artifactPath: "target/ExplosiveMobs.jar"
     job: release
+
+- name: gta-sa-toolbox
+  repoName: GTASAToolBox
+  title: "GTA San Andreas ToolBox"
+  type: application
+  lastUpdate: "2019-01-20"
+  coverImage: "http://placekitten.com/1920/500"
+  description: ""
+
+- name: jsonconfig
+  repoName: JsonConfig
+  title: "JsonConfig"
+  type: php-library
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A simple PHP class for reading and writing configuration values from JSON files"
 
 - name: keyboard-mapper
   repoName: KeyboardMapper
@@ -45,6 +90,28 @@
     useArtifacts: true
     artifactPath: "dist/keyboard-mapper.py"
     job: release
+
+- name: krunner-ssh
+  repoName: krunner-ssh
+  title: "KRunner SSH"
+  type: application
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "KRunner SSH Backend"
+  gitlabCI:
+    useArtifacts: true
+    job: release
+
+- name: loxonestats2influxdb
+  repoName: LoxoneStats2InfluxDB
+  title: "Loxone Stats 2 InfluxDB"
+  type: application
+  lastUpdate: "2019-08-03"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "Import statistics collected by the Loxone Miniserver into InfluxDB"
+  downloads:
+    - url: https://gitlab.com/Programie/LoxoneStats2InfluxDB/-/archive/master/LoxoneStats2InfluxDB-master.tar.gz
+      title: "Latest version"
 
 - name: matterbukkit
   repoName: MatterBukkit
@@ -70,16 +137,33 @@
     artifactPath: "target/MineStats.jar"
     job: release
 
-- name: team-planer
-  repoName: TeamPlaner
-  title: "Team Planer"
-  type: application
-  lastUpdate: "2019-12-02"
+- name: nearbyrespawner
+  repoName: NearbyRespawner
+  title: "NearbyRespawner"
+  type: minecraft-plugin
+  lastUpdate: "2020-04-20"
   coverImage: "http://placekitten.com/1920/500"
-  description: "A simple calendar allowing to plan recurring events in teams (e.g. shift planing)"
+  description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
   gitlabCI:
     useArtifacts: true
+    artifactPath: "target/NearbyRespawner.jar"
     job: release
+
+- name: parallelprocesses
+  repoName: ParallelProcesses
+  title: "ParallelProcesses"
+  type: php-library
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A library to handle parallel process executions using Symfony Process component"
+
+- name: phpcurl
+  repoName: PHPCurl
+  title: "PHPCurl"
+  type: php-library
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A PHP OOP wrapper for Curl with some additional features"
 
 - name: phpdyndns
   repoName: PHPDynDNS
@@ -90,6 +174,42 @@
   description: "A simple DynDNS Service written in PHP"
   gitlabCI:
     useArtifacts: true
+    job: release
+
+- name: phptable
+  repoName: PHPTable
+  title: "PHPTable"
+  type: php-library
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A library to display data in a table"
+
+- name: phputils
+  repoName: PHPUtils
+  title: "PHPUtils"
+  type: php-library
+  lastUpdate: "2019-08-13"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A collection of PHP utility functions"
+
+- name: pini
+  repoName: Pini
+  title: "Pini"
+  type: php-library
+  lastUpdate: "2019-09-08"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A library for reading and writing Ini files in PHP"
+
+- name: screenshot-manager
+  repoName: ScreenshotManager
+  title: "Screenshot Manager"
+  type: application
+  lastUpdate: "2020-04-18"
+  coverImage: "http://placekitten.com/1920/500"
+  description: "A simple manager and editor for screenshots"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "screenshot-manager.py"
     job: release
 
 - name: signwarper
@@ -104,134 +224,6 @@
     artifactPath: "target/SignWarper.jar"
     job: release
 
-- name: parallelprocesses
-  repoName: ParallelProcesses
-  title: "ParallelProcesses"
-  type: php-library
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A library to handle parallel process executions using Symfony Process component"
-
-- name: phptable
-  repoName: PHPTable
-  title: "PHPTable"
-  type: php-library
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A library to display data in a table"
-
-- name: xpkeeper
-  repoName: XPKeeper
-  title: "XPKeeper"
-  type: minecraft-plugin
-  lastUpdate: "2019-08-22"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
-  gitlabCI:
-    useArtifacts: true
-    artifactPath: "target/XPKeeper.jar"
-    job: release
-
-- name: phputils
-  repoName: PHPUtils
-  title: "PHPUtils"
-  type: php-library
-  lastUpdate: "2019-08-13"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A collection of PHP utility functions"
-
-- name: albumshowcase
-  repoName: AlbumShowcase
-  title: "AlbumShowcase"
-  type: application
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A showcase and download page for albums (music)"
-  gitlabCI:
-    useArtifacts: true
-    job: release
-
-- name: ejabberd-archive-viewer
-  repoName: EjabberdArchiveViewer
-  title: "Ejabberd Archive Viewer"
-  type: application
-  lastUpdate: "2019-07-14"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A simple frontend for viewing ejabberd archive entries"
-  gitlabCI:
-    useArtifacts: true
-    job: release
-
-- name: pini
-  repoName: Pini
-  title: "Pini"
-  type: php-library
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A library for reading and writing Ini files in PHP"
-
-- name: krunner-ssh
-  repoName: krunner-ssh
-  title: "KRunner SSH"
-  type: application
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "KRunner SSH Backend"
-  gitlabCI:
-    useArtifacts: true
-    job: release
-
-- name: loxonestats2influxdb
-  repoName: LoxoneStats2InfluxDB
-  title: "Loxone Stats 2 InfluxDB"
-  type: application
-  lastUpdate: "2019-08-03"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "Import statistics collected by the Loxone Miniserver into InfluxDB"
-  downloads:
-    - url: https://gitlab.com/Programie/LoxoneStats2InfluxDB/-/archive/master/LoxoneStats2InfluxDB-master.tar.gz
-      title: "Latest version"
-
-- name: phpcurl
-  repoName: PHPCurl
-  title: "PHPCurl"
-  type: php-library
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A PHP OOP wrapper for Curl with some additional features"
-
-- name: jsonconfig
-  repoName: JsonConfig
-  title: "JsonConfig"
-  type: php-library
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A simple PHP class for reading and writing configuration values from JSON files"
-
-- name: doorcloser
-  repoName: DoorCloser
-  title: "DoorCloser"
-  type: minecraft-plugin
-  lastUpdate: "2019-07-19"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
-  gitlabCI:
-    useArtifacts: true
-    artifactPath: "target/DoorCloser.jar"
-    job: release
-
-- name: explosivemobs
-  repoName: ExplosiveMobs
-  title: "ExplosiveMobs"
-  type: minecraft-plugin
-  lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
-  description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
-  gitlabCI:
-    useArtifacts: true
-    artifactPath: "target/ExplosiveMobs.jar"
-    job: release
-
 - name: talkingmobs
   repoName: TalkingMobs
   title: "TalkingMobs"
@@ -244,29 +236,37 @@
     artifactPath: "target/TalkingMobs.jar"
     job: release
 
-- name: chromescreens
-  repoName: ChromeScreens
-  title: "ChromeScreens"
+- name: team-planer
+  repoName: TeamPlaner
+  title: "Team Planer"
   type: application
-  lastUpdate: "2017-02-17"
+  lastUpdate: "2019-12-02"
   coverImage: "http://placekitten.com/1920/500"
-  description: "Run a fullscreen chrome instance on each display"
-  downloads:
-    - url: https://gitlab.com/Programie/ChromeScreens/-/archive/master/ChromeScreens-master.tar.gz
-      title: "Latest version"
+  description: "A simple calendar allowing to plan recurring events in teams (e.g. shift planing)"
+  gitlabCI:
+    useArtifacts: true
+    job: release
 
-- name: capture2net
-  repoName: Capture2Net
-  title: "Capture2Net"
+- name: telegram2elastic
+  repoName: Telegram2Elastic
+  title: "Telegram 2 Elastic"
   type: application
-  lastUpdate: "2019-01-20"
+  lastUpdate: "2020-03-18"
   coverImage: "http://placekitten.com/1920/500"
-  description: "Upload screenshots with just a single shortcut"
+  description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "telegram2elastic.py"
+    job: release
 
-- name: gta-sa-toolbox
-  repoName: GTASAToolBox
-  title: "GTA San Andreas ToolBox"
-  type: application
-  lastUpdate: "2019-01-20"
+- name: xpkeeper
+  repoName: XPKeeper
+  title: "XPKeeper"
+  type: minecraft-plugin
+  lastUpdate: "2019-08-22"
   coverImage: "http://placekitten.com/1920/500"
-  description: ""
+  description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
+  gitlabCI:
+    useArtifacts: true
+    artifactPath: "target/XPKeeper.jar"
+    job: release
