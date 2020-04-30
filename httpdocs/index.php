@@ -1,5 +1,6 @@
 <?php
 use com\selfcoders\website\controller\HomeController;
+use com\selfcoders\website\controller\ImprintController;
 use com\selfcoders\website\controller\ProjectsController;
 use com\selfcoders\website\TwigRenderer;
 use Symfony\Component\Asset\Package;
@@ -14,6 +15,7 @@ TwigRenderer::init($assetsPackage);
 $router = new AltoRouter;
 
 $router->map("GET", "/", [HomeController::class, "getContent"]);
+$router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[*:name]/?", [ProjectsController::class, "showProject"]);
 
