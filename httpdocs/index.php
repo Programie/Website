@@ -15,7 +15,7 @@ $router = new AltoRouter;
 
 $router->map("GET", "/", [HomeController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
-$router->map("GET", "/projects/[*:name]", [ProjectsController::class, "showProject"]);
+$router->map("GET", "/projects/[*:name]/?", [ProjectsController::class, "showProject"]);
 
 $match = $router->match();
 
