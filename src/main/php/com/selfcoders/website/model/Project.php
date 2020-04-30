@@ -3,6 +3,7 @@ namespace com\selfcoders\website\model;
 
 use DateTime;
 use Exception;
+use GuzzleHttp\Client;
 
 class Project
 {
@@ -13,6 +14,7 @@ class Project
     public $coverImage;
     public $description;
     public $repoName;
+    public $gitlabId;
     public $gitlabCIUseArtifacts;
     public $gitlabCIArtifactPath;
     public $gitlabCIJob;
@@ -50,5 +52,34 @@ class Project
         }
 
         return file_get_contents($filename);
+    }
+
+    public function fetchGitlabArtifacts()
+    {
+        $gitlabClient = new Client([
+            "base_uri" => "https://gitlab.com/api/v4/"
+        ]);
+
+        $tags = json_decode($gitlabClient->get(sprintf("projects/%d/repository/tags", $this->gitlabId))->getBody()->getContents(), true);
+
+        $this->downloads = [];
+
+        foreach ($tags as $tag) {
+            $tagName = $tag["name"];
+            $date = $tag["commit"]["created_at"];
+
+            $artifactPath = $this->gitlabCIArtifactPath;
+            if ($artifactPath === null) {
+                $artifactPath = "download";
+            } else {
+                $artifactPath = sprintf("raw/%s", $artifactPath);
+            }
+
+            $this->downloads[] = [
+                "url" => sprintf("https://gitlab.com/Programie/%s/-/jobs/artifacts/%s/%s?job=%s", $this->repoName, $tagName, $artifactPath, $this->gitlabCIJob),
+                "date" => $date,
+                "title" => $tagName
+            ];
+        }
     }
 }

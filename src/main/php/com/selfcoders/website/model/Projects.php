@@ -3,6 +3,7 @@ namespace com\selfcoders\website\model;
 
 use ArrayObject;
 use Exception;
+use GuzzleHttp\Client;
 use RuntimeException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Yaml;
@@ -65,6 +66,30 @@ class Projects extends ArrayObject
         $filesystem = new Filesystem;
 
         $filesystem->dumpFile(CACHE_ROOT . "/projects.serialized", serialize($this));
+    }
+
+    public function fetchGitLabIds()
+    {
+        $gitlabClient = new Client([
+            "base_uri" => "https://gitlab.com/api/v4/"
+        ]);
+
+        $gitlabProjects = json_decode($response = $gitlabClient->get("users/Programie/projects?per_page=100")->getBody()->getContents(), true);
+
+        $repoIds = [];
+
+        foreach ($gitlabProjects as $gitlabProject) {
+            $repoName = $gitlabProject["path"];
+
+            $repoIds[$repoName] = $gitlabProject["id"];
+        }
+
+        /**
+         * @var $project Project
+         */
+        foreach ($this as $project) {
+            $project->gitlabId = $repoIds[$project->repoName] ?? null;
+        }
     }
 
     /**
