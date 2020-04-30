@@ -229,7 +229,7 @@
   title: "TalkingMobs"
   type: minecraft-plugin
   lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
+  coverImage: "screenshot.png"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
   gitlabCI:
     useArtifacts: true
