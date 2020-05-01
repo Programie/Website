@@ -217,7 +217,7 @@
   title: "SignWarper"
   type: minecraft-plugin
   lastUpdate: "2019-08-27"
-  coverImage: "http://placekitten.com/1920/500"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to warp using signs"
   gitlabCI:
     useArtifacts: true
