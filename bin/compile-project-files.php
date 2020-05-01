@@ -33,6 +33,7 @@ foreach ($projects as $project) {
     $outputPath = sprintf("%s/projects-html/%s", CACHE_ROOT, $project->name);
     $resourcesPath = sprintf("%s/httpdocs/projects/%s", APP_ROOT, $project->name);
     $coverImagePath = sprintf("%s/%s", $projectPath, $project->coverImage);
+    $baseUrl = sprintf("/projects/%s", $project->name);
 
     if (!is_dir($projectPath)) {
         continue;
@@ -47,7 +48,7 @@ foreach ($projects as $project) {
 
     $parsedown = new CustomizedParsedown;
 
-    $parsedown->baseUrl = sprintf("/projects/%s", $project->name);
+    $parsedown->baseUrl = $baseUrl;
 
     $parsedown->relativeLinkHook = function ($filename) use ($projectPath, $resourcesPath, &$resources, $filesystem) {
         $sourceFile = sprintf("%s/%s", $projectPath, $filename);
@@ -69,7 +70,7 @@ foreach ($projects as $project) {
     if (file_exists($coverImagePath)) {
         $filename = sprintf("%s.%s", md5_file($coverImagePath), strtolower(pathinfo($coverImagePath, PATHINFO_EXTENSION)));
 
-        $project->coverImage = $filename;
+        $project->coverImage = sprintf("%s/%s", $baseUrl, $filename);
 
         $resources[$filename] = $coverImagePath;
     }
