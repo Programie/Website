@@ -9,7 +9,7 @@
             <h3>{{ category[1] }}</h3>
             {% for project in projects.ofType(category[0]) %}
                 <div class="card mb-4">
-                    <img src="{{ project.coverImage }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-img-top project-list-image" style="background-image: url({{ project.coverImage }})"></div>
                     <div class="card-body">
                         <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
                         <p class="card-text">{{ project.description }}</p>

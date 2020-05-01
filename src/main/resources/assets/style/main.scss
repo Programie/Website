@@ -11,6 +11,15 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
+.project-list-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    min-height: 200px;
+    min-width: 100%;
+}
+
 .project-carousel-inner {
     overflow: visible;
 }
