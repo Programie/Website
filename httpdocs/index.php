@@ -21,7 +21,7 @@ $router->addMatchTypes([
 $router->map("GET", "/", [HomeController::class, "getContent"]);
 $router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
-$router->map("GET", "/projects/[noslash:name]/?", [ProjectsController::class, "showProject"]);
+$router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "showProject"]);
 
 $match = $router->match();
 
