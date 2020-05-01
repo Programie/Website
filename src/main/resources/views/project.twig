@@ -10,8 +10,8 @@
             <div class="carousel-item active">
                 <div class="carousel-image" style="background-image: url({{ project.coverImage }})"></div>
                 <div class="carousel-caption text-left">
-                    <h2>{{ project.title }}</h2>
-                    <p>{{ project.description }}</p>
+                    <h2 class="project-cover-text">{{ project.title }}</h2>
+                    <p class="project-cover-text">{{ project.description }}</p>
                     {% if project.downloads %}
                         <div class="dropdown d-inline">
                             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-download"></i> Download</button>

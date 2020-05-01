@@ -20,6 +20,10 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
     min-width: 100%;
 }
 
+.project-cover-text {
+    text-shadow: 1px 1px 1px black;
+}
+
 .project-carousel-inner {
     overflow: visible;
 }
