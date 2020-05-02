@@ -139,7 +139,7 @@
   title: "NearbyRespawner"
   type: minecraft-plugin
   lastUpdate: "2020-04-20"
-  coverImage: "http://placekitten.com/1920/500"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
   gitlabCI:
     useArtifacts: true
