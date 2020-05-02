@@ -1,4 +1,8 @@
+## Introduction
+
 This script reads the statistics collected by the Loxone Miniserver and writes them to an InfluxDB instance.
+
+The idea for the script started in a [thread in the Loxforum](https://www.loxforum.com/forum/german/software-konfiguration-programm-und-visualisierung/126152-beispiel-loxone-mit-node-red-auf-rpi-3-influxdb-und-grafana-visu).
 
 ## Requirements
 

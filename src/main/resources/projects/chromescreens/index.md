@@ -1,5 +1,7 @@
 **Please note: This script is experimental! Use at your own risk!**
 
+## Introduction
+
 ChromeScreens can be used to launch a Google Chrome instance on each connected display.
 
 For each screen an URL (or even multiple ones if combined with a tab switcher extension like [Revolver - Tabs](https://chrome.google.com/webstore/detail/revolver-tabs/dlknooajieciikpedpldejhhijacnbda)) can be configured. So it is a perfect solution to show websites like monitoring dashboards on big screens.

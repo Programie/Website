@@ -1,3 +1,5 @@
+## Introduction
+
 Creepers explode, but what about exploding sheep, cows or pigs? This plugin makes any mob explode once they die.
 
 It is possible to configure the plugin to just have explosive mobs if they are spawned using the `/spawnexplosivemob` command or simply every time a mob dies.

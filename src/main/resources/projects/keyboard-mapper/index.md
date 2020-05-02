@@ -1,3 +1,5 @@
+## Introduction
+
 Keyboard Mapper is a small application for Linux desktops allowing you to map keys of different input devices to specific actions.
 
 In that way, it allows you to use a second keyboard as some sort of application launcher. Or you could use unused buttons from your mouse as multimedia keys.
