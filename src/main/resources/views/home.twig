@@ -12,7 +12,7 @@
         <div class="carousel-inner">
             {% for project in projects.latest(3) %}
                 <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-                    <div class="carousel-image" style="background-image: url({{ project.coverImage }})"></div>
+                    <div class="carousel-image" style="background-image: url({{ project.getCoverImage() }})"></div>
                     <div class="carousel-caption text-left">
                         <h2 class="project-cover-text">{{ project.title }}</h2>
                         <p class="project-cover-text">{{ project.description }}</p>

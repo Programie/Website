@@ -19,9 +19,9 @@ class TwigRenderer
 
     /**
      * @param Package $assetsPackage
-     * @throws Exception
+     * @param Projects $projects
      */
-    public static function init(Package $assetsPackage)
+    public static function init(Package $assetsPackage, Projects $projects)
     {
         if (self::$twig !== null) {
             return;
@@ -36,8 +36,6 @@ class TwigRenderer
         $loader = new FilesystemLoader(VIEWS_ROOT);
 
         self::$twig = new Environment($loader);
-
-        $projects = Projects::loadSerialized();
 
         self::$twig->addExtension(new HtmlExtension);
 
@@ -66,7 +64,7 @@ class TwigRenderer
             return true;
         }));
 
-        if (strtolower(getenv("TWIG_CACHE")) !== "false") {
+        if (USE_CACHE) {
             self::$twig->setCache(TWIG_CACHE_ROOT);
         }
     }

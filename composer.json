@@ -13,7 +13,8 @@
         "guzzlehttp/guzzle": "^6.5",
         "ext-json": "*",
         "symfony/filesystem": "^5.0",
-        "symfony/asset": "^5.0"
+        "symfony/asset": "^5.0",
+        "ext-fileinfo": "*"
     },
     "autoload": {
         "psr-4": {

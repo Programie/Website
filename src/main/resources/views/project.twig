@@ -1,14 +1,12 @@
 {% extends "page.twig" %}
 
-{% set project = projects.byName(name) %}
-
 {% block title %}{{ project.title }}{% endblock %}
 
 {% block content %}
     <div class="carousel">
         <div class="carousel-inner project-carousel-inner">
             <div class="carousel-item active">
-                <div class="carousel-image" style="background-image: url({{ project.coverImage }})"></div>
+                <div class="carousel-image" style="background-image: url({{ project.getCoverImage() }})"></div>
                 <div class="carousel-caption text-left">
                     <h2 class="project-cover-text">{{ project.title }}</h2>
                     <p class="project-cover-text">{{ project.description }}</p>

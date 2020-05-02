@@ -2,6 +2,8 @@
 use com\selfcoders\website\controller\HomeController;
 use com\selfcoders\website\controller\ImprintController;
 use com\selfcoders\website\controller\ProjectsController;
+use com\selfcoders\website\exception\NotFoundException;
+use com\selfcoders\website\model\Projects;
 use com\selfcoders\website\TwigRenderer;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\VersionStrategy\JsonManifestVersionStrategy;
@@ -10,7 +12,9 @@ require_once __DIR__ . "/../bootstrap.php";
 
 $assetsPackage = new Package(new JsonManifestVersionStrategy(APP_ROOT . "/webpack.assets.json"));
 
-TwigRenderer::init($assetsPackage);
+$projects = Projects::loadSerialized();
+
+TwigRenderer::init($assetsPackage, $projects);
 
 $router = new AltoRouter;
 
@@ -22,6 +26,7 @@ $router->map("GET", "/", [HomeController::class, "getContent"]);
 $router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "showProject"]);
+$router->map("GET", "/projects/[noslash:name]/[**:resource]", [ProjectsController::class, "getResource"]);
 
 $match = $router->match();
 
@@ -31,7 +36,15 @@ if ($match === false) {
 } else {
     $target = $match["target"];
 
-    $class = new $target[0];
+    $class = new $target[0]($projects);
     $method = $target[1];
-    echo $class->{$method}($match["params"]);
+    try {
+        $response = $class->{$method}($match["params"]);
+        if ($response !== null) {
+            echo $response;
+        }
+    } catch (NotFoundException $exception) {
+        http_response_code(404);
+        echo TwigRenderer::render("error-404");
+    }
 }
