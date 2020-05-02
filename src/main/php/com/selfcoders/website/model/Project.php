@@ -96,11 +96,14 @@ class Project
 
         $tags = json_decode($gitlabClient->get(sprintf("projects/%d/repository/tags", $this->gitlabId))->getBody()->getContents(), true);
 
+        $latestDate = null;
         $this->downloads = [];
 
         foreach ($tags as $tag) {
             $tagName = $tag["name"];
-            $date = $tag["commit"]["created_at"];
+            $date = new DateTime($tag["commit"]["created_at"]);
+
+            $latestDate = max($latestDate, $date);
 
             $artifactPath = $this->gitlabCIArtifactPath;
             if ($artifactPath === null) {
@@ -115,6 +118,8 @@ class Project
                 "title" => $tagName
             ];
         }
+
+        $this->lastUpdate = $latestDate;
     }
 
     public function getContentFromMarkdown()
