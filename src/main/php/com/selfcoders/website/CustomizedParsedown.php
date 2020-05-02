@@ -14,12 +14,18 @@ class CustomizedParsedown extends Parsedown
 
         $url = $link["element"]["attributes"]["href"];
 
-        if (parse_url($url, PHP_URL_HOST) === null and $url[0] !== "/") {
+        $isAbsoluteUrl = parse_url($url, PHP_URL_HOST) !== null;
+
+        if (!$isAbsoluteUrl and $url[0] !== "/") {
             if (is_callable($this->relativeLinkHook)) {
                 $url = call_user_func($this->relativeLinkHook, $url);
             }
 
             $link["element"]["attributes"]["href"] = sprintf("%s/%s", $this->baseUrl, $url);
+        }
+
+        if ($isAbsoluteUrl) {
+            $link["element"]["attributes"]["target"] = "_blank";
         }
 
         return $link;
