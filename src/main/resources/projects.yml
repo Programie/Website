@@ -33,7 +33,6 @@
   title: "DoorCloser"
   type: minecraft-plugin
   lastUpdate: "2019-07-19"
-  coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
   gitlabCI:
     useArtifacts: true
@@ -56,7 +55,6 @@
   title: "ExplosiveMobs"
   type: minecraft-plugin
   lastUpdate: "2019-09-08"
-  coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
   gitlabCI:
     useArtifacts: true
@@ -118,7 +116,6 @@
   title: "MatterBukkit"
   type: minecraft-plugin
   lastUpdate: "2019-10-30"
-  coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
   gitlabCI:
     useArtifacts: true
@@ -264,7 +261,6 @@
   title: "XPKeeper"
   type: minecraft-plugin
   lastUpdate: "2019-08-22"
-  coverImage: "http://placekitten.com/1920/500"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
   gitlabCI:
     useArtifacts: true
