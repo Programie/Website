@@ -27,8 +27,8 @@ RUN sed -ri -e 's!/var/www/html!/app/httpdocs!g' /etc/apache2/sites-available/*.
     echo "ServerTokens Prod" > /etc/apache2/conf-enabled/z-server-tokens.conf && \
     a2enmod rewrite && \
     mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
-    mkdir -p /app/twig-cache && \
-    chown www-data: /app/twig-cache
+    mkdir -p /app/cache && \
+    chown www-data: /app/cache
 
 COPY --from=composer /app/vendor /app/vendor
 COPY --from=webpack /app/httpdocs/assets /app/httpdocs/assets
