@@ -11,6 +11,7 @@
                     <h2 class="project-cover-text">{{ project.title }}</h2>
                     <p class="project-cover-text">{{ project.description }}</p>
                     {% if project.downloads %}
+                        <p class="project-cover-text">Last release: {{ project.lastUpdate.format("D, d M Y") }}</p>
                         <div class="dropdown d-inline">
                             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
                             <div class="dropdown-menu">

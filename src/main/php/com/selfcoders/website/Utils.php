@@ -3,7 +3,7 @@ namespace com\selfcoders\website;
 
 class Utils
 {
-    public static function isSafePath(string $basePath, string $path)
+    public static function isSafePath(string $basePath, string $path): bool
     {
         $basePath = realpath($basePath);
         if ($basePath === false) {

@@ -2,52 +2,53 @@
 namespace com\selfcoders\website\model;
 
 use com\selfcoders\website\CustomizedParsedown;
+use com\selfcoders\website\GitlabAPI;
 use com\selfcoders\website\Utils;
 use DateTime;
 use Exception;
-use GuzzleHttp\Client;
 use Symfony\Component\Filesystem\Filesystem;
 
 class Project
 {
-    public $name;
-    public $title;
-    public $type;
-    public $lastUpdate;
-    public $coverImage;
-    public $description;
-    public $repoName;
-    public $gitlabId;
-    public $gitlabCIUseArtifacts;
-    public $gitlabCIArtifactPath;
-    public $gitlabCIJob;
-    public $downloads = [];
+    public string $name;
+    public string $title;
+    public string $type;
+    public ?DateTime $lastUpdate;
+    public string $coverImage;
+    public string $description;
+    public string $repoName;
+    public ?int $gitlabId;
+    public bool $useSourceAsDownload;
+    public string $sourceBranch;
+    public Downloads $downloads;
+
+    public function __construct()
+    {
+        $this->downloads = new Downloads;
+    }
 
     /**
      * @param array $data
      * @return Project
      * @throws Exception
      */
-    public static function fromArray(array $data)
+    public static function fromArray(array $data): Project
     {
         $project = new self;
 
         $project->name = $data["name"];
         $project->title = $data["title"];
         $project->type = $data["type"];
-        $project->lastUpdate = new DateTime($data["lastUpdate"]);
         $project->coverImage = $data["coverImage"] ?? "cover-image.jpg";
         $project->description = $data["description"];
         $project->repoName = $data["repoName"];
-        $project->gitlabCIUseArtifacts = $data["gitlabCI"]["useArtifacts"] ?? false;
-        $project->gitlabCIArtifactPath = $data["gitlabCI"]["artifactPath"] ?? null;
-        $project->gitlabCIJob = $data["gitlabCI"]["job"] ?? null;
-        $project->downloads = $data["downloads"] ?? [];
+        $project->useSourceAsDownload = $data["useSourceAsDownload"] ?? false;
+        $project->sourceBranch = $data["sourceBranch"] ?? "master";
 
         return $project;
     }
 
-    public function getBaseUrl()
+    public function getBaseUrl(): string
     {
         return sprintf("/projects/%s", $this->name);
     }
@@ -61,7 +62,7 @@ class Project
         }
     }
 
-    public function getResourcePath(string $resource)
+    public function getResourcePath(string $resource): ?string
     {
         $basePath = sprintf("%s/projects/%s", RESOURCES_ROOT, $this->name);
         $fullPath = sprintf("%s/%s", $basePath, $resource);
@@ -78,7 +79,7 @@ class Project
         return null;
     }
 
-    public function getContent()
+    public function getContent(): string
     {
         $filename = sprintf("%s/projects-html/%s/index.html", CACHE_ROOT, $this->name);
         if (USE_CACHE and file_exists($filename)) {
@@ -88,41 +89,60 @@ class Project
         }
     }
 
-    public function fetchGitlabArtifacts()
+    public function updateDownloadsFromGitlab(): void
     {
-        $gitlabClient = new Client([
-            "base_uri" => "https://gitlab.com/api/v4/"
-        ]);
+        $gitlabAPI = new GitlabAPI;
 
-        $tags = json_decode($gitlabClient->get(sprintf("projects/%d/repository/tags", $this->gitlabId))->getBody()->getContents(), true);
+        $releases = $gitlabAPI->getReleasesForProject($this->gitlabId);
 
         $latestDate = null;
-        $this->downloads = [];
+        $this->downloads = new Downloads;
 
-        foreach ($tags as $tag) {
-            $tagName = $tag["name"];
-            $date = new DateTime($tag["commit"]["created_at"]);
+        foreach ($releases as $release) {
+            try {
+                $date = new DateTime($release["released_at"]);
+            } catch (Exception $exception) {
+                $date = new DateTime;
+            }
 
             $latestDate = max($latestDate, $date);
 
-            $artifactPath = $this->gitlabCIArtifactPath;
-            if ($artifactPath === null) {
-                $artifactPath = "download";
+            $assetLinks = $release["assets"]["links"] ?? null;
+
+            if (empty($assetLinks)) {
+                $downloadUrl = $gitlabAPI->getSourceDownloadUrl("Programie", $this->repoName, $release["tag_name"]);
             } else {
-                $artifactPath = sprintf("raw/%s", $artifactPath);
+                $downloadUrl = $assetLinks[0]["url"];
             }
 
-            $this->downloads[] = [
-                "url" => sprintf("https://gitlab.com/Programie/%s/-/jobs/artifacts/%s/%s?job=%s", $this->repoName, $tagName, $artifactPath, $this->gitlabCIJob),
-                "date" => $date,
-                "title" => $tagName
-            ];
+            $this->downloads->append(new Download($downloadUrl, $date, $release["name"]));
+        }
+
+        if ($this->useSourceAsDownload) {
+            $branches = $gitlabAPI->getBranchesOfProject($this->gitlabId);
+
+            $date = new DateTime;
+
+            foreach ($branches as $branch) {
+                if ($branch["name"] === $this->sourceBranch) {
+                    try {
+                        $date = new DateTime($branch["commit"]["committed_date"]);
+                    } catch (Exception $exception) {
+                        $date = new DateTime;
+                    }
+                    break;
+                }
+            }
+
+            $latestDate = max($latestDate, $date);
+
+            $this->downloads->append(new Download($gitlabAPI->getSourceDownloadUrl("Programie", $this->repoName, $this->sourceBranch), $date, $this->sourceBranch));
         }
 
         $this->lastUpdate = $latestDate;
     }
 
-    public function getContentFromMarkdown()
+    public function getContentFromMarkdown(): string
     {
         $parsedown = new CustomizedParsedown;
 

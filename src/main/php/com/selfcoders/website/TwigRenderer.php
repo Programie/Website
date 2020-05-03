@@ -2,7 +2,6 @@
 namespace com\selfcoders\website;
 
 use com\selfcoders\website\model\Projects;
-use Exception;
 use Symfony\Component\Asset\Package;
 use Twig\Environment;
 use Twig\Error\Error;
@@ -12,16 +11,13 @@ use Twig\TwigFunction;
 
 class TwigRenderer
 {
-    /**
-     * @var Environment
-     */
-    public static $twig;
+    private static ?Environment $twig = null;
 
     /**
      * @param Package $assetsPackage
      * @param Projects $projects
      */
-    public static function init(Package $assetsPackage, Projects $projects)
+    public static function init(Package $assetsPackage, Projects $projects): void
     {
         if (self::$twig !== null) {
             return;
@@ -75,7 +71,7 @@ class TwigRenderer
      * @return string
      * @throws Error
      */
-    public static function render($name, $context = [])
+    public static function render($name, $context = []): string
     {
         return self::$twig->render($name . ".twig", $context);
     }

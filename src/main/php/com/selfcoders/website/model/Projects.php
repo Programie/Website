@@ -2,8 +2,8 @@
 namespace com\selfcoders\website\model;
 
 use ArrayObject;
+use com\selfcoders\website\GitlabAPI;
 use Exception;
-use GuzzleHttp\Client;
 use RuntimeException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Yaml;
@@ -26,7 +26,7 @@ class Projects extends ArrayObject
      * @return Projects
      * @throws Exception
      */
-    public static function load()
+    public static function load(): self
     {
         $projects = new self;
 
@@ -46,7 +46,7 @@ class Projects extends ArrayObject
      * @return Projects
      * @throws Exception
      */
-    public static function loadSerialized()
+    public static function loadSerialized(): self
     {
         $filename = CACHE_ROOT . "/projects.serialized";
         if (!file_exists($filename)) {
@@ -61,20 +61,18 @@ class Projects extends ArrayObject
         throw new RuntimeException(sprintf("Data is not an instance of %s", self::class));
     }
 
-    public function saveSerialized()
+    public function saveSerialized(): void
     {
         $filesystem = new Filesystem;
 
         $filesystem->dumpFile(CACHE_ROOT . "/projects.serialized", serialize($this));
     }
 
-    public function fetchGitLabIds()
+    public function fetchGitLabIds(): void
     {
-        $gitlabClient = new Client([
-            "base_uri" => "https://gitlab.com/api/v4/"
-        ]);
+        $gitlabAPI = new GitlabAPI;
 
-        $gitlabProjects = json_decode($response = $gitlabClient->get("users/Programie/projects?per_page=100")->getBody()->getContents(), true);
+        $gitlabProjects = $gitlabAPI->getProjectsOfUser("Programie");
 
         $repoIds = [];
 
@@ -96,7 +94,7 @@ class Projects extends ArrayObject
      * @param string $type
      * @return Projects
      */
-    public function ofType(string $type)
+    public function ofType(string $type): self
     {
         $projects = new self;
 
@@ -116,7 +114,7 @@ class Projects extends ArrayObject
      * @param string $name
      * @return Project|null
      */
-    public function byName(string $name)
+    public function byName(string $name): ?Project
     {
         /**
          * @var $project Project
@@ -130,7 +128,7 @@ class Projects extends ArrayObject
         return null;
     }
 
-    public function latest(int $limit)
+    public function latest(int $limit): self
     {
         $projects = clone $this;
 
@@ -147,7 +145,7 @@ class Projects extends ArrayObject
         return $projects->slice(0, $limit);
     }
 
-    public function slice(int $offset, int $length)
+    public function slice(int $offset, int $length): self
     {
         return new self(array_slice($this->getArrayCopy(), $offset, $length));
     }

@@ -15,14 +15,12 @@ $projects->fetchGitLabIds();
 foreach ($projects as $project) {
     printf("\n*** %s ***\n", $project->title);
 
-    if ($project->gitlabCIUseArtifacts) {
-        if ($project->gitlabId === null) {
-            printf("Can't find Gitlab project ID for project %s (repository name %s), skipping fetching artifacts from Gitlab\n", $project->name, $project->repoName);
-        } else {
-            $project->fetchGitlabArtifacts();
+    if ($project->gitlabId === null) {
+        printf("Can't find Gitlab project ID for project %s (repository name %s), skipping fetching artifacts from Gitlab\n", $project->name, $project->repoName);
+    } else {
+        $project->updateDownloadsFromGitlab();
 
-            printf("Found %d download(s)\n", count($project->downloads));
-        }
+        printf("Found %d download(s)\n", count($project->downloads));
     }
 }
 

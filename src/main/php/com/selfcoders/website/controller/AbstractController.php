@@ -5,10 +5,7 @@ use com\selfcoders\website\model\Projects;
 
 abstract class AbstractController
 {
-    /**
-     * @var Projects
-     */
-    protected $projects;
+    protected Projects $projects;
 
     public function __construct(Projects $projects)
     {

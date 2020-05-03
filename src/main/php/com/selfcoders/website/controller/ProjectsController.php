@@ -4,15 +4,25 @@ namespace com\selfcoders\website\controller;
 use com\selfcoders\website\exception\ForbiddenException;
 use com\selfcoders\website\exception\NotFoundException;
 use com\selfcoders\website\TwigRenderer;
+use Twig\Error\Error as TwigError;
 
 class ProjectsController extends AbstractController
 {
-    public function listProjects()
+    /**
+     * @return string
+     * @throws TwigError
+     */
+    public function listProjects(): string
     {
         return TwigRenderer::render("projects");
     }
 
-    public function showProject($params)
+    /**
+     * @param $params
+     * @return string
+     * @throws TwigError
+     */
+    public function showProject($params): string
     {
         $project = $this->projects->byName($params["name"]);
 
@@ -25,7 +35,7 @@ class ProjectsController extends AbstractController
         ]);
     }
 
-    public function getResource($params)
+    public function getResource($params): void
     {
         $project = $this->projects->byName($params["name"]);
 
@@ -46,7 +56,7 @@ class ProjectsController extends AbstractController
         readfile($filename);
     }
 
-    public function update($params)
+    public function update($params): string
     {
         $headers = getallheaders();
         if ($headers === false) {
@@ -73,8 +83,8 @@ class ProjectsController extends AbstractController
             throw new NotFoundException;
         }
 
-        if ($project->gitlabCIUseArtifacts and $project->gitlabId !== null) {
-            $project->fetchGitlabArtifacts();
+        if ($project->gitlabId !== null) {
+            $project->updateDownloadsFromGitlab();
             $this->projects->saveSerialized();
 
             return sprintf("Updated project %s with %d downloads", $project->name, count($project->downloads));

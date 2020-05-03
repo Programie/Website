@@ -5,7 +5,7 @@ use Parsedown;
 
 class CustomizedParsedown extends Parsedown
 {
-    public $baseUrl;
+    public string $baseUrl;
     public $relativeLinkHook;
 
     protected function inlineLink($Excerpt)

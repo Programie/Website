@@ -16,6 +16,9 @@
                     <div class="carousel-caption text-left">
                         <h2 class="project-cover-text">{{ project.title }}</h2>
                         <p class="project-cover-text">{{ project.description }}</p>
+                        {% if project.downloads %}
+                            <p class="project-cover-text">Last release: {{ project.lastUpdate.format("D, d M Y") }}</p>
+                        {% endif %}
                         <a class="btn btn-lg btn-primary" href="/projects/{{ project.name }}">Go to project page</a>
                     </div>
                 </div>
