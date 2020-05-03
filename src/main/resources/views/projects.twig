@@ -15,7 +15,7 @@
                         <p class="card-text">{{ project.description }}</p>
                         <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
                     </div>
-                    {% if project.downloads %}
+                    {% if project.lastUpdate %}
                         <div class="card-footer">
                             <small class="text-muted">Last release: {{ project.lastUpdate.format("D, d M Y") }}</small>
                         </div>
