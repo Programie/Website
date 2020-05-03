@@ -159,7 +159,7 @@
   coverImage: "screenshot.png"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
 
-- name: team-planer
+- name: teamplaner
   repoName: TeamPlaner
   title: "Team Planer"
   type: application
