@@ -28,6 +28,10 @@ class ProjectsController extends AbstractController
     {
         $project = $this->projects->byName($params["name"]);
 
+        if ($project === null) {
+            throw new NotFoundException;
+        }
+
         $filename = $project->getResourcePath($params["resource"]);
         if ($filename === null) {
             throw new NotFoundException;
