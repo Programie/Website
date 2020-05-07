@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div class="carousel slide" data-ride="carousel" id="home-carousel">
+    <div class="carousel slide carousel-fade" data-ride="carousel" id="home-carousel">
         <ol class="carousel-indicators">
             {% for project in projects.latest(3) %}
                 <li data-target="#home-carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
