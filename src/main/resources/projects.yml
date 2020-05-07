@@ -93,7 +93,6 @@
   repoName: NearbyRespawner
   title: "NearbyRespawner"
   type: minecraft-plugin
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
 
 - name: parallelprocesses
