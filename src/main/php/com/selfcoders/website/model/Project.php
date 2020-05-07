@@ -13,6 +13,7 @@ class Project
     public string $name;
     public string $title;
     public string $type;
+    public DateTime $startDate;
     public ?DateTime $lastUpdate;
     public string $coverImage;
     public string $description;
@@ -39,6 +40,7 @@ class Project
         $project->name = $data["name"];
         $project->title = $data["title"];
         $project->type = $data["type"];
+        $project->startDate = new DateTime($data["startDate"]);
         $project->coverImage = $data["coverImage"] ?? "cover-image.jpg";
         $project->description = $data["description"];
         $project->repoName = $data["repoName"];

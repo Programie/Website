@@ -2,18 +2,21 @@
   repoName: AlbumShowcase
   title: "AlbumShowcase"
   type: application
+  startDate: "2014-11-24"
   description: "A showcase and download page for albums (music)"
 
 - name: capture2net
   repoName: Capture2Net
   title: "Capture2Net"
   type: application
+  startDate: "2011-12-05"
   description: "Upload screenshots with just a single shortcut"
 
 - name: chromescreens
   repoName: ChromeScreens
   title: "ChromeScreens"
   type: application
+  startDate: "2014-01-20"
   description: "Run a fullscreen chrome instance on each display"
   useSourceAsDownload: true
   sourceBranch: master
@@ -22,48 +25,56 @@
   repoName: DoorCloser
   title: "DoorCloser"
   type: minecraft-plugin
+  startDate: "2018-02-11"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
 
 - name: ejabberd-archive-viewer
   repoName: EjabberdArchiveViewer
   title: "Ejabberd Archive Viewer"
   type: application
+  startDate: "2018-06-09"
   description: "A simple frontend for viewing ejabberd archive entries"
 
 - name: explosivemobs
   repoName: ExplosiveMobs
   title: "ExplosiveMobs"
   type: minecraft-plugin
+  startDate: "2013-09-03"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
 
 - name: gta-sa-toolbox
   repoName: GTASAToolBox
   title: "GTA San Andreas ToolBox"
   type: application
+  startDate: "2007-01-02"
   description: "A tool for GTA San Andreas allowing to teleport the player, spawn vehicles and more"
 
 - name: jsonconfig
   repoName: JsonConfig
   title: "JsonConfig"
   type: php-library
+  startDate: "2014-12-16"
   description: "A simple PHP class for reading and writing configuration values from JSON files"
 
 - name: keyboard-mapper
   repoName: KeyboardMapper
   title: "Keyboard Mapper"
   type: application
+  startDate: "2018-11-21"
   description: "A tool for Linux desktops to map keys of dedicated keyboards to specific actions"
 
 - name: krunner-ssh
   repoName: krunner-ssh
   title: "KRunner SSH"
   type: application
+  startDate: "2019-01-11"
   description: "KRunner SSH Backend"
 
 - name: loxonestats2influxdb
   repoName: LoxoneStats2InfluxDB
   title: "Loxone Stats 2 InfluxDB"
   type: application
+  startDate: "2018-03-08"
   description: "Import statistics collected by the Loxone Miniserver into InfluxDB"
   useSourceAsDownload: true
   sourceBranch: master
@@ -72,66 +83,77 @@
   repoName: MatterBukkit
   title: "MatterBukkit"
   type: minecraft-plugin
+  startDate: "2019-09-24"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
 
 - name: minestats
   repoName: MineStats
   title: "MineStats"
   type: minecraft-plugin
+  startDate: "2019-10-26"
   description: "A Minecraft Bukkit plugin which sends statistics to InfluxDB"
 
 - name: nearbyrespawner
   repoName: NearbyRespawner
   title: "NearbyRespawner"
   type: minecraft-plugin
+  startDate: "2020-04-20"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
 
 - name: parallelprocesses
   repoName: ParallelProcesses
   title: "ParallelProcesses"
   type: php-library
+  startDate: "2017-01-04"
   description: "A library to handle parallel process executions using Symfony Process component"
 
 - name: phpcurl
   repoName: PHPCurl
   title: "PHPCurl"
   type: php-library
+  startDate: "2014-12-18"
   description: "A PHP OOP wrapper for Curl with some additional features"
 
 - name: phpdyndns
   repoName: PHPDynDNS
   title: "PHPDynDNS"
   type: application
+  startDate: "2013-12-19"
   description: "A simple DynDNS Service written in PHP"
 
 - name: phptable
   repoName: PHPTable
   title: "PHPTable"
   type: php-library
+  startDate: "2017-01-03"
   description: "A library to display data in a table"
 
 - name: phputils
   repoName: PHPUtils
   title: "PHPUtils"
   type: php-library
+  startDate: "2015-01-13"
   description: "A collection of PHP utility functions"
 
 - name: pini
   repoName: Pini
   title: "Pini"
   type: php-library
+  startDate: "2014-12-02"
   description: "A library for reading and writing Ini files in PHP"
 
 - name: screenshot-manager
   repoName: ScreenshotManager
   title: "Screenshot Manager"
   type: application
+  startDate: "2020-04-16"
   description: "A simple manager and editor for screenshots"
 
 - name: signwarper
   repoName: SignWarper
   title: "SignWarper"
   type: minecraft-plugin
+  startDate: "2019-08-25"
   coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to warp using signs"
 
@@ -139,6 +161,7 @@
   repoName: TalkingMobs
   title: "TalkingMobs"
   type: minecraft-plugin
+  startDate: "2013-06-30"
   coverImage: "screenshot.png"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
 
@@ -146,16 +169,19 @@
   repoName: TeamPlaner
   title: "Team Planer"
   type: application
+  startDate: "2014-12-23"
   description: "A simple calendar allowing to plan recurring events in teams (e.g. shift planing)"
 
 - name: telegram2elastic
   repoName: Telegram2Elastic
   title: "Telegram 2 Elastic"
   type: application
+  startDate: "2020-03-18"
   description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
 
 - name: xpkeeper
   repoName: XPKeeper
   title: "XPKeeper"
   type: minecraft-plugin
+  startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
