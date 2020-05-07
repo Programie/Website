@@ -45,7 +45,7 @@
   title: "GTA San Andreas ToolBox"
   type: application
   coverImage: "http://placekitten.com/1920/500"
-  description: ""
+  description: "A tool for GTA San Andreas allowing to teleport the player, spawn vehicles and more"
 
 - name: jsonconfig
   repoName: JsonConfig
