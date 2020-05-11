@@ -32,7 +32,9 @@ RUN sed -ri -e 's!/var/www/html!/app/httpdocs!g' /etc/apache2/sites-available/*.
 
 COPY --from=composer /app/vendor /app/vendor
 COPY --from=webpack /app/httpdocs/assets /app/httpdocs/assets
+COPY --from=webpack /app/webpack.assets.json /app/webpack.assets.json
 
 COPY bootstrap.php /app/
 COPY httpdocs /app/httpdocs
+COPY bin /app/bin
 COPY src /app/src
