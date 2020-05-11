@@ -37,6 +37,14 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
     min-width: 100%;
 }
 
+.carousel-indicators li {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+
 .social-icon {
     display: inline-block;
     width: 30px;
