@@ -11,6 +11,17 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
+$social-icon-colors: (
+        "github": #4e8bc7,
+        "gitlab": #e04229,
+        "lastfm": #ba0000,
+        "reddit": #fd4400,
+        "steam": #bebcb9,
+        "telegram": #27a6e3,
+        "twitter": #1c9fef,
+        "youtube": #fd0000
+);
+
 .project-list-image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,10 +68,12 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
     transition: all .3s ease-in-out;
 }
 
-.social-icon:hover,
-.social-icon:focus,
-.social-icon:active {
-    color: $link-color;
+@each $name, $color in $social-icon-colors {
+    .social-icon-#{$name}:hover,
+    .social-icon-#{$name}:focus,
+    .social-icon-#{$name}:active {
+        color: $color;
+    }
 }
 
 main {
