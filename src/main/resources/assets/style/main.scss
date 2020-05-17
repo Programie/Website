@@ -1,7 +1,6 @@
 @import "~bootswatch/dist/darkly/variables";
 
 $link-color: $yellow;
-$pre-color: $pink;
 
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/darkly/bootswatch";
@@ -91,4 +90,11 @@ footer {
 
 main > .container {
     margin-top: 20px;
+}
+
+pre {
+    background: $gray-800;
+    color: $gray-300;
+    padding: $spacer * .5;
+    border-radius: .25rem;
 }
