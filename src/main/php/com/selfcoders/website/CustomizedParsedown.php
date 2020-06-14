@@ -8,6 +8,20 @@ class CustomizedParsedown extends Parsedown
     public string $baseUrl;
     public $relativeLinkHook;
 
+    protected function blockHeader($Line)
+    {
+        $headerBlock = parent::blockHeader($Line);
+
+        $id = strtolower($headerBlock["element"]["text"]);
+
+        $id = str_replace(" ", "-", $id);
+        $id = preg_replace("/([^a-z\-_]+)/", "", $id);
+
+        $headerBlock["element"]["attributes"]["id"] = $id;
+
+        return $headerBlock;
+    }
+
     protected function inlineLink($Excerpt)
     {
         $link = parent::inlineLink($Excerpt);
@@ -16,7 +30,7 @@ class CustomizedParsedown extends Parsedown
 
         $isAbsoluteUrl = parse_url($url, PHP_URL_HOST) !== null;
 
-        if (!$isAbsoluteUrl and $url[0] !== "/") {
+        if (!$isAbsoluteUrl and $url[0] !== "/" and $url[0] !== "#") {
             if (is_callable($this->relativeLinkHook)) {
                 $url = call_user_func($this->relativeLinkHook, $url);
             }
