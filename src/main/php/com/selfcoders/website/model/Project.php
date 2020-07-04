@@ -146,11 +146,17 @@ class Project
 
     public function getContentFromMarkdown(): string
     {
+        $filename = $this->getResourcePath("index.md");
+
+        if (!file_exists($filename)) {
+            return "";
+        }
+
         $parsedown = new CustomizedParsedown;
 
         $parsedown->baseUrl = $this->getBaseUrl();
 
-        $html = $parsedown->text(file_get_contents($this->getResourcePath("index.md")));
+        $html = $parsedown->text(file_get_contents($filename));
 
         if (USE_CACHE) {
             $filesystem = new Filesystem;
