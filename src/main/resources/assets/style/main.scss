@@ -3,6 +3,8 @@
 $link-color: $yellow;
 
 @import "~bootstrap/scss/bootstrap";
+
+$web-font-path: "google-fonts.css";
 @import "~bootswatch/dist/darkly/bootswatch";
 
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
