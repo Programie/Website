@@ -60,6 +60,25 @@ class TwigRenderer
             return true;
         }));
 
+        self::$twig->addFunction(new TwigFunction("isActiveProjectCategory", function (string $category) use ($path, $projects) {
+            $pathParts = explode("/", trim($path, "/"));
+
+            if (count($pathParts) < 2) {
+                return false;
+            }
+
+            if ($pathParts[0] !== "projects") {
+                return false;
+            }
+
+            $project = $projects->byName($pathParts[1]);
+            if ($project === null) {
+                return false;
+            }
+
+            return $project->type === $category;
+        }));
+
         if (USE_CACHE) {
             self::$twig->setCache(TWIG_CACHE_ROOT);
         }
