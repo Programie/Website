@@ -1,0 +1,15 @@
+# Note: This docker-compose file is designed for development purposes. Do not use in production!
+
+version: '3.8'
+
+services:
+  website:
+    image: registry.gitlab.com/programie/website
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:80
+    environment:
+      USE_CACHE: 'false'
+      GITLAB_TOKEN: test
