@@ -14,10 +14,10 @@
                 <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
                     <div class="carousel-image" style="background-image: url({{ project.getCoverImage() }})"></div>
                     <div class="carousel-caption text-left">
-                        <h2 class="project-cover-text">{{ project.title }}</h2>
+                        <h2 class="project-cover-text">{{ project.title }}{% if project.latestDownload %} <sup><span class="badge badge-primary project-latest-download-badge">{{ project.latestDownload.title }}</span></sup>{% endif %}</h2>
                         <p class="project-cover-text">{{ project.description }}</p>
-                        {% if project.lastUpdate %}
-                            <p class="project-cover-text">Last release: {{ project.lastUpdate.format("D, d M Y") }}</p>
+                        {% if project.latestDownload %}
+                            <p class="project-cover-text">Last release: <span class="badge badge-secondary">{{ project.latestDownload.date.format("D, d M Y") }}</span></p>
                         {% endif %}
                         <a class="btn btn-lg btn-primary" href="/projects/{{ project.name }}">Go to project page</a>
                     </div>

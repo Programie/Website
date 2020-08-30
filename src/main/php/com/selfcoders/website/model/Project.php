@@ -91,6 +91,11 @@ class Project
         }
     }
 
+    public function getLatestDownload(): ?Download
+    {
+        return $this->downloads[0] ?? null;
+    }
+
     public function updateDownloadsFromGitlab(): void
     {
         $gitlabAPI = new GitlabAPI;
