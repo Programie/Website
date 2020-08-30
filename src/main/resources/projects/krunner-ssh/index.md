@@ -2,12 +2,20 @@
 
 KRunner SSH provides a simple backend for KRunner providing SSH hosts from your .ssh/known_hosts file as search results.
 
-It allows you to directly connect to often used SSH servers by simply searching for the hostname in KRunner.
+![Screenshot](screenshot.png)
 
 ## Installation
 
-* Copy `ssh-runner.desktop` to `~/.local/share/kservices5`
-* Start `runner.py` (add it to your startup applications)
+### Automatic installation
+
+Simply execute the `install.sh` script and you are ready to go.
+
+### Manual installation
+
+* Copy [ssh-runner.desktop](ssh-runner.desktop) to ~/.local/share/kservices5
+* Copy [ssh-runner.service](ssh-runner.service) to ~/.local/share/dbus-1/services/com.selfcoders.ssh-runner.service
+* Replace "%{BASE_DIR}" with the path to the folder containing the runner.py in ~/.local/share/dbus-1/services/com.selfcoders.ssh-runner.service
+* Restart KRunner using `kquitapp5 krunner`
 
 ## Terminal Command
 
@@ -26,3 +34,5 @@ Example call: `/path/to/runner.py konsole -e 'ssh {}'`
 ## Usage
 
 Open KRunner (usually Alt+F2) and search for a host listed in your known_hosts file.
+
+Note: Make sure to disable hashing of your known_hosts file (`HashKnownHOsts no` in your ~/.ssh/config), otherwise SSH Runner can't find any hosts from your known_hosts file.
