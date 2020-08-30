@@ -106,6 +106,10 @@ $social-icon-colors: (
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 main {
     padding-top: 70px;
 }
