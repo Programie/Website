@@ -140,6 +140,10 @@ nav.navbar > .container {
     padding: 1em;
 }
 
+.navbar-item {
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .navbar-item, #navbar-collapse {
         display: inline-block !important;
