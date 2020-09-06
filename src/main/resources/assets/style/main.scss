@@ -148,6 +148,10 @@ nav.navbar > .container {
     cursor: pointer;
 }
 
+.project-list-anchor {
+    scroll-margin-top: 85px;
+}
+
 @media (min-width: 768px) {
     .navbar-item, #navbar-collapse {
         display: inline-block !important;
