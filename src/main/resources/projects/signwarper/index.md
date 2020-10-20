@@ -2,7 +2,7 @@
 
 SignWarper allows players to place signs to teleport between them by simply right clicking on them.
 
-By default, teleports have a cost of one ender pearl which must be in your hand while interacting with the sign, but it can also be disabled in the configuration.
+By default, teleports have a cost of one ender pearl which must be in the players hand while interacting with the sign, but it can also be disabled in the configuration.
 
 ## Installation
 
