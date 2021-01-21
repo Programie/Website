@@ -13,7 +13,7 @@ Instructions how to manually build the project can be found on [GitLab](https://
 
 ## Permissions
 
-Currently, there is only one permission available: `xpdispenser` (Default: everyone)
+Currently, there is only one permission available which controls whether a player is allowed to use this plugin: `xpdispenser` (Default: everyone)
 
 ## How to use it?
 
