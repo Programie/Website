@@ -13,7 +13,7 @@ Instructions how to manually build the project can be found on [GitLab](https://
 
 ## Permissions
 
-Currently, there are no permissions to be set.
+Currently, there is only one permission available: `xpdispenser` (Default: everyone)
 
 ## How to use it?
 
