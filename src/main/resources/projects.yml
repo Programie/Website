@@ -184,6 +184,7 @@
   title: "XPDispenser"
   type: minecraft-plugin
   startDate: "2021-01-20"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to throw your XP at yourself (e.g. to repair your mending tools)"
 
 - name: xpkeeper
