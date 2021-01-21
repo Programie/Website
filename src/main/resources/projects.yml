@@ -179,6 +179,13 @@
   startDate: "2020-03-18"
   description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
 
+- name: xpdispenser
+  repoName: XPDispenser
+  title: "XPDispenser"
+  type: minecraft-plugin
+  startDate: "2021-01-20"
+  description: "A Minecraft Bukkit plugin to throw your XP at yourself (e.g. to repair your mending tools)"
+
 - name: xpkeeper
   repoName: XPKeeper
   title: "XPKeeper"
