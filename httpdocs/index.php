@@ -1,6 +1,7 @@
 <?php
 use com\selfcoders\website\controller\HomeController;
 use com\selfcoders\website\controller\ImprintController;
+use com\selfcoders\website\controller\PrivacyPolicyController;
 use com\selfcoders\website\controller\ProjectsController;
 use com\selfcoders\website\exception\ForbiddenException;
 use com\selfcoders\website\exception\NotFoundException;
@@ -25,6 +26,7 @@ $router->addMatchTypes([
 
 $router->map("GET", "/", [HomeController::class, "getContent"]);
 $router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
+$router->map("GET", "/privacy-policy", [PrivacyPolicyController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "showProject"]);
 $router->map("GET", "/projects/[noslash:name]/[**:resource]", [ProjectsController::class, "getResource"]);
