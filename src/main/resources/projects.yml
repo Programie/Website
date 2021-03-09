@@ -26,6 +26,7 @@
   title: "DoorCloser"
   type: minecraft-plugin
   startDate: "2018-02-11"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
 
 - name: ejabberd-archive-viewer
