@@ -25,6 +25,13 @@
                         </div>
                     {% endif %}
                     <a class="btn btn-secondary" href="https://gitlab.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-gitlab"></i> View on GitLab</a>
+                    {% if project.extName %}
+                        {% if project.type == "minecraft-plugin" %}
+                            <a class="btn btn-secondary" href="https://www.curseforge.com/minecraft/bukkit-plugins/{{ project.extName }}" target="_blank">View on CurseForge</a>
+                        {% elseif project.type == "php-library" %}
+                            <a class="btn btn-secondary" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
+                        {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>

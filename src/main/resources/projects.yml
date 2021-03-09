@@ -24,6 +24,7 @@
 - name: doorcloser
   repoName: DoorCloser
   title: "DoorCloser"
+  extName: doorcloser
   type: minecraft-plugin
   startDate: "2018-02-11"
   coverImage: "screenshot.jpg"
@@ -39,6 +40,7 @@
 - name: explosivemobs
   repoName: ExplosiveMobs
   title: "ExplosiveMobs"
+  extName: explosivemobs
   type: minecraft-plugin
   startDate: "2013-09-03"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
@@ -53,6 +55,7 @@
 - name: jsonconfig
   repoName: JsonConfig
   title: "JsonConfig"
+  extName: jsonconfig
   type: php-library
   startDate: "2014-12-16"
   description: "A simple PHP class for reading and writing configuration values from JSON files"
@@ -83,6 +86,7 @@
 - name: matterbukkit
   repoName: MatterBukkit
   title: "MatterBukkit"
+  extName: matterbukkit
   type: minecraft-plugin
   startDate: "2019-09-24"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
@@ -97,6 +101,7 @@
 - name: nearbyrespawner
   repoName: NearbyRespawner
   title: "NearbyRespawner"
+  extName: nearbyrespawner
   type: minecraft-plugin
   startDate: "2020-04-20"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
@@ -104,6 +109,7 @@
 - name: parallelprocesses
   repoName: ParallelProcesses
   title: "ParallelProcesses"
+  extName: parallel-processes
   type: php-library
   startDate: "2017-01-04"
   description: "A library to handle parallel process executions using Symfony Process component"
@@ -111,6 +117,7 @@
 - name: phpcurl
   repoName: PHPCurl
   title: "PHPCurl"
+  extName: phpcurl
   type: php-library
   startDate: "2014-12-18"
   description: "A PHP OOP wrapper for Curl with some additional features"
@@ -125,6 +132,7 @@
 - name: phptable
   repoName: PHPTable
   title: "PHPTable"
+  extName: phptable
   type: php-library
   startDate: "2017-01-03"
   description: "A library to display data in a table"
@@ -132,6 +140,7 @@
 - name: phputils
   repoName: PHPUtils
   title: "PHPUtils"
+  extName: phputils
   type: php-library
   startDate: "2015-01-13"
   description: "A collection of PHP utility functions"
@@ -139,6 +148,7 @@
 - name: pini
   repoName: Pini
   title: "Pini"
+  extName: pini
   type: php-library
   startDate: "2014-12-02"
   description: "A library for reading and writing Ini files in PHP"
@@ -146,6 +156,7 @@
 - name: retainxp
   repoName: RetainXP
   title: "RetainXP"
+  extName: retainxp
   type: minecraft-plugin
   startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
@@ -160,6 +171,7 @@
 - name: signwarper
   repoName: SignWarper
   title: "SignWarper"
+  extName: sign-warper
   type: minecraft-plugin
   startDate: "2019-08-25"
   coverImage: "screenshot.jpg"
@@ -168,6 +180,7 @@
 - name: talkingmobs
   repoName: TalkingMobs
   title: "TalkingMobs"
+  extName: talkingmobs
   type: minecraft-plugin
   startDate: "2013-06-30"
   coverImage: "screenshot.png"
@@ -190,6 +203,7 @@
 - name: xpdispenser
   repoName: XPDispenser
   title: "XPDispenser"
+  extName: xpdispenser
   type: minecraft-plugin
   startDate: "2021-01-20"
   coverImage: "screenshot.jpg"
