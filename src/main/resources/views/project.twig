@@ -12,7 +12,7 @@
                     <p class="project-cover-text">{{ project.description }}</p>
                     <div class="project-cover-text">
                         <div class="badge-group mb-3"><span class="badge badge-secondary">Project start</span><span class="badge badge-primary">{{ project.startDate.format("D, d M Y") }}</span></div>
-                        <div class="badge-group mb-3"><span class="badge badge-secondary">Last release</span><span class="badge badge-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}No available yet{% endif %}</span></div>
+                        <div class="badge-group mb-3"><span class="badge badge-secondary">Last release</span><span class="badge badge-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}Not available yet{% endif %}</span></div>
                     </div>
                     {% if project.downloads.count() %}
                         <div class="dropdown d-inline mr-1">
