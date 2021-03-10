@@ -1,0 +1,30 @@
+<div class="card mb-4">
+    <div class="card-img-top project-list-image" style="background-image: url({{ project.getCoverImage() }})"></div>
+    <div class="card-body">
+        <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
+        <p class="card-text">{{ project.description }}</p>
+        <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
+        {% if project.extName %}
+            {% if project.type == "minecraft-plugin" %}
+                <a class="ml-2" href="https://www.curseforge.com/minecraft/bukkit-plugins/{{ project.extName }}" target="_blank">View on CurseForge</a>
+            {% elseif project.type == "php-library" %}
+                <a class="ml-2" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
+            {% endif %}
+        {% endif %}
+        {% if project.downloads.count() %}
+            <div class="dropdown d-inline ml-2">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-download"></i> Download</a>
+                <div class="dropdown-menu">
+                    {% for download in project.downloads %}
+                        <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% if project.lastUpdate %}
+        <div class="card-footer">
+            <small class="text-muted">Last release: {{ project.lastUpdate.format("D, d M Y") }}</small>
+        </div>
+    {% endif %}
+</div>

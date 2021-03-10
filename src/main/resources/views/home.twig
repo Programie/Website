@@ -5,24 +5,39 @@
 {% block content %}
     <div class="carousel slide carousel-fade" data-ride="carousel" id="home-carousel">
         <ol class="carousel-indicators">
-            {% for project in projects.latest(3) %}
-                <li data-target="#home-carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}"></li>
-            {% endfor %}
+            <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#home-carousel" data-slide-to="1"></li>
+            <li data-target="#home-carousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            {% for project in projects.latest(3) %}
-                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-                    <div class="carousel-image" style="background-image: url({{ project.getCoverImage() }})"></div>
+            <div class="carousel-item active">
+                <div class="carousel-image" id="home-carousel-application-cover"></div>
+                <div class="container">
                     <div class="carousel-caption text-left">
-                        <h2 class="project-cover-text">{{ project.title }}{% if project.latestDownload %} <sup><span class="badge badge-primary project-latest-download-badge">{{ project.latestDownload.title }}</span></sup>{% endif %}</h2>
-                        <p class="project-cover-text">{{ project.description }}</p>
-                        <div class="project-cover-text">
-                            <div class="badge-group mb-3"><span class="badge badge-secondary">Last release</span><span class="badge badge-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}Not available yet{% endif %}</span></div>
-                        </div>
-                        <a class="btn btn-lg btn-primary" href="/projects/{{ project.name }}">Go to project page</a>
+                        <h1>Applications</h1>
+                        <p>Free and open source software.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/projects#application">Show all</a></p>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-image" id="home-carousel-minecraft-plugin-cover"></div>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Minecraft plugins</h1>
+                        <p>Enhance your Minecraft experience with those plugins for Bukkit/Spigot.</p>
+                        <p><a class="btn btn-lg btn-primary" href="/projects#minecraft-plugin">Show all</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-image" id="home-carousel-php-library-cover"></div>
+                <div class="carousel-caption text-right">
+                    <h1>PHP libraries</h1>
+                    <p>Small libraries to make your PHP developer life easier.</p>
+                    <p><a class="btn btn-lg btn-primary" href="/projects#php-library">Show all</a></p>
+                </div>
+            </div>
         </div>
         <a class="carousel-control-prev" href="#home-carousel" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -33,73 +48,9 @@
     </div>
 
     <div class="container">
-        <div class="jumbotron">
-            <h2>Hi!</h2>
-
-            <p>My name is Michael a.k.a. Programie. I'm {{ age }} years old and live in Germany.</p>
-
-            <p>I work at <a href="https://www.ionos.com" target="_blank">1&amp;1 IONOS SE</a> where I am responsible for the availability of the <a href="https://www.ionos.com" target="_blank">Shops</a>, the <a href="https://my.ionos.com" target="_blank">Control Center</a> as well as some services in the background.</p>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <h3>Software development</h3>
-
-                <p>I started to write my first programs in 2005 in the programming language <a href="https://www.purebasic.com" target="_blank">PureBasic</a>.</p>
-
-                <p>I'm a hobby developer. But I also develop some tools at work, regardless of my actual job title. Some of them are even open source, like <a href="/projects/teamplaner">Team Planer</a> which is used for our team internal on-call duty planing.</p>
-            </div>
-
-            <div class="col-lg-6">
-                <h3>Developed stuff</h3>
-
-                <p>One of my first and pretty long living projects was the <a href="/projects/gta-sa-toolbox">GTA San Andreas ToolBox</a>.</p>
-
-                <p>I also developed some small PHP libraries like <a href="/projects/pini">Pini</a> (a library for reading and writing Ini files in PHP), <a href="/projects/phpcurl">PHPCurl</a> (a PHP OOP wrapper for Curl with some additional features) or <a href="/projects/phputils">PHPUtils</a> (a collection of useful utility functions).</p>
-
-                <p>In 2013, I started to write my first Bukkit plugins (Minecraft), then lost the interest in Minecraft. After 4 or 5 years later, I decided to continue maintaining them and even developed some more plugins.</p>
-
-                <p>You can find all my projects on the <a href="/projects">projects page</a>.</p>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <h3>Known languages</h3>
-
-                <ul>
-                    <li><a href="https://www.gnu.org/software/bash" target="_blank">Bash</a></li>
-                    <li><a href="https://msdn.microsoft.com/en-us/vstudio/hh388566" target="_blank">C#</a> (just a few basics)</li>
-                    <li>C++ (just a few basics)</li>
-                    <li><a href="https://www.w3.org/Style/CSS" target="_blank">CSS</a></li>
-                    <li>HTML</li>
-                    <li>Java</li>
-                    <li>JavaScript</li>
-                    <li><a href="https://www.lua.org" target="_blank">Lua</a></li>
-                    <li>Objective-C (just a few basics)</li>
-                    <li><a href="https://www.compuphase.com/pawn/pawn.htm" target="_blank">Pawn</a></li>
-                    <li><a href="https://www.perl.org" target="_blank">Perl</a> (just a few basics)</li>
-                    <li><a href="https://php.net" target="_blank">PHP</a></li>
-                    <li><a href="https://puppet.com" target="_blank">Puppet</a></li>
-                    <li><a href="https://www.purebasic.com" target="_blank">PureBasic</a></li>
-                    <li><a href="https://python.org" target="_blank">Python</a></li>
-                    <li><a href="https://mysql.com" target="_blank">(My)SQL</a></li>
-                    <li><a href="http://squirrel-lang.org" target="_blank">Squirrel</a></li>
-                    <li><a href="https://www.typescriptlang.org" target="_blank">TypeScript</a> (just a few basics)</li>
-                </ul>
-            </div>
-
-            <div class="col-lg-6">
-                <h3>Used frameworks, libraries and technologies</h3>
-
-                <ul>
-                    <li><a href="https://getbootstrap.com" target="_blank">Bootstrap</a></li>
-                    <li><a href="https://docker.com" target="_blank">Docker</a></li>
-                    <li><a href="https://jquery.com" target="_blank">jQuery</a></li>
-                    <li><a href="https://qooxdoo.org" target="_blank">qooxdoo</a></li>
-                    <li><a href="https://unrealengine.com" target="_blank">Unreal Engine 4</a> (just a few basics)</li>
-                </ul>
-            </div>
-        </div>
+        <h2>Latest projects</h2>
+        {% for project in projects.latest(3) %}
+            {{ include("project-list-item.twig") }}
+        {% endfor %}
     </div>
 {% endblock %}

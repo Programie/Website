@@ -43,21 +43,12 @@ class TwigRenderer
             return $assetsPackage->getUrl($path);
         }));
 
-        self::$twig->addFunction(new TwigFunction("isActivePage", function (string $url) use ($path) {
-            $urlParts = explode("/", trim($url, "/"));
-            $pathParts = explode("/", trim($path, "/"));
-
-            foreach ($urlParts as $index => $part) {
-                if (!isset($pathParts[$index])) {
-                    return false;
-                }
-
-                if ($pathParts[$index] !== $part) {
-                    return false;
-                }
+        self::$twig->addFunction(new TwigFunction("isActivePage", function (string $url, bool $isRegex = false) use ($path) {
+            if ($isRegex) {
+                return preg_match(sprintf("|%s|", $url), $path);
             }
 
-            return true;
+            return $url === $path;
         }));
 
         self::$twig->addFunction(new TwigFunction("isActiveProjectCategory", function (string $category) use ($path, $projects) {

@@ -24,12 +24,15 @@
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul class="navbar-nav">
+                                <li class="{{ html_classes("navbar-item nav-item", {"active": isActivePage("/about")}) }}">
+                                    <a class="nav-link" href="/about">About</a>
+                                </li>
                                 {% for category in projects.getTypes() %}
                                     <li class="{{ html_classes("navbar-item nav-item dropdown", {"active": isActiveProjectCategory(category[0])}) }}">
                                         <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ category[1] }}</a>
                                         <div class="dropdown-menu">
                                             {% for project in projects.ofType(category[0]) %}
-                                                <a class="{{ html_classes("dropdown-item", {"active": isActivePage("/projects/" ~ project.name )}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a>
+                                                <a class="{{ html_classes("dropdown-item", {"active": isActivePage("^/projects/" ~ project.name, true)}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a>
                                             {% endfor %}
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="/projects#{{ category[0] }}">Show all</a>

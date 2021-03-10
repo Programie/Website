@@ -1,4 +1,5 @@
 <?php
+use com\selfcoders\website\controller\AboutController;
 use com\selfcoders\website\controller\HomeController;
 use com\selfcoders\website\controller\ImprintController;
 use com\selfcoders\website\controller\PrivacyPolicyController;
@@ -25,6 +26,7 @@ $router->addMatchTypes([
 ]);
 
 $router->map("GET", "/", [HomeController::class, "getContent"]);
+$router->map("GET", "/about", [AboutController::class, "getContent"]);
 $router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
 $router->map("GET", "/privacy-policy", [PrivacyPolicyController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);

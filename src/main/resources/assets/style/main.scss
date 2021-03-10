@@ -24,6 +24,8 @@ $social-icon-colors: (
         "youtube": #fd0000
 );
 
+$project-types: "application", "minecraft-plugin", "php-library";
+
 .project-list-image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,15 +55,6 @@ $social-icon-colors: (
     min-height: 400px;
     min-width: 100%;
 }
-
-.carousel-indicators li {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-}
-
 .badge-group {
     display: inline-block;
     white-space: nowrap;
@@ -181,4 +174,20 @@ nav.navbar:after {
     width: 100%;
     height: 0.75em;
     background-color: $yellow;
+}
+
+@each $type in $project-types {
+    #home-carousel-#{$type}-cover {
+        background-image: url("../../projects/_default_/#{$type}/cover-image.jpg");
+    }
+}
+
+#about-avatar {
+    background-image: url("../images/avatar.png");
+    background-repeat: no-repeat;
+    background-size: 128px;
+    width: 128px;
+    height: 128px;
+    margin-top: auto;
+    margin-bottom: auto;
 }

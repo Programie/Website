@@ -41,7 +41,7 @@ module.exports = {
                     "sass-loader"
                 ]
             }, {
-                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /.(png|jpg|ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 use: [
                     "file-loader"
                 ]
