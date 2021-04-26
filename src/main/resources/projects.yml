@@ -161,6 +161,14 @@
   startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
 
+- name: savemyxp
+  repoName: SaveMyXP
+  title: "SaveMyXP"
+  extName: savemyxp
+  type: minecraft-plugin
+  startDate: "2021-04-25"
+  description: "A Minecraft Bukkit plugin to save your XP by using a sign"
+
 - name: screenshot-manager
   repoName: ScreenshotManager
   title: "Screenshot Manager"
