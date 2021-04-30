@@ -167,6 +167,7 @@
   extName: savemyxp
   type: minecraft-plugin
   startDate: "2021-04-25"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to save your XP by using a sign"
 
 - name: screenshot-manager
