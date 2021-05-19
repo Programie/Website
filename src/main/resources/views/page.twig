@@ -18,32 +18,32 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-                <div class="container">
+                <div class="container py-2">
                     <div class="mx-md-auto">
-                        <div class="{{ html_classes("navbar-item", {"active": isActivePage("/")}) }}"><a class="navbar-brand" href="/">SelfCoders</a></div>
+                        <div class="{{ html_classes("nav-item", {"active": isActivePage("/")}) }}"><a class="nav-link fs-5" href="/">SelfCoders</a></div>
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul class="navbar-nav">
-                                <li class="{{ html_classes("navbar-item nav-item", {"active": isActivePage("/about")}) }}">
+                                <li class="{{ html_classes("nav-item", {"active": isActivePage("/about")}) }}">
                                     <a class="nav-link" href="/about">About</a>
                                 </li>
                                 {% for category in projects.getTypes() %}
-                                    <li class="{{ html_classes("navbar-item nav-item dropdown", {"active": isActiveProjectCategory(category[0])}) }}">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ category[1] }}</a>
-                                        <div class="dropdown-menu">
+                                    <li class="{{ html_classes("nav-item dropdown", {"active": isActiveProjectCategory(category[0])}) }}">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ category[1] }}</a>
+                                        <ul class="dropdown-menu">
                                             {% for project in projects.ofType(category[0]) %}
-                                                <a class="{{ html_classes("dropdown-item", {"active": isActivePage("^/projects/" ~ project.name, true)}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a>
+                                                <li><a class="{{ html_classes("dropdown-item", {"active": isActivePage("^/projects/" ~ project.name, true)}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a></li>
                                             {% endfor %}
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="/projects#{{ category[0] }}">Show all</a>
-                                        </div>
+                                            <li><hr class="dropdown-divider"/></li>
+                                            <li><a class="dropdown-item" href="/projects#{{ category[0] }}">Show all</a></li>
+                                        </ul>
                                     </li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
@@ -58,14 +58,14 @@
             <div class="container-fluid">
                 <div class="center">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a class="social-icon social-icon-github" href="https://github.com/Programie" target="_blank" title="GitHub" data-toggle="tooltip"><i class="fab fa-github"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-gitlab" href="https://gitlab.com/Programie" target="_blank" title="GitLab" data-toggle="tooltip"><i class="fab fa-gitlab"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-lastfm" href="https://www.last.fm/user/Programie" target="_blank" title="Last.fm" data-toggle="tooltip"><i class="fab fa-lastfm"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-reddit" href="https://www.reddit.com/user/Programie" target="_blank" title="Reddit" data-toggle="tooltip"><i class="fab fa-reddit"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-steam" href="https://steamcommunity.com/id/programiex" target="_blank" title="Steam" data-toggle="tooltip"><i class="fab fa-steam-symbol"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-telegram" href="https://t.me/Programie" target="_blank" title="Telegram" data-toggle="tooltip"><i class="fab fa-telegram"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-twitter" href="https://twitter.com/Programie" target="_blank" title="Twitter" data-toggle="tooltip"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-youtube" href="https://www.youtube.com/channel/UCwRoDwSWCHlNG9lp2YOFg8w" target="_blank" title="YouTube" data-toggle="tooltip"><i class="fab fa-youtube"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-github" href="https://github.com/Programie" target="_blank" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-gitlab" href="https://gitlab.com/Programie" target="_blank" title="GitLab" data-bs-toggle="tooltip"><i class="fab fa-gitlab"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-lastfm" href="https://www.last.fm/user/Programie" target="_blank" title="Last.fm" data-bs-toggle="tooltip"><i class="fab fa-lastfm"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-reddit" href="https://www.reddit.com/user/Programie" target="_blank" title="Reddit" data-bs-toggle="tooltip"><i class="fab fa-reddit"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-steam" href="https://steamcommunity.com/id/programiex" target="_blank" title="Steam" data-bs-toggle="tooltip"><i class="fab fa-steam-symbol"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-telegram" href="https://t.me/Programie" target="_blank" title="Telegram" data-bs-toggle="tooltip"><i class="fab fa-telegram"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-twitter" href="https://twitter.com/Programie" target="_blank" title="Twitter" data-bs-toggle="tooltip"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a class="social-icon social-icon-youtube" href="https://www.youtube.com/channel/UCwRoDwSWCHlNG9lp2YOFg8w" target="_blank" title="YouTube" data-bs-toggle="tooltip"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                     <p><a href="/imprint">Legal disclosure</a></p>
                     <p><a href="/privacy-policy">Privacy policy</a></p>

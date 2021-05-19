@@ -7,16 +7,16 @@
         <div class="carousel-inner project-carousel-inner">
             <div class="carousel-item active">
                 <div class="carousel-image" style="background-image: url({{ project.getCoverImage() }})"></div>
-                <div class="carousel-caption text-left">
-                    <h1 class="project-cover-text">{{ project.title }}{% if project.latestDownload %} <sup><span class="badge badge-primary project-latest-download-badge">{{ project.latestDownload.title }}</span></sup>{% endif %}</h1>
+                <div class="carousel-caption text-start">
+                    <h1 class="project-cover-text">{{ project.title }}{% if project.latestDownload %} <sup><span class="badge bg-primary project-latest-download-badge">{{ project.latestDownload.title }}</span></sup>{% endif %}</h1>
                     <p class="project-cover-text">{{ project.description }}</p>
                     <div class="project-cover-text">
-                        <div class="badge-group mb-3"><span class="badge badge-secondary">Project start</span><span class="badge badge-primary">{{ project.startDate.format("D, d M Y") }}</span></div>
-                        <div class="badge-group mb-3"><span class="badge badge-secondary">Last release</span><span class="badge badge-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}Not available yet{% endif %}</span></div>
+                        <div class="badge-group mb-3"><span class="badge bg-secondary">Project start</span><span class="badge bg-primary">{{ project.startDate.format("D, d M Y") }}</span></div>
+                        <div class="badge-group mb-3"><span class="badge bg-secondary">Last release</span><span class="badge bg-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}Not available yet{% endif %}</span></div>
                     </div>
                     {% if project.downloads.count() %}
-                        <div class="dropdown d-inline mr-1">
-                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
+                        <div class="dropdown d-inline me-1">
+                            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
                             <div class="dropdown-menu">
                                 {% for download in project.downloads %}
                                     <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>

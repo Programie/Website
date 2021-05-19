@@ -4,16 +4,16 @@
 
 {% block content %}
     <div class="carousel slide carousel-fade" data-ride="carousel" id="home-carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#home-carousel" data-slide-to="1"></li>
-            <li data-target="#home-carousel" data-slide-to="2"></li>
-        </ol>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="2"></button>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="carousel-image" id="home-carousel-application-cover"></div>
                 <div class="container">
-                    <div class="carousel-caption text-left">
+                    <div class="carousel-caption text-start">
                         <h1>Applications</h1>
                         <p>Free and open source software.</p>
                         <p><a class="btn btn-lg btn-primary" href="/projects#application">Show all</a></p>
@@ -32,19 +32,19 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-image" id="home-carousel-php-library-cover"></div>
-                <div class="carousel-caption text-right">
+                <div class="carousel-caption text-end">
                     <h1>PHP libraries</h1>
                     <p>Small libraries to make your PHP developer life easier.</p>
                     <p><a class="btn btn-lg btn-primary" href="/projects#php-library">Show all</a></p>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#home-carousel" data-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#home-carousel" data-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
-        </a>
+        </button>
     </div>
 
     <div class="container">

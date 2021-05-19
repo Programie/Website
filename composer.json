@@ -6,15 +6,15 @@
     "require": {
         "php": ">=7.4",
         "altorouter/altorouter": "^2.0",
-        "twig/twig": "^3.0",
-        "symfony/yaml": "^5.0",
         "erusev/parsedown": "^1.7",
-        "twig/html-extra": "^3.0",
-        "guzzlehttp/guzzle": "^6.5",
-        "ext-json": "*",
-        "symfony/filesystem": "^5.0",
-        "symfony/asset": "^5.0",
-        "ext-fileinfo": "*"
+        "guzzlehttp/guzzle": "^7.3",
+        "twig/html-extra": "^3.3",
+        "twig/twig": "^3.3",
+        "symfony/asset": "^5.2",
+        "symfony/filesystem": "^5.2",
+        "symfony/yaml": "^5.2",
+        "ext-fileinfo": "*",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
