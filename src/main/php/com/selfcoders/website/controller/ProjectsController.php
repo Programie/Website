@@ -3,6 +3,7 @@ namespace com\selfcoders\website\controller;
 
 use com\selfcoders\website\exception\ForbiddenException;
 use com\selfcoders\website\exception\NotFoundException;
+use com\selfcoders\website\model\Projects;
 use com\selfcoders\website\TwigRenderer;
 use Twig\Error\Error as TwigError;
 
@@ -15,6 +16,14 @@ class ProjectsController extends AbstractController
     public function listProjects(): string
     {
         return TwigRenderer::render("projects");
+    }
+
+    public function listProjectsOfCategory($params): string
+    {
+        return TwigRenderer::render("projects-of-category", [
+            "title" => Projects::getCategories()[$params["category"]][0],
+            "category" => $params["category"]
+        ]);
     }
 
     /**

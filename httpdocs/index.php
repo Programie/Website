@@ -30,6 +30,7 @@ $router->map("GET", "/about", [AboutController::class, "getContent"]);
 $router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
 $router->map("GET", "/privacy-policy", [PrivacyPolicyController::class, "getContent"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
+$router->map("GET", "/projects/[applications|minecraft-plugins|php-libraries:category]", [ProjectsController::class, "listProjectsOfCategory"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "showProject"]);
 $router->map("GET", "/projects/[noslash:name]/[**:resource]", [ProjectsController::class, "getResource"]);
 $router->map("POST", "/projects/[noslash:name]/update", [ProjectsController::class, "update"]);

@@ -26,9 +26,9 @@
                     {% endif %}
                     <a class="btn btn-secondary" href="https://gitlab.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-gitlab"></i> View on GitLab</a>
                     {% if project.extName %}
-                        {% if project.type == "minecraft-plugin" %}
+                        {% if project.category == "minecraft-plugins" %}
                             <a class="btn btn-secondary" href="https://www.curseforge.com/minecraft/bukkit-plugins/{{ project.extName }}" target="_blank">View on CurseForge</a>
-                        {% elseif project.type == "php-library" %}
+                        {% elseif project.category == "php-libraries" %}
                             <a class="btn btn-secondary" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
                         {% endif %}
                     {% endif %}

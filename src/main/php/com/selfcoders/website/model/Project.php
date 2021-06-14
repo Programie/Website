@@ -12,7 +12,7 @@ class Project
 {
     public string $name;
     public string $title;
-    public string $type;
+    public string $category;
     public ?string $extName;
     public DateTime $startDate;
     public ?DateTime $lastUpdate;
@@ -40,7 +40,7 @@ class Project
 
         $project->name = $data["name"];
         $project->title = $data["title"];
-        $project->type = $data["type"];
+        $project->category = $data["category"];
         $project->extName = $data["extName"] ?? null;
         $project->startDate = new DateTime($data["startDate"]);
         $project->coverImage = $data["coverImage"] ?? "cover-image.jpg";
@@ -74,7 +74,7 @@ class Project
             return $fullPath;
         }
 
-        $basePath = sprintf("%s/projects/_default_/%s", RESOURCES_ROOT, $this->type);
+        $basePath = sprintf("%s/projects/_default_/%s", RESOURCES_ROOT, $this->category);
         $fullPath = sprintf("%s/%s", $basePath, $resource);
         if (Utils::isSafePath($basePath, $fullPath) and is_file($fullPath)) {
             return $fullPath;

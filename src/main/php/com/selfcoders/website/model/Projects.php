@@ -11,14 +11,14 @@ use Symfony\Component\Yaml\Yaml;
 class Projects extends ArrayObject
 {
     /**
-     * @return string[][]
+     * @return string[]
      */
-    public static function getTypes()
+    public static function getCategories(): array
     {
         return [
-            ["application", "Applications & Tools"],
-            ["minecraft-plugin", "Minecraft plugins"],
-            ["php-library", "PHP libraries"]
+            "applications" => ["Applications & Tools", "Free and open source software.", "text-start"],
+            "minecraft-plugins" => ["Minecraft plugins", "Enhance your Minecraft experience with those plugins for Bukkit/Spigot.", ""],
+            "php-libraries" => ["PHP libraries", "Small libraries to make your PHP developer life easier.", "text-end"]
         ];
     }
 
@@ -91,10 +91,10 @@ class Projects extends ArrayObject
     }
 
     /**
-     * @param string $type
+     * @param string $category
      * @return Projects
      */
-    public function ofType(string $type): self
+    public function ofCategory(string $category): self
     {
         $projects = new self;
 
@@ -102,7 +102,7 @@ class Projects extends ArrayObject
          * @var $project Project
          */
         foreach ($this as $project) {
-            if ($project->type === $type) {
+            if ($project->category === $category) {
                 $projects->append($project);
             }
         }

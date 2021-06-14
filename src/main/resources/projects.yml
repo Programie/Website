@@ -1,21 +1,21 @@
 - name: albumshowcase
   repoName: AlbumShowcase
   title: "AlbumShowcase"
-  type: application
+  category: applications
   startDate: "2014-11-24"
   description: "A showcase and download page for albums (music)"
 
 - name: capture2net
   repoName: Capture2Net
   title: "Capture2Net"
-  type: application
+  category: applications
   startDate: "2011-12-05"
   description: "Upload screenshots with just a single shortcut"
 
 - name: chromescreens
   repoName: ChromeScreens
   title: "ChromeScreens"
-  type: application
+  category: applications
   startDate: "2014-01-20"
   description: "Run a fullscreen chrome instance on each display"
   useSourceAsDownload: true
@@ -25,7 +25,7 @@
   repoName: DoorCloser
   title: "DoorCloser"
   extName: doorcloser
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2018-02-11"
   coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
@@ -33,7 +33,7 @@
 - name: ejabberd-archive-viewer
   repoName: EjabberdArchiveViewer
   title: "Ejabberd Archive Viewer"
-  type: application
+  category: applications
   startDate: "2018-06-09"
   description: "A simple frontend for viewing ejabberd archive entries"
 
@@ -41,14 +41,14 @@
   repoName: ExplosiveMobs
   title: "ExplosiveMobs"
   extName: explosivemobs
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2013-09-03"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
 
 - name: gta-sa-toolbox
   repoName: GTASAToolBox
   title: "GTA San Andreas ToolBox"
-  type: application
+  category: applications
   startDate: "2007-01-02"
   description: "A tool for GTA San Andreas allowing to teleport the player, spawn vehicles and more"
 
@@ -56,28 +56,28 @@
   repoName: JsonConfig
   title: "JsonConfig"
   extName: jsonconfig
-  type: php-library
+  category: php-libraries
   startDate: "2014-12-16"
   description: "A simple PHP class for reading and writing configuration values from JSON files"
 
 - name: keyboard-mapper
   repoName: KeyboardMapper
   title: "Keyboard Mapper"
-  type: application
+  category: applications
   startDate: "2018-11-21"
   description: "A tool for Linux desktops to map keys of dedicated keyboards to specific actions"
 
 - name: krunner-ssh
   repoName: krunner-ssh
   title: "KRunner SSH"
-  type: application
+  category: applications
   startDate: "2019-01-11"
   description: "KRunner SSH Backend"
 
 - name: loxonestats2influxdb
   repoName: LoxoneStats2InfluxDB
   title: "Loxone Stats 2 InfluxDB"
-  type: application
+  category: applications
   startDate: "2018-03-08"
   description: "Import statistics collected by the Loxone Miniserver into InfluxDB"
   useSourceAsDownload: true
@@ -87,14 +87,14 @@
   repoName: MatterBukkit
   title: "MatterBukkit"
   extName: matterbukkit
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2019-09-24"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
 
 - name: minestats
   repoName: MineStats
   title: "MineStats"
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2019-10-26"
   description: "A Minecraft Bukkit plugin which sends statistics to InfluxDB"
 
@@ -102,7 +102,7 @@
   repoName: NearbyRespawner
   title: "NearbyRespawner"
   extName: nearbyrespawner
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2020-04-20"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
 
@@ -110,7 +110,7 @@
   repoName: ParallelProcesses
   title: "ParallelProcesses"
   extName: parallel-processes
-  type: php-library
+  category: php-libraries
   startDate: "2017-01-04"
   description: "A library to handle parallel process executions using Symfony Process component"
 
@@ -118,14 +118,14 @@
   repoName: PHPCurl
   title: "PHPCurl"
   extName: phpcurl
-  type: php-library
+  category: php-libraries
   startDate: "2014-12-18"
   description: "A PHP OOP wrapper for Curl with some additional features"
 
 - name: phpdyndns
   repoName: PHPDynDNS
   title: "PHPDynDNS"
-  type: application
+  category: applications
   startDate: "2013-12-19"
   description: "A simple DynDNS Service written in PHP"
 
@@ -133,7 +133,7 @@
   repoName: PHPTable
   title: "PHPTable"
   extName: phptable
-  type: php-library
+  category: php-libraries
   startDate: "2017-01-03"
   description: "A library to display data in a table"
 
@@ -141,7 +141,7 @@
   repoName: PHPUtils
   title: "PHPUtils"
   extName: phputils
-  type: php-library
+  category: php-libraries
   startDate: "2015-01-13"
   description: "A collection of PHP utility functions"
 
@@ -149,7 +149,7 @@
   repoName: Pini
   title: "Pini"
   extName: pini
-  type: php-library
+  category: php-libraries
   startDate: "2014-12-02"
   description: "A library for reading and writing Ini files in PHP"
 
@@ -157,7 +157,7 @@
   repoName: RetainXP
   title: "RetainXP"
   extName: retainxp
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
 
@@ -165,7 +165,7 @@
   repoName: SaveMyXP
   title: "SaveMyXP"
   extName: savemyxp
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2021-04-25"
   coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to save your XP by using a sign"
@@ -173,7 +173,7 @@
 - name: screenshot-manager
   repoName: ScreenshotManager
   title: "Screenshot Manager"
-  type: application
+  category: applications
   startDate: "2020-04-16"
   description: "A simple manager and editor for screenshots"
 
@@ -181,7 +181,7 @@
   repoName: SignWarper
   title: "SignWarper"
   extName: sign-warper
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2019-08-25"
   coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to warp using signs"
@@ -190,7 +190,7 @@
   repoName: TalkingMobs
   title: "TalkingMobs"
   extName: talkingmobs
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2013-06-30"
   coverImage: "screenshot.png"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
@@ -198,14 +198,14 @@
 - name: teamplaner
   repoName: TeamPlaner
   title: "Team Planer"
-  type: application
+  category: applications
   startDate: "2014-12-23"
   description: "A simple calendar allowing to plan recurring events in teams (e.g. shift planing)"
 
 - name: telegram2elastic
   repoName: Telegram2Elastic
   title: "Telegram 2 Elastic"
-  type: application
+  category: applications
   startDate: "2020-03-18"
   description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
 
@@ -213,7 +213,7 @@
   repoName: XPDispenser
   title: "XPDispenser"
   extName: xpdispenser
-  type: minecraft-plugin
+  category: minecraft-plugins
   startDate: "2021-01-20"
   coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to throw your XP at yourself (e.g. to repair your mending tools)"

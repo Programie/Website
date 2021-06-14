@@ -10,34 +10,18 @@
             <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="2"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-image" id="home-carousel-application-cover"></div>
-                <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1>Applications</h1>
-                        <p>Free and open source software.</p>
-                        <p><a class="btn btn-lg btn-primary" href="/projects#application">Show all</a></p>
+            {% for categoryName, categoryData in projects.getCategories() %}
+                <div class="{{ html_classes("carousel-item", {"active": loop.first}) }}">
+                    <div class="carousel-image" id="home-carousel-{{ categoryName }}-cover"></div>
+                    <div class="container">
+                        <div class="{{ html_classes("carousel-caption", categoryData[2]) }}">
+                            <h1>{{ categoryData[0] }}</h1>
+                            <p>{{ categoryData[1] }}</p>
+                            <p><a class="btn btn-lg btn-primary" href="/projects/{{ categoryName }}">Show all</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-image" id="home-carousel-minecraft-plugin-cover"></div>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Minecraft plugins</h1>
-                        <p>Enhance your Minecraft experience with those plugins for Bukkit/Spigot.</p>
-                        <p><a class="btn btn-lg btn-primary" href="/projects#minecraft-plugin">Show all</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-image" id="home-carousel-php-library-cover"></div>
-                <div class="carousel-caption text-end">
-                    <h1>PHP libraries</h1>
-                    <p>Small libraries to make your PHP developer life easier.</p>
-                    <p><a class="btn btn-lg btn-primary" href="/projects#php-library">Show all</a></p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>

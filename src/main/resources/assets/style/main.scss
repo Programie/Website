@@ -24,7 +24,7 @@ $social-icon-colors: (
         "youtube": #fd0000
 );
 
-$project-types: "application", "minecraft-plugin", "php-library";
+$project-categories: "applications", "minecraft-plugins", "php-libraries";
 
 .project-list-image {
     background-repeat: no-repeat;
@@ -181,9 +181,9 @@ a {
     text-decoration: none;
 }
 
-@each $type in $project-types {
-    #home-carousel-#{$type}-cover {
-        background-image: url("../../projects/_default_/#{$type}/cover-image.jpg");
+@each $category in $project-categories {
+    #home-carousel-#{$category}-cover {
+        background-image: url("../../projects/_default_/#{$category}/cover-image.jpg");
     }
 }
 

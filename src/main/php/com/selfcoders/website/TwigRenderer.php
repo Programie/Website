@@ -67,7 +67,7 @@ class TwigRenderer
                 return false;
             }
 
-            return $project->type === $category;
+            return $project->category === $category;
         }));
 
         if (USE_CACHE) {
