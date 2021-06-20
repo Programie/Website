@@ -1,3 +1,11 @@
+## Introduction
+
+Note: This plugin is a remake of the [MobTalk](https://dev.bukkit.org/projects/mobtalk) plugin. Most of the older mob messages are copied from MobTalk. Messages for mobs not present at the last release of the MobTalk plugin still have to be added this plugin.
+
+It is simple: It lets mobs talk to the player.
+
+For example if you attack a mob, a random message will be sent to the attacking player.
+
 ## Installation
 
 * Download the latest release and put the Jar file into your plugins folder
