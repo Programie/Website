@@ -60,15 +60,9 @@
             <div class="container-fluid">
                 <div class="center">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a class="social-icon social-icon-github" href="https://github.com/Programie" target="_blank" title="GitHub" data-bs-toggle="tooltip"><i class="fab fa-github"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-gitlab" href="https://gitlab.com/Programie" target="_blank" title="GitLab" data-bs-toggle="tooltip"><i class="fab fa-gitlab"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-lastfm" href="https://www.last.fm/user/Programie" target="_blank" title="Last.fm" data-bs-toggle="tooltip"><i class="fab fa-lastfm"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-reddit" href="https://www.reddit.com/user/Programie" target="_blank" title="Reddit" data-bs-toggle="tooltip"><i class="fab fa-reddit"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-steam" href="https://steamcommunity.com/id/programiex" target="_blank" title="Steam" data-bs-toggle="tooltip"><i class="fab fa-steam-symbol"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-telegram" href="https://t.me/Programie" target="_blank" title="Telegram" data-bs-toggle="tooltip"><i class="fab fa-telegram"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-twitter" href="https://twitter.com/Programie" target="_blank" title="Twitter" data-bs-toggle="tooltip"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-xing" href="https://www.xing.com/profile/Michael_Wieland73" target="_blank" title="XING" data-bs-toggle="tooltip"><i class="fab fa-xing"></i></a></li>
-                        <li class="list-inline-item"><a class="social-icon social-icon-youtube" href="https://www.youtube.com/channel/UCwRoDwSWCHlNG9lp2YOFg8w" target="_blank" title="YouTube" data-bs-toggle="tooltip"><i class="fab fa-youtube"></i></a></li>
+                        {% for socialIcon in socialIcons %}
+                            <li class="list-inline-item"><a class="social-icon social-icon-{{ socialIcon.name }}" href="{{ socialIcon.url }}" target="_blank" title="{{ socialIcon.title }}" data-bs-toggle="tooltip"><i class="fab fa-{{ socialIcon.icon }}"></i></a></li>
+                        {% endfor %}
                     </ul>
                     <p><a href="/imprint">Legal disclosure</a></p>
                     <p><a href="/privacy-policy">Privacy policy</a></p>
