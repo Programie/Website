@@ -21,6 +21,15 @@
   useSourceAsDownload: true
   sourceBranch: master
 
+- name: dashboard
+  repoName: Dashboard
+  title: "Dashboard"
+  category: applications
+  startDate: "2020-05-30"
+  description: "A customizable dashboard providing various widgets"
+  useSourceAsDownload: true
+  sourceBranch: master
+
 - name: doorcloser
   repoName: DoorCloser
   title: "DoorCloser"
