@@ -18,8 +18,6 @@
   category: applications
   startDate: "2014-01-20"
   description: "Run a fullscreen chrome instance on each display"
-  useSourceAsDownload: true
-  sourceBranch: master
 
 - name: dashboard
   repoName: Dashboard
