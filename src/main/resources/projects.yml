@@ -57,6 +57,14 @@
   startDate: "2007-01-02"
   description: "A tool for GTA San Andreas allowing to teleport the player, spawn vehicles and more"
 
+- name: itemsorter
+  repoName: ItemSorter
+  title: "ItemSorter"
+  extName: itemsorter
+  category: minecraft-plugins
+  startDate: "2022-03-04"
+  description: "A Minecraft Bukkit plugin which transfers and sorts items from inventories like chests into other inventories"
+
 - name: jsonconfig
   repoName: JsonConfig
   title: "JsonConfig"
