@@ -63,6 +63,7 @@
   extName: itemsorter
   category: minecraft-plugins
   startDate: "2022-03-04"
+  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which transfers and sorts items from inventories like chests into other inventories"
 
 - name: jsonconfig
