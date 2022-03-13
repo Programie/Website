@@ -11,30 +11,32 @@ When transferring the items from the source chest into the target chests, the pl
 
 Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/ItemSorter).
 
+## Configuration
+
+The following options can be configured in the config.yml of the plugin (created on the first load):
+
+* `allow-cross-world-connections` - Allow to connect signs between worlds (i.e. transfer items from the Nether to the Overworld) (`true` or `false`, default: `false`)
+* `max-distance` - The maximum distance between source and target chests (`0` = unlimited, default: `100`)
+
 ## Permissions
 
-* `itemsorter.create` - Allow to create and destroy signs (Default: everyone)
+* `itemsorter.create` - Allow to create and destroy your own ItemSorter signs' (Default: everyone)
+* `itemsorter.destroyAny` - Allow to destroy any ItemSorter signs (not just your own) (Default: op)
 * `itemsorter.*` - Allow access to all features (Default: op)
-
-## Commands
-
-There are no commands.
 
 ## How to use it?
 
 Simply place a sign at the side of any inventory block (chest, barrel, hopper, etc.) you would like to use as the source chest containing the following content:
 
-* First line: `[ItemSorter]`
-* Second line: `SOURCE`
-* Third line: Any unique name used by the other connected chests
+* First line: `[ItemSource]`
+* Second line: Any unique name used by the other connected chests
 
 This will define the chest as an item source (i.e. the chest you will throw in your items for the plugin to sort them for you).
 
 After that, place a sign at the side of any inventory block (chest, barrel, hopper, etc.) you would like to use as the target chest containing the following content:
 
-* First line: `[ItemSorter]`
-* Second line: `TARGET`
-* Third line: Any unique name used by the other connected chests
+* First line: `[ItemTarget]`
+* Second line: Any unique name used by the other connected chests
 
 This will define the chest as an item target (i.e. the chest your items will be moved to).
 
@@ -52,9 +54,15 @@ To archive that type of target chest order, simply define the order using `o:<an
 
 Example:
 
-* First line: `[ItemSorter]`
-* Second line: `TARGET`
-* Third line: Any unique name used by the other connected chests
+* First line: `[ItemTarget]`
+* Second line: Any unique name used by the other connected chests
+* Third line: Keep empty (will be replaced with your player name)
 * Fourth line: `o:10`
 
 A lower number means the chest is used before another with a higher number. By default, any target chest without the order option will have the order number `0`.
+
+If you define multiple chests with the same order number, the order of those chests might be random.
+
+### Show info about sign
+
+Clicking on a ItemSorter sign (left or right click) shows some information about the sign as well as it's connection to the other signs/chests.
