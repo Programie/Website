@@ -32,7 +32,6 @@
   extName: doorcloser
   category: minecraft-plugins
   startDate: "2018-02-11"
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
 
 - name: ejabberd-archive-viewer
@@ -63,7 +62,6 @@
   extName: itemsorter
   category: minecraft-plugins
   startDate: "2022-03-04"
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin which transfers and sorts items from inventories like chests into other inventories"
 
 - name: jsonconfig
@@ -181,7 +179,6 @@
   extName: savemyxp
   category: minecraft-plugins
   startDate: "2021-04-25"
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to save your XP by using a sign"
 
 - name: screenshot-manager
@@ -197,7 +194,6 @@
   extName: sign-warper
   category: minecraft-plugins
   startDate: "2019-08-25"
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to warp using signs"
 
 - name: talkingmobs
@@ -206,7 +202,6 @@
   extName: talkingmobs
   category: minecraft-plugins
   startDate: "2013-06-30"
-  coverImage: "screenshot.png"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
 
 - name: teamplaner
@@ -229,5 +224,4 @@
   extName: xpdispenser
   category: minecraft-plugins
   startDate: "2021-01-20"
-  coverImage: "screenshot.jpg"
   description: "A Minecraft Bukkit plugin to throw your XP at yourself (e.g. to repair your mending tools)"
