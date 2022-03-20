@@ -22,6 +22,17 @@ class CustomizedParsedown extends Parsedown
         return $headerBlock;
     }
 
+    protected function inlineImage($Excerpt)
+    {
+        $image = parent::inlineImage($Excerpt);
+
+        if (isset($image["element"])) {
+            $image["element"]["attributes"]["class"] = "img-fluid";
+        }
+
+        return $image;
+    }
+
     protected function inlineLink($Excerpt)
     {
         $link = parent::inlineLink($Excerpt);
