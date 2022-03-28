@@ -20,7 +20,7 @@ RUN composer install --no-dev --ignore-platform-reqs && \
     rm /app/composer.json /app/composer.lock
 
 
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 RUN sed -ri -e 's!/var/www/html!/app/httpdocs!g' /etc/apache2/sites-available/*.conf && \
     sed -ri -e 's!/var/www/!/app/httpdocs!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf && \
