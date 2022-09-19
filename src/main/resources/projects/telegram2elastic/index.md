@@ -6,8 +6,8 @@ With the data stored in Elasticsearch, you can use applications like Kibana or G
 
 ## Requirements
 
-* Python 3.x
-* Elasticsearch (tested with Elasticsearch 7.x but other versions should also work)
+* Python >= 3.7
+* Elasticsearch (tested with Elasticsearch 7.x and Elasticsearch 8.x)
 * Telegram API ID and API Hash (create one at [my.telegram.org](https://my.telegram.org))
 
 ## Installation
