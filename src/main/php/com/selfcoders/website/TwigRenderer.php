@@ -39,7 +39,7 @@ class TwigRenderer
             new SocialIcon("telegram", "Telegram", "https://t.me/Programie"),
             new SocialIcon("twitter", "Twitter", "https://twitter.com/Programie"),
             new SocialIcon("xing", "XING", "https://www.xing.com/profile/Michael_Wieland73"),
-            new SocialIcon("youtube", "YouTube", "https://www.youtube.com/channel/UCwRoDwSWCHlNG9lp2YOFg8w")
+            new SocialIcon("youtube", "YouTube", "https://youtube.com/@Programie")
         ];
 
         $loader = new FilesystemLoader(VIEWS_ROOT);
