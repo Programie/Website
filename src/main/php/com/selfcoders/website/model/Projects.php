@@ -138,7 +138,7 @@ class Projects extends ArrayObject
             } elseif ($project1->lastUpdate > $project2->lastUpdate) {
                 return -1;
             } else {
-                return ($project1->title > $project2->title);
+                return strcmp($project1->title, $project2->title);
             }
         });
 
