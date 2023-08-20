@@ -13,7 +13,7 @@ In case your normal respawn location (e.g. your spawn bed or world spawn) would 
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-You may also download the latest release from [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/nearbyrespawner).
+You may also download the latest release from [Modrinth](https://modrinth.com/plugin/nearbyrespawner).
 
 Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/NearbyRespawner).
 

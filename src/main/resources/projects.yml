@@ -191,7 +191,7 @@
 - name: signwarper
   repoName: SignWarper
   title: "SignWarper"
-  extName: sign-warper
+  extName: signwarper
   category: minecraft-plugins
   startDate: "2019-08-25"
   description: "A Minecraft Bukkit plugin to warp using signs"

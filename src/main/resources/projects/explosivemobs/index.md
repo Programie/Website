@@ -15,7 +15,7 @@ And the funny part: Players with the correct permissions can even spawn explosiv
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-You may also download the latest release from [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/explosivemobs).
+You may also download the latest release from [Modrinth](https://modrinth.com/plugin/explosivemobs).
 
 Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/ExplosiveMobs).
 

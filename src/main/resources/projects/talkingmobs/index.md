@@ -12,7 +12,7 @@ For example if you attack a mob, a random message will be sent to the attacking 
 * Start your Minecraft server to let the plugin generate the initial configuration files
 * Optional: Customize the configuration to fit your needs (use `/talkingmobs reload` to reload)
 
-You may also download the latest release from [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/talkingmobs).
+You may also download the latest release from [Modrinth](https://modrinth.com/plugin/talkingmobs).
 
 Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/TalkingMobs).
 

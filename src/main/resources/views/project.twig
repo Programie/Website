@@ -27,7 +27,7 @@
                     <a class="btn btn-secondary" href="https://gitlab.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-gitlab"></i> View on GitLab</a>
                     {% if project.extName %}
                         {% if project.category == "minecraft-plugins" %}
-                            <a class="btn btn-secondary" href="https://www.curseforge.com/minecraft/bukkit-plugins/{{ project.extName }}" target="_blank">View on CurseForge</a>
+                            <a class="btn btn-secondary" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
                         {% elseif project.category == "php-libraries" %}
                             <a class="btn btn-secondary" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
                         {% endif %}
