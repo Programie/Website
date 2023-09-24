@@ -36,7 +36,7 @@ channel="api"
 
 Add any other protocols and gateways you would like to use, following [MatterBridge's documentation](https://github.com/42wim/matterbridge/wiki/How-to-create-your-config).
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/MatterBukkit).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/MatterBukkit).
 
 ## Permissions
 

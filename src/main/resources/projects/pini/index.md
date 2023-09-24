@@ -10,4 +10,4 @@ Install the package using `composer require programie/pini`.
 
 ## Usage
 
-See the [wiki](https://gitlab.com/Programie/Pini/wikis/home) for information how to use this library.
+See the [wiki](https://github.com/Programie/Pini/wiki) for information how to use this library.

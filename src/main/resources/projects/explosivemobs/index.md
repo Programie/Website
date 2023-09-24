@@ -17,7 +17,7 @@ And the funny part: Players with the correct permissions can even spawn explosiv
 
 You may also download the latest release from [Modrinth](https://modrinth.com/plugin/explosivemobs).
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/ExplosiveMobs).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/ExplosiveMobs).
 
 ## Permissions
 

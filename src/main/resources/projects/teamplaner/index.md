@@ -27,7 +27,7 @@ If you clone the repository directly (instead of downloading one of the pre-buil
 
 ## Installation from the Git repository
 
-   * Clone this repository: `git clone https://gitlab.com/Programie/TeamPlaner.git`
+   * Clone this repository: `git clone https://github.com/Programie/TeamPlaner.git`
    * Execute `bin/build.sh` to build the application
    * Execute `php bin/update-config.php` to create or update your configuration file
    * Edit the `config.json` file inside of the `config` folder (See section **Configuration** for details)
@@ -82,7 +82,7 @@ Extensions are located in the `extensions` folder in the root of this applicatio
 
 ## Testing with Docker
 
-* Run `docker build -t registry.gitlab.com/programie/teamplaner .` inside the root of the git checkout
+* Run `docker build -t teamplaner .` inside the root of the git checkout
 * Start the containers using `docker-compose up`
 * Import sample data into the MySQL database:
 ```

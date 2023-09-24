@@ -9,7 +9,7 @@ By default, teleports have a cost of one ender pearl which must be in the player
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration files
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/SignWarper).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/SignWarper).
 
 ## Permissions
 

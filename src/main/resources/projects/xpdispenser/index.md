@@ -9,7 +9,7 @@ The collected XP points can be used to repair tools and armor enchanted with the
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/XPDispenser).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/XPDispenser).
 
 ## Permissions
 

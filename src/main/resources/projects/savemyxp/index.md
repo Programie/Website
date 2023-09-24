@@ -9,7 +9,7 @@ Then this plugin is the right one for you! It allows you to place an unlimited a
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/SaveMyXP).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/SaveMyXP).
 
 ## Permissions
 

@@ -9,7 +9,7 @@ RetainXP allows you to keep a part of your XP after you die. For example, you ca
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/RetainXP).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/RetainXP).
 
 ## Permissions
 

@@ -11,7 +11,7 @@ The plugin also supports defining a list of door types which should be automatic
 * Download the latest release and put the Jar file into your plugins folder
 * Start your Minecraft server to let the plugin generate the initial configuration
 
-Instructions how to manually build the project can be found on [GitLab](https://gitlab.com/Programie/DoorCloser).
+Instructions how to manually build the project can be found on [GitHub](https://github.com/Programie/DoorCloser).
 
 ## How to use it?
 

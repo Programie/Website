@@ -3,7 +3,7 @@
     <div class="card-body">
         <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
         <p class="card-text">{{ project.description }}</p>
-        <a href="https://gitlab.com/Programie/{{ project.repoName }}"><i class="fab fa-gitlab"></i> View on GitLab</a>
+        <a href="https://github.com/Programie/{{ project.repoName }}"><i class="fab fa-github"></i> View on GitHub</a>
         {% if project.extName %}
             {% if project.category == "minecraft-plugins" %}
                 <a class="ms-2" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
