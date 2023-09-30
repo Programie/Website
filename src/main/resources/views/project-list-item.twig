@@ -3,6 +3,9 @@
     <div class="card-body">
         <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
         <p class="card-text">{{ project.description }}</p>
+        {% if project.latestDowload %}
+            <a class="btn btn-primary" href="{{ project.latestDowload.url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
+        {% endif %}
         <a href="https://github.com/Programie/{{ project.repoName }}"><i class="fab fa-github"></i> View on GitHub</a>
         {% if project.extName %}
             {% if project.category == "minecraft-plugins" %}
@@ -10,16 +13,6 @@
             {% elseif project.category == "php-libraries" %}
                 <a class="ms-2" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
             {% endif %}
-        {% endif %}
-        {% if project.downloads.count() %}
-            <div class="dropdown d-inline ms-2">
-                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-download"></i> Download</a>
-                <div class="dropdown-menu">
-                    {% for download in project.downloads %}
-                        <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
-                    {% endfor %}
-                </div>
-            </div>
         {% endif %}
     </div>
     {% if project.lastUpdate %}

@@ -14,15 +14,8 @@
                         <div class="badge-group mb-3"><span class="badge bg-secondary">Project start</span><span class="badge bg-primary">{{ project.startDate.format("D, d M Y") }}</span></div>
                         <div class="badge-group mb-3"><span class="badge bg-secondary">Last release</span><span class="badge bg-primary">{% if project.latestDownload %}{{ project.latestDownload.date.format("D, d M Y") }}{% else %}Not available yet{% endif %}</span></div>
                     </div>
-                    {% if project.downloads.count() %}
-                        <div class="dropdown d-inline me-1">
-                            <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
-                            <div class="dropdown-menu">
-                                {% for download in project.downloads %}
-                                    <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
-                                {% endfor %}
-                            </div>
-                        </div>
+                    {% if project.latestDowload %}
+                        <a class="btn btn-primary" href="{{ project.latestDowload.url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
                     {% endif %}
                     <a class="btn btn-secondary" href="https://github.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
                     {% if project.extName %}
