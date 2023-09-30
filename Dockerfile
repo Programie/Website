@@ -39,4 +39,4 @@ COPY httpdocs /app/httpdocs
 COPY bin /app/bin
 COPY src /app/src
 
-RUN /app/bin/fetch-gitlab-data.php
+RUN /app/bin/fetch-github-data.php

@@ -2,7 +2,7 @@
 namespace com\selfcoders\website\model;
 
 use ArrayObject;
-use com\selfcoders\website\GitlabAPI;
+use com\selfcoders\website\GitHubAPI;
 use Exception;
 use RuntimeException;
 use Symfony\Component\Filesystem\Filesystem;
@@ -66,28 +66,6 @@ class Projects extends ArrayObject
         $filesystem = new Filesystem;
 
         $filesystem->dumpFile(CACHE_ROOT . "/projects.serialized", serialize($this));
-    }
-
-    public function fetchGitLabIds(): void
-    {
-        $gitlabAPI = new GitlabAPI;
-
-        $gitlabProjects = $gitlabAPI->getProjectsOfUser("Programie");
-
-        $repoIds = [];
-
-        foreach ($gitlabProjects as $gitlabProject) {
-            $repoName = $gitlabProject["path"];
-
-            $repoIds[$repoName] = $gitlabProject["id"];
-        }
-
-        /**
-         * @var $project Project
-         */
-        foreach ($this as $project) {
-            $project->gitlabId = $repoIds[$project->repoName] ?? null;
-        }
     }
 
     /**

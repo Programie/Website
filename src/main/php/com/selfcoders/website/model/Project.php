@@ -2,7 +2,7 @@
 namespace com\selfcoders\website\model;
 
 use com\selfcoders\website\CustomizedParsedown;
-use com\selfcoders\website\GitlabAPI;
+use com\selfcoders\website\GitHubAPI;
 use com\selfcoders\website\Utils;
 use DateTime;
 use Exception;
@@ -15,19 +15,14 @@ class Project
     public string $category;
     public ?string $extName;
     public DateTime $startDate;
-    public ?DateTime $lastUpdate;
+    public ?DateTime $lastUpdate = null;
+    public ?string $lastRelease = null;
     public string $coverImage;
     public string $description;
     public string $repoName;
-    public ?int $gitlabId;
     public bool $useSourceAsDownload;
     public string $sourceBranch;
-    public Downloads $downloads;
-
-    public function __construct()
-    {
-        $this->downloads = new Downloads;
-    }
+    public ?Downloads $downloads = null;
 
     /**
      * @param array $data
@@ -93,62 +88,42 @@ class Project
         }
     }
 
-    public function getLatestDownload(): ?Download
+    public function updateDownloads(): void
     {
-        return $this->downloads[0] ?? null;
-    }
+        $gitHubApi = new GitHubAPI;
 
-    public function updateDownloadsFromGitlab(): void
-    {
-        $gitlabAPI = new GitlabAPI;
+        if ($this->useSourceAsDownload) {
+            $this->lastUpdate = $gitHubApi->getLastUpdate($this->repoName, $this->sourceBranch);
+            $this->lastRelease = $this->sourceBranch;
 
-        $releases = $gitlabAPI->getReleasesForProject($this->gitlabId);
+            $this->downloads = new Downloads;
+            $this->downloads->append(new Download($gitHubApi->getSourceDownloadUrl($this->repoName, $this->sourceBranch), $this->sourceBranch));
+            return;
+        }
 
-        $latestDate = null;
-        $this->downloads = new Downloads;
+        $release = $gitHubApi->getLatestReleaseForRepository($this->repoName);
 
-        foreach ($releases as $release) {
+        if ($release !== null) {
             try {
-                $date = new DateTime($release["released_at"]);
+                $date = new DateTime($release["published_at"]);
             } catch (Exception $exception) {
                 $date = new DateTime;
             }
 
-            $latestDate = max($latestDate, $date);
+            $this->lastUpdate = $date;
+            $this->lastRelease = $release["name"];
 
-            $assetLinks = $release["assets"]["links"] ?? null;
+            $this->downloads = new Downloads;
 
-            if (empty($assetLinks)) {
-                $downloadUrl = $gitlabAPI->getSourceDownloadUrl("Programie", $this->repoName, $release["tag_name"]);
+            $assets = $release["assets"] ?? [];
+            if (empty($assets)) {
+                $this->downloads->append(new Download($release["zipball_url"], "zip"));
             } else {
-                $downloadUrl = $assetLinks[0]["url"];
-            }
-
-            $this->downloads->append(new Download($downloadUrl, $date, $release["name"]));
-        }
-
-        if ($this->useSourceAsDownload) {
-            $branches = $gitlabAPI->getBranchesOfProject($this->gitlabId);
-
-            $date = new DateTime;
-
-            foreach ($branches as $branch) {
-                if ($branch["name"] === $this->sourceBranch) {
-                    try {
-                        $date = new DateTime($branch["commit"]["committed_date"]);
-                    } catch (Exception $exception) {
-                        $date = new DateTime;
-                    }
-                    break;
+                foreach ($assets as $asset) {
+                    $this->downloads->append(new Download($asset["browser_download_url"], $asset["name"]));
                 }
             }
-
-            $latestDate = max($latestDate, $date);
-
-            $this->downloads->append(new Download($gitlabAPI->getSourceDownloadUrl("Programie", $this->repoName, $this->sourceBranch), $date, $this->sourceBranch));
         }
-
-        $this->lastUpdate = $latestDate;
     }
 
     public function getContentFromMarkdown(): string

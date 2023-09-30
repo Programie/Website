@@ -3,10 +3,21 @@
     <div class="card-body">
         <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
         <p class="card-text">{{ project.description }}</p>
-        {% if project.latestDownload %}
-            <a class="btn btn-primary" href="{{ project.latestDownload.url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
+        {% if project.downloads %}
+            {% if project.downloads.count > 1 %}
+                <div class="dropdown d-inline ms-2">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-download"></i> Download</a>
+                    <div class="dropdown-menu">
+                        {% for download in project.downloads %}
+                            <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <a class="ms-2" href="{{ project.downloads[0].url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
+            {% endif %}
         {% endif %}
-        <a href="https://github.com/Programie/{{ project.repoName }}"><i class="fab fa-github"></i> View on GitHub</a>
+        <a class="ms-2" href="https://github.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
         {% if project.extName %}
             {% if project.category == "minecraft-plugins" %}
                 <a class="ms-2" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>

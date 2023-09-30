@@ -92,13 +92,9 @@ class ProjectsController extends AbstractController
             throw new NotFoundException;
         }
 
-        if ($project->gitlabId !== null) {
-            $project->updateDownloadsFromGitlab();
-            $this->projects->saveSerialized();
+        $project->updateDownloads();
+        $this->projects->saveSerialized();
 
-            return sprintf("Updated project %s with %d downloads", $project->name, count($project->downloads));
-        }
-
-        return "Nothing to update";
+        return sprintf("Updated project %s with %d downloads", $project->name, count($project->downloads));
     }
 }
