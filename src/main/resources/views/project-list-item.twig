@@ -3,8 +3,8 @@
     <div class="card-body">
         <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
         <p class="card-text">{{ project.description }}</p>
-        {% if project.latestDowload %}
-            <a class="btn btn-primary" href="{{ project.latestDowload.url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
+        {% if project.latestDownload %}
+            <a class="btn btn-primary" href="{{ project.latestDownload.url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
         {% endif %}
         <a href="https://github.com/Programie/{{ project.repoName }}"><i class="fab fa-github"></i> View on GitHub</a>
         {% if project.extName %}
