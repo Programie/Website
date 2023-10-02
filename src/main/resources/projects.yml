@@ -103,6 +103,13 @@
   startDate: "2019-09-24"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
 
+- name: mealplan
+  repoName: MealPlan
+  title: "MealPlan"
+  category: applications
+  startDate: "2023-04-09"
+  description: "A webapp for managing meal plans"
+
 - name: minestats
   repoName: MineStats
   title: "MineStats"
@@ -172,6 +179,13 @@
   category: minecraft-plugins
   startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
+
+- name: rssfilter
+  repoName: RSSFilter
+  title: "RSSFilter"
+  category: applications
+  startDate: "2022-01-04"
+  description: "A simple proxy allowing to filter RSS feeds"
 
 - name: savemyxp
   repoName: SaveMyXP
