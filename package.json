@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/Programie/Website.git"
+    "url": "git+ssh://git@github.com/Programie/Website.git"
   },
   "homepage": "https://selfcoders.com",
   "dependencies": {

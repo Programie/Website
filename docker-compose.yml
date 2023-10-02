@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   website:
-    image: registry.gitlab.com/programie/website
+    image: ghcr.io/programie/website
     build: .
     volumes:
       - ./:/app
