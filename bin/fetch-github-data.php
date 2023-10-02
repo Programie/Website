@@ -5,16 +5,34 @@ use com\selfcoders\website\model\Projects;
 
 require_once __DIR__ . "/../bootstrap.php";
 
-$projects = Projects::load();
-
-/**
- * @var $project Project
- */
-foreach ($projects as $project) {
+function updateProject(Project $project)
+{
     printf("\n*** %s ***\n", $project->title);
 
     $project->updateDownloads();
     printf("Found %d download(s)\n", $project->downloads === null ? 0 : count($project->downloads));
+}
+
+$projects = Projects::load();
+
+$projectsToUpdate = array_slice($argv, 1);
+
+if (empty($projectsToUpdate)) {
+    /**
+     * @var $project Project
+     */
+    foreach ($projects as $project) {
+        updateProject($project);
+    }
+} else {
+    foreach ($projectsToUpdate as $projectName) {
+        $project = $projects->byName($projectName);
+        if ($project === null) {
+            printf("Project %s not found!\n", $projectName);
+        } else {
+            updateProject($project);
+        }
+    }
 }
 
 $projects->saveSerialized();
