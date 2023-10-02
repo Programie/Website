@@ -18,8 +18,13 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - id: metadata
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/programie/website
       - uses: docker/build-push-action@v5
         with:
           push: true
           context: .
           tags: ghcr.io/programie/website
+          labels: ${{ steps.metadata.outputs.labels }}
