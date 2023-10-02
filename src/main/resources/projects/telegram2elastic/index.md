@@ -6,7 +6,7 @@ With the data stored in Elasticsearch, you can use applications like Kibana or G
 
 ## Requirements
 
-* Python >= 3.7
+* Python >= 3.10
 * Elasticsearch (in case you want to use the Elasticsearch output)
 * Redis (in case you want to use the Redis output)
 * Telegram API ID and API Hash (create one at [my.telegram.org](https://my.telegram.org))
@@ -44,6 +44,39 @@ date: "message.date"
 sender: "sender"
 chat: "get_display_name(await message.get_chat())"
 message: "message.text"
+```
+
+## Media downloads
+
+It is not only possible to store the text messages in something like Elasticsearch. There is also the possibility to download media files attached to those messages.
+
+To enable that, you simply add the following configuration to your `config.yml`:
+
+```yaml
+media:
+  download_path: /path/where/to/put/media-files
+```
+
+There are also some more options to restrict those downloads to specific file types, chats or limit them by size. For more options, have a look into the `config.sample.yml`.
+
+## Translate messages
+
+It is possible to use the Telegram API to translate messages.
+
+You might specify the target language using the `translate_to_lang` property in your `config.yml`:
+
+```yaml
+translate_to_lang: "en"
+```
+
+Note: Use the two-letter ISO 639-1 language code (examples: "de", "en", "es", "it").
+
+The translated message will be written into `translated_text` which can be mapped to any field using the output map configuration in your `config.yml`:
+
+```yaml
+output_map:
+  "message.original": "message.text"
+  "message.translated": "translated_text"
 ```
 
 ## Initial setup
