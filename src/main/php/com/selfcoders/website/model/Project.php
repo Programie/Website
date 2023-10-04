@@ -17,7 +17,6 @@ class Project
     public DateTime $startDate;
     public ?DateTime $lastUpdate = null;
     public ?string $lastRelease = null;
-    public string $coverImage;
     public string $description;
     public string $repoName;
     public bool $useSourceAsDownload;
@@ -38,7 +37,6 @@ class Project
         $project->category = $data["category"];
         $project->extName = $data["extName"] ?? null;
         $project->startDate = new DateTime($data["startDate"]);
-        $project->coverImage = $data["coverImage"] ?? "cover-image.jpg";
         $project->description = $data["description"];
         $project->repoName = $data["repoName"];
         $project->useSourceAsDownload = $data["useSourceAsDownload"] ?? false;
@@ -54,11 +52,7 @@ class Project
 
     public function getCoverImage()
     {
-        if ($this->coverImage[0] === "/" or parse_url($this->coverImage, PHP_URL_HOST) !== null) {
-            return $this->coverImage;
-        } else {
-            return sprintf("%s/%s", $this->getBaseUrl(), $this->coverImage);
-        }
+        return sprintf("%s/cover-image.jpg", $this->getBaseUrl());
     }
 
     public function getResourcePath(string $resource): ?string
