@@ -28,17 +28,8 @@
                                     <a class="nav-link" href="/about">About</a>
                                 </li>
                                 {% for categoryName, categoryData in projects.getCategories() %}
-                                    <li class="{{ html_classes("nav-item dropdown", {"active": isActiveProjectCategory(categoryName)}) }}">
-                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ categoryData[0] }}</a>
-                                        <ul class="dropdown-menu">
-                                            {% for project in projects.ofCategory(categoryName) %}
-                                                <li><a class="{{ html_classes("dropdown-item", {"active": isActivePage("^/projects/" ~ project.name, true)}) }}" href="/projects/{{ project.name }}">{{ project.title }}</a></li>
-                                            {% endfor %}
-                                            <li>
-                                                <hr class="dropdown-divider"/>
-                                            </li>
-                                            <li><a class="{{ html_classes("dropdown-item", {"active": isActivePage("/projects/" ~ categoryName)}) }}" href="/projects/{{ categoryName }}">Show all</a></li>
-                                        </ul>
+                                    <li class="{{ html_classes("nav-item", {"active": isActivePage("/projects/" ~ categoryName)}) }}">
+                                        <a class="nav-link" href="/projects/{{ categoryName }}">{{ categoryData[0] }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
