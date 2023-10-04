@@ -2,7 +2,6 @@
 namespace com\selfcoders\website\model;
 
 use ArrayObject;
-use com\selfcoders\website\GitHubAPI;
 use Exception;
 use RuntimeException;
 use Symfony\Component\Filesystem\Filesystem;
