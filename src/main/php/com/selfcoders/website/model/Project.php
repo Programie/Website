@@ -52,7 +52,7 @@ class Project
 
     public function getCoverImagePath()
     {
-        return sprintf("%s/projects/%s/cover-image.jpg", RESOURCES_ROOT, $this->name);
+        return sprintf("%s/assets/images/projects/%s.jpg", RESOURCES_ROOT, $this->name);
     }
 
     public function hasCoverImage()
@@ -68,23 +68,6 @@ class Project
     public function getRepoUrl(): string
     {
         return sprintf("https://github.com/Programie/%s", $this->repoName);
-    }
-
-    public function getResourcePath(string $resource): ?string
-    {
-        $basePath = sprintf("%s/projects/%s", RESOURCES_ROOT, $this->name);
-        $fullPath = sprintf("%s/%s", $basePath, $resource);
-        if (Utils::isSafePath($basePath, $fullPath) and is_file($fullPath)) {
-            return $fullPath;
-        }
-
-        $basePath = sprintf("%s/projects/_default_/%s", RESOURCES_ROOT, $this->category);
-        $fullPath = sprintf("%s/%s", $basePath, $resource);
-        if (Utils::isSafePath($basePath, $fullPath) and is_file($fullPath)) {
-            return $fullPath;
-        }
-
-        return null;
     }
 
     public function updateDownloads(): void

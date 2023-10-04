@@ -188,7 +188,7 @@ a {
 
 @each $category in $project-categories {
     #home-carousel-#{$category}-cover {
-        background-image: url("../../projects/_default_/#{$category}/cover-image.jpg");
+        background-image: url("../images/categories/#{$category}.jpg");
     }
 }
 
