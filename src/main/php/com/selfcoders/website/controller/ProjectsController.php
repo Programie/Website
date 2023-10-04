@@ -29,10 +29,9 @@ class ProjectsController extends AbstractController
 
     /**
      * @param $params
-     * @return string
      * @throws TwigError
      */
-    public function showProject($params): string
+    public function redirectToRepoReadme($params): void
     {
         $project = $this->projects->byName($params["name"]);
 
@@ -40,9 +39,7 @@ class ProjectsController extends AbstractController
             throw new NotFoundException;
         }
 
-        return TwigRenderer::render("project", [
-            "project" => $project
-        ]);
+        header(sprintf("Location: %s#readme", $project->getRepoUrl()));
     }
 
     public function getResource($params): void

@@ -1,11 +1,15 @@
 <div class="card mb-4">
-    <div class="card-img-top project-list-image" style="background-image: url({{ project.getCoverImage() }})"></div>
+    <div class="card-header">
+        <h5 class="m-0">{{ project.title }}{% if project.lastRelease %} <span>{{ project.lastRelease }}</span>{% endif %}</h5>
+    </div>
+    {% if project.hasCoverImage %}
+        <div class="project-list-image" style="background-image: url({{ project.getCoverImage() }})"></div>
+    {% endif %}
     <div class="card-body">
-        <h5 class="card-title"><a href="/projects/{{ project.name }}">{{ project.title }}</a></h5>
         <p class="card-text">{{ project.description }}</p>
         {% if project.downloads %}
             {% if project.downloads.count > 1 %}
-                <div class="dropdown d-inline ms-2">
+                <div class="dropdown d-inline ms-2 btn btn-primary">
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-download"></i> Download</a>
                     <div class="dropdown-menu">
                         {% for download in project.downloads %}
@@ -14,21 +18,22 @@
                     </div>
                 </div>
             {% else %}
-                <a class="ms-2" href="{{ project.downloads[0].url }}" target="_blank"><i class="fa-solid fa-download"></i> Download</a>
+                <a class="ms-2 btn btn-primary" href="{{ project.downloads[0].url }}" target="_blank"><i class="fa-solid fa-download"></i> Download</a>
             {% endif %}
         {% endif %}
-        <a class="ms-2" href="https://github.com/Programie/{{ project.repoName }}" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        <a class="ms-2 btn btn-secondary" href="{{ project.repoUrl }}" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
         {% if project.extName %}
             {% if project.category == "minecraft-plugins" %}
-                <a class="ms-2" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
+                <a class="ms-2 btn btn-secondary" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
             {% elseif project.category == "php-libraries" %}
-                <a class="ms-2" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
+                <a class="ms-2 btn btn-secondary" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
             {% endif %}
         {% endif %}
     </div>
+
     {% if project.lastUpdate %}
-        <div class="card-footer">
-            <small class="text-muted">Last release: {{ project.lastUpdate.format("D, d M Y") }}</small>
+        <div class="card-footer text-body-secondary">
+            <div>Last release: {{ project.lastUpdate.format("D, d M Y") }}</div>
         </div>
     {% endif %}
 </div>

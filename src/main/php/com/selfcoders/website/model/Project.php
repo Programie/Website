@@ -50,9 +50,19 @@ class Project
         return sprintf("/projects/%s", $this->name);
     }
 
+    public function hasCoverImage()
+    {
+        return file_exists(sprintf("%s/projects/%s/cover-image.jpg", RESOURCES_ROOT, $this->name));
+    }
+
     public function getCoverImage()
     {
         return sprintf("%s/cover-image.jpg", $this->getBaseUrl());
+    }
+
+    public function getRepoUrl(): string
+    {
+        return sprintf("https://github.com/Programie/%s", $this->repoName);
     }
 
     public function getResourcePath(string $resource): ?string
