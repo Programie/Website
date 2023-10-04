@@ -6,7 +6,6 @@
     "require": {
         "php": ">=8.0",
         "altorouter/altorouter": "^2.0",
-        "erusev/parsedown": "^1.7",
         "guzzlehttp/guzzle": "^7.3",
         "twig/html-extra": "^3.3",
         "twig/twig": "^3.3",

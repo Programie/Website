@@ -1,12 +1,9 @@
 <?php
 namespace com\selfcoders\website\model;
 
-use com\selfcoders\website\CustomizedParsedown;
 use com\selfcoders\website\GitHubAPI;
-use com\selfcoders\website\Utils;
 use DateTime;
 use Exception;
-use Symfony\Component\Filesystem\Filesystem;
 
 class Project
 {
