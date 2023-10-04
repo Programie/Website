@@ -143,6 +143,10 @@ nav.navbar > .container {
     cursor: pointer;
 }
 
+.navbar-brand {
+    padding: 0.5rem;
+}
+
 .project-list-anchor {
     scroll-margin-top: 85px;
 }
@@ -152,11 +156,11 @@ nav.navbar > .container {
         display: inline-block !important;
     }
 
-    .nav-item.active {
+    .nav-item.active, .navbar-brand.active {
         position: relative;
     }
 
-    .nav-item.active:after {
+    .nav-item.active:after, .navbar-brand.active:after {
         transform: rotateZ(45deg);
         width: 0.75em;
         height: 0.75em;
