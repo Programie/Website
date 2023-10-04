@@ -17,7 +17,7 @@
                     {% if project.downloads %}
                         {% if project.downloads.count > 1 %}
                             <div class="dropdown d-inline me-1">
-                                <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-download"></i> Download</button>
+                                <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-download"></i> Download</button>
                                 <div class="dropdown-menu">
                                     {% for download in project.downloads %}
                                         <a class="dropdown-item" href="{{ download.url }}" target="_blank">{{ download.title }}</a>
@@ -25,10 +25,10 @@
                                 </div>
                             </div>
                         {% else %}
-                            <a class="btn btn-primary" href="{{ project.downloads[0].url }}" target="_blank"><i class="fas fa-download"></i> Download</a>
+                            <a class="btn btn-primary" href="{{ project.downloads[0].url }}" target="_blank"><i class="fa-solid fa-download"></i> Download</a>
                         {% endif %}
                     {% endif %}
-                    <a class="btn btn-secondary" href="https://github.com/Programie/{{ project.repoName }}" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <a class="btn btn-secondary" href="https://github.com/Programie/{{ project.repoName }}" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
                     {% if project.extName %}
                         {% if project.category == "minecraft-plugins" %}
                             <a class="btn btn-secondary" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
