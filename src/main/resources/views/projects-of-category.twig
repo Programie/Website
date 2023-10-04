@@ -3,8 +3,22 @@
 {% block title %}Projects - {{ title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h3>{{ title }}</h3>
+    <div class="carousel">
+        <div class="carousel-inner project-carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-image" id="home-carousel-{{ category }}-cover"></div>
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>{{ title }}</h2>
+                        <p>{{ description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
         {% for project in projects.ofCategory(category) %}
             {{ include("project-list-item.twig") }}
         {% endfor %}

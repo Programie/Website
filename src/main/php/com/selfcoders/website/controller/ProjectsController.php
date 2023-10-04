@@ -22,6 +22,7 @@ class ProjectsController extends AbstractController
     {
         return TwigRenderer::render("projects-of-category", [
             "title" => Projects::getCategories()[$params["category"]][0],
+            "description" => Projects::getCategories()[$params["category"]][1],
             "category" => $params["category"]
         ]);
     }
