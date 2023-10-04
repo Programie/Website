@@ -29,7 +29,6 @@ class ProjectsController extends AbstractController
 
     /**
      * @param $params
-     * @throws TwigError
      */
     public function redirectToRepoReadme($params): void
     {
@@ -42,7 +41,7 @@ class ProjectsController extends AbstractController
         header(sprintf("Location: %s#readme", $project->getRepoUrl()));
     }
 
-    public function getResource($params): void
+    public function getCoverImage($params): void
     {
         $project = $this->projects->byName($params["name"]);
 
@@ -50,17 +49,18 @@ class ProjectsController extends AbstractController
             throw new NotFoundException;
         }
 
-        $filename = $project->getResourcePath($params["resource"]);
-        if ($filename === null) {
+        if (!$project->hasCoverImage()) {
             throw new NotFoundException;
         }
 
-        $contentType = mime_content_type($filename);
+        $path = $project->getCoverImagePath();
+
+        $contentType = mime_content_type($path);
         if ($contentType !== false) {
             header(sprintf("Content-Type: %s", $contentType));
         }
 
-        readfile($filename);
+        readfile($path);
     }
 
     public function update($params): string

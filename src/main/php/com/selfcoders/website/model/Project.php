@@ -50,9 +50,14 @@ class Project
         return sprintf("/projects/%s", $this->name);
     }
 
+    public function getCoverImagePath()
+    {
+        return sprintf("%s/projects/%s/cover-image.jpg", RESOURCES_ROOT, $this->name);
+    }
+
     public function hasCoverImage()
     {
-        return file_exists(sprintf("%s/projects/%s/cover-image.jpg", RESOURCES_ROOT, $this->name));
+        return file_exists($this->getCoverImagePath());
     }
 
     public function getCoverImage()
@@ -80,16 +85,6 @@ class Project
         }
 
         return null;
-    }
-
-    public function getContent(): string
-    {
-        $filename = sprintf("%s/projects-html/%s/index.html", CACHE_ROOT, $this->name);
-        if (USE_CACHE and file_exists($filename)) {
-            return file_get_contents($filename);
-        } else {
-            return $this->getContentFromMarkdown();
-        }
     }
 
     public function updateDownloads(): void
@@ -128,27 +123,5 @@ class Project
                 }
             }
         }
-    }
-
-    public function getContentFromMarkdown(): string
-    {
-        $filename = $this->getResourcePath("index.md");
-
-        if (!file_exists($filename)) {
-            return "";
-        }
-
-        $parsedown = new CustomizedParsedown;
-
-        $parsedown->baseUrl = $this->getBaseUrl();
-
-        $html = $parsedown->text(file_get_contents($filename));
-
-        if (USE_CACHE) {
-            $filesystem = new Filesystem;
-            $filesystem->dumpFile(sprintf("%s/projects-html/%s/index.html", CACHE_ROOT, $this->name), $html);
-        }
-
-        return $html;
     }
 }

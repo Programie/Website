@@ -32,7 +32,7 @@ $router->map("GET", "/privacy-policy", [PrivacyPolicyController::class, "getCont
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[applications|minecraft-plugins|php-libraries:category]", [ProjectsController::class, "listProjectsOfCategory"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "redirectToRepoReadme"]);
-$router->map("GET", "/projects/[noslash:name]/[**:resource]", [ProjectsController::class, "getResource"]);
+$router->map("GET", "/projects/[noslash:name]/cover-image.jpg", [ProjectsController::class, "getCoverImage"]);
 $router->map("POST", "/projects/[noslash:name]/update", [ProjectsController::class, "update"]);
 
 $match = $router->match();
