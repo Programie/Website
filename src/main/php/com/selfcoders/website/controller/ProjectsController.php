@@ -55,11 +55,7 @@ class ProjectsController extends AbstractController
 
         $path = $project->getCoverImagePath();
 
-        $contentType = mime_content_type($path);
-        if ($contentType !== false) {
-            header(sprintf("Content-Type: %s", $contentType));
-        }
-
+        header("Content-Type: image/jpeg");
         readfile($path);
     }
 
