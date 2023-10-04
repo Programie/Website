@@ -2,8 +2,8 @@
 namespace com\selfcoders\website;
 
 use DateTime;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+use Github\Client;
+use Github\Exception\RuntimeException;
 
 class GitHubAPI
 {
@@ -11,17 +11,15 @@ class GitHubAPI
 
     public function __construct()
     {
-        $this->client = new Client([
-            "base_uri" => "https://api.github.com/"
-        ]);
+        $this->client = new Client;
     }
 
     public function getLatestReleaseForRepository(string $repository): ?array
     {
         try {
-            return json_decode($this->client->get(sprintf("repos/Programie/%s/releases/latest", $repository))->getBody()->getContents(), true);
-        } catch (ClientException $exception) {
-            if ($exception->getResponse()->getStatusCode() === 404) {
+            return $this->client->repository()->releases()->latest("Programie", $repository);
+        } catch (RuntimeException $exception) {
+            if ($exception->getCode() === 404) {
                 return null;
             }
 
@@ -31,7 +29,7 @@ class GitHubAPI
 
     public function getLastUpdate(string $repository, string $branch): ?DateTime
     {
-        $data = json_decode($this->client->get(sprintf("repos/Programie/%s/branches/%s", $repository, $branch))->getBody()->getContents(), true);
+        $data = $this->client->repository()->branches("Programie", $repository, $branch);
 
         $date = $data["commit"]["commit"]["committer"]["date"] ?? null;
         if ($date === null) {

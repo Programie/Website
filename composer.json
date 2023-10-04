@@ -13,6 +13,7 @@
         "symfony/asset": "^5.2",
         "symfony/filesystem": "^5.2",
         "symfony/yaml": "^5.2",
+        "knplabs/github-api": "^3.12",
         "ext-fileinfo": "*",
         "ext-json": "*"
     },
@@ -26,5 +27,10 @@
             "name": "Michael Wieland",
             "email": "git@selfcoders.com"
         }
-    ]
+    ],
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
 }
