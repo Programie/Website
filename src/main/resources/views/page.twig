@@ -28,7 +28,7 @@
                                     <a class="nav-link" href="/about">About</a>
                                 </li>
                                 {% for categoryName, categoryData in projects.getCategories() %}
-                                    <li class="{{ html_classes("nav-item", {"active": isActivePage("/projects/" ~ categoryName) or isActiveProjectCategory(categoryName)}) }}">
+                                    <li class="{{ html_classes("nav-item", {"active": isActivePage("/projects/" ~ categoryName)}) }}">
                                         <a class="nav-link" href="/projects/{{ categoryName }}">{{ categoryData[0] }}</a>
                                     </li>
                                 {% endfor %}
