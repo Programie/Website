@@ -80,7 +80,7 @@
   description: "A tool for Linux desktops to map keys of dedicated keyboards to specific actions"
 
 - name: krunner-ssh
-  repoName: krunner-ssh
+  repoName: KRunner-SSH
   title: "KRunner SSH"
   category: applications
   startDate: "2019-01-11"
