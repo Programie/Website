@@ -31,7 +31,7 @@ $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[applications|minecraft-plugins|php-libraries:category]", [ProjectsController::class, "listProjectsOfCategory"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "redirectToRepoReadme"]);
 $router->map("GET", "/projects/[noslash:name]/cover-image.jpg", [ProjectsController::class, "getCoverImage"]);
-$router->map("POST", "/projects/[noslash:name]/update", [ProjectsController::class, "update"]);
+$router->map("POST", "/update-project", [ProjectsController::class, "update"]);
 
 $match = $router->match();
 

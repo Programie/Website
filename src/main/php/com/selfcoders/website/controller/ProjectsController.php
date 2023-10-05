@@ -59,29 +59,35 @@ class ProjectsController extends AbstractController
         readfile($path);
     }
 
-    public function update($params): string
+    public function update(): string
     {
         $headers = getallheaders();
         if ($headers === false) {
             throw new ForbiddenException;
         }
 
-        if (!isset($headers["X-Gitlab-Token"])) {
+        if (!isset($headers["X-Update-Token"])) {
             throw new ForbiddenException;
         }
 
-        $requiredToken = getenv("GITLAB_TOKEN");
+        $requiredToken = getenv("PROJECT_UPDATE_TOKEN");
         if (!$requiredToken) {
             // $requiredToken is null, false, empty string, ...
             throw new ForbiddenException;
         }
 
-        if ($headers["X-Gitlab-Token"] !== $requiredToken) {
+        if ($headers["X-Update-Token"] !== $requiredToken) {
             throw new ForbiddenException;
         }
 
-        $project = $this->projects->byName($params["name"]);
+        $repository = $_POST["repository"] ?? null;
+        if (!$repository) {
+            throw new ForbiddenException;
+        }
 
+        $repository = explode("/", $repository)[1];
+
+        $project = $this->projects->byRepository($repository);
         if ($project === null) {
             throw new NotFoundException;
         }

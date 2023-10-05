@@ -105,6 +105,24 @@ class Projects extends ArrayObject
         return null;
     }
 
+    /**
+     * @param string $repository
+     * @return Project|null
+     */
+    public function byRepository(string $repository): ?Project
+    {
+        /**
+         * @var $project Project
+         */
+        foreach ($this as $project) {
+            if ($project->repoName === $repository) {
+                return $project;
+            }
+        }
+
+        return null;
+    }
+
     public function latest(int $limit): self
     {
         $projects = clone $this;

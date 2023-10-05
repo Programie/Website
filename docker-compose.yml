@@ -12,4 +12,4 @@ services:
       - 8080:80
     environment:
       USE_CACHE: 'false'
-      GITLAB_TOKEN: test
+      PROJECT_UPDATE_TOKEN: test
