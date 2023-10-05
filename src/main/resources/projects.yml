@@ -57,6 +57,7 @@
   description: "A tool for GTA San Andreas allowing to teleport the player, spawn vehicles and more"
   useSourceAsDownload: true
   sourceBranch: master
+  forceLastUpdate: "2013-08-02"
 
 - name: itemsorter
   repoName: ItemSorter

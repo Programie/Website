@@ -13,6 +13,7 @@ class Project
     public ?string $extName;
     public DateTime $startDate;
     public ?DateTime $lastUpdate = null;
+    public ?DateTime $forceLastUpdate = null;
     public ?string $lastRelease = null;
     public string $description;
     public string $repoName;
@@ -38,6 +39,11 @@ class Project
         $project->repoName = $data["repoName"];
         $project->useSourceAsDownload = $data["useSourceAsDownload"] ?? false;
         $project->sourceBranch = $data["sourceBranch"] ?? "master";
+
+        $forceLastUpdate = $data["forceLastUpdate"] ?? null;
+        if ($forceLastUpdate !== null) {
+            $project->forceLastUpdate = new DateTime($forceLastUpdate);
+        }
 
         return $project;
     }
@@ -72,7 +78,7 @@ class Project
         $gitHubApi = new GitHubAPI;
 
         if ($this->useSourceAsDownload) {
-            $this->lastUpdate = $gitHubApi->getLastUpdate($this->repoName, $this->sourceBranch);
+            $this->setLastUpdate($gitHubApi->getLastUpdate($this->repoName, $this->sourceBranch));
             $this->lastRelease = $this->sourceBranch;
 
             $this->downloads = new Downloads;
@@ -89,7 +95,7 @@ class Project
                 $date = new DateTime;
             }
 
-            $this->lastUpdate = $date;
+            $this->setLastUpdate($date);
             $this->lastRelease = $release["name"];
 
             $this->downloads = new Downloads;
@@ -103,5 +109,15 @@ class Project
                 }
             }
         }
+    }
+
+    private function setLastUpdate(DateTime $dateTime): void
+    {
+        if ($this->forceLastUpdate !== null) {
+            $this->lastUpdate = $this->forceLastUpdate;
+            return;
+        }
+
+        $this->lastUpdate = $dateTime;
     }
 }
