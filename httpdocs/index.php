@@ -1,8 +1,6 @@
 <?php
 use com\selfcoders\website\controller\AboutController;
-use com\selfcoders\website\controller\HomeController;
-use com\selfcoders\website\controller\ImprintController;
-use com\selfcoders\website\controller\PrivacyPolicyController;
+use com\selfcoders\website\controller\StaticController;
 use com\selfcoders\website\controller\ProjectsController;
 use com\selfcoders\website\exception\ForbiddenException;
 use com\selfcoders\website\exception\NotFoundException;
@@ -25,10 +23,10 @@ $router->addMatchTypes([
     "noslash" => "[^/]+"
 ]);
 
-$router->map("GET", "/", [HomeController::class, "getContent"]);
+$router->map("GET", "/", [StaticController::class, "getHome"]);
 $router->map("GET", "/about", [AboutController::class, "getContent"]);
-$router->map("GET", "/imprint", [ImprintController::class, "getContent"]);
-$router->map("GET", "/privacy-policy", [PrivacyPolicyController::class, "getContent"]);
+$router->map("GET", "/imprint", [StaticController::class, "getImprint"]);
+$router->map("GET", "/privacy-policy", [StaticController::class, "getPrivacyPolicy"]);
 $router->map("GET", "/projects", [ProjectsController::class, "listProjects"]);
 $router->map("GET", "/projects/[applications|minecraft-plugins|php-libraries:category]", [ProjectsController::class, "listProjectsOfCategory"]);
 $router->map("GET", "/projects/[noslash:name]", [ProjectsController::class, "redirectToRepoReadme"]);
