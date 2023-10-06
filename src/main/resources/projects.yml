@@ -5,6 +5,13 @@
   startDate: "2014-11-24"
   description: "A showcase and download page for albums (music)"
 
+- name: bukkit-collection
+  repoName: BukkitCollection
+  title: "Bukkit Collection"
+  category: minecraft-plugins
+  startDate: "2022-05-08"
+  description: "A Minecraft Bukkit plugin providing various small features"
+
 - name: capture2net
   repoName: Capture2Net
   title: "Capture2Net"
