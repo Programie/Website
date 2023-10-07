@@ -248,7 +248,7 @@
   description: "A Minecraft Bukkit plugin to warp using signs"
   sites:
     modrinth: signwarper
-    curseforge: signwarper
+    curseforge: sign-warper
 
 - name: talkingmobs
   repoName: TalkingMobs
