@@ -36,10 +36,12 @@
 - name: doorcloser
   repoName: DoorCloser
   title: "DoorCloser"
-  extName: doorcloser
   category: minecraft-plugins
   startDate: "2018-02-11"
   description: "A Minecraft Bukkit plugin which automatically closes doors after they have been opened"
+  sites:
+    modrinth: doorcloser
+    curseforge: doorcloser
 
 - name: ejabberd-archive-viewer
   repoName: EjabberdArchiveViewer
@@ -47,14 +49,18 @@
   category: applications
   startDate: "2018-06-09"
   description: "A simple frontend for viewing ejabberd archive entries"
+  sites:
+    dockerhub: programie/ejabberdarchiveviewer
 
 - name: explosivemobs
   repoName: ExplosiveMobs
   title: "ExplosiveMobs"
-  extName: explosivemobs
   category: minecraft-plugins
   startDate: "2013-09-03"
   description: "A Minecraft Bukkit plugin which lets mobs explode once they die"
+  sites:
+    modrinth: explosivemobs
+    curseforge: explosivemobs
 
 - name: gta-sa-toolbox
   repoName: GTASAToolBox
@@ -69,18 +75,21 @@
 - name: itemsorter
   repoName: ItemSorter
   title: "ItemSorter"
-  extName: itemsorter
   category: minecraft-plugins
   startDate: "2022-03-04"
   description: "A Minecraft Bukkit plugin which transfers and sorts items from inventories like chests into other inventories"
+  sites:
+    modrinth: itemsorter
+    curseforge: itemsorter
 
 - name: jsonconfig
   repoName: JsonConfig
   title: "JsonConfig"
-  extName: jsonconfig
   category: php-libraries
   startDate: "2014-12-16"
   description: "A simple PHP class for reading and writing configuration values from JSON files"
+  sites:
+    packagist: programie/jsonconfig
 
 - name: keyboard-mapper
   repoName: KeyboardMapper
@@ -108,10 +117,12 @@
 - name: matterbukkit
   repoName: MatterBukkit
   title: "MatterBukkit"
-  extName: matterbukkit
   category: minecraft-plugins
   startDate: "2019-09-24"
   description: "A Minecraft Bukkit plugin which sends chat messages from/to MatterBridge"
+  sites:
+    modrinth: matterbukkit
+    curseforge: matterbukkit
 
 - name: mealplan
   repoName: MealPlan
@@ -119,6 +130,8 @@
   category: applications
   startDate: "2023-04-09"
   description: "A webapp for managing meal plans"
+  sites:
+    dockerhub: programie/mealplan
 
 - name: minestats
   repoName: MineStats
@@ -130,26 +143,30 @@
 - name: nearbyrespawner
   repoName: NearbyRespawner
   title: "NearbyRespawner"
-  extName: nearbyrespawner
   category: minecraft-plugins
   startDate: "2020-04-20"
   description: "A Minecraft Bukkit plugin which respawns players at a random location near the death location"
+  sites:
+    modrinth: nearbyrespawner
+    curseforge: nearbyrespawner
 
 - name: parallelprocesses
   repoName: ParallelProcesses
   title: "ParallelProcesses"
-  extName: parallel-processes
   category: php-libraries
   startDate: "2017-01-04"
   description: "A library to handle parallel process executions using Symfony Process component"
+  sites:
+    packagist: programie/parallel-processes
 
 - name: phpcurl
   repoName: PHPCurl
   title: "PHPCurl"
-  extName: phpcurl
   category: php-libraries
   startDate: "2014-12-18"
   description: "A PHP OOP wrapper for Curl with some additional features"
+  sites:
+    packagist: programie/phpcurl
 
 - name: phpdyndns
   repoName: PHPDynDNS
@@ -157,38 +174,45 @@
   category: applications
   startDate: "2013-12-19"
   description: "A simple DynDNS Service written in PHP"
+  sites:
+    dockerhub: programie/phpdyndns
 
 - name: phptable
   repoName: PHPTable
   title: "PHPTable"
-  extName: phptable
   category: php-libraries
   startDate: "2017-01-03"
   description: "A library to display data in a table"
+  sites:
+    packagist: programie/phptable
 
 - name: phputils
   repoName: PHPUtils
   title: "PHPUtils"
-  extName: phputils
   category: php-libraries
   startDate: "2015-01-13"
   description: "A collection of PHP utility functions"
+  sites:
+    packagist: programie/phputils
 
 - name: pini
   repoName: Pini
   title: "Pini"
-  extName: pini
   category: php-libraries
   startDate: "2014-12-02"
   description: "A library for reading and writing Ini files in PHP"
+  sites:
+    packagist: programie/pini
 
 - name: retainxp
   repoName: RetainXP
   title: "RetainXP"
-  extName: retainxp
   category: minecraft-plugins
   startDate: "2019-08-22"
   description: "A Minecraft Bukkit plugin which prevents loosing all your XP after death"
+  sites:
+    modrinth: retainxp
+    curseforge: retainxp
 
 - name: rssfilter
   repoName: RSSFilter
@@ -196,14 +220,18 @@
   category: applications
   startDate: "2022-01-04"
   description: "A simple proxy allowing to filter RSS feeds"
+  sites:
+    dockerhub: programie/rssfilter
 
 - name: savemyxp
   repoName: SaveMyXP
   title: "SaveMyXP"
-  extName: savemyxp
   category: minecraft-plugins
   startDate: "2021-04-25"
   description: "A Minecraft Bukkit plugin to save your XP by using a sign"
+  sites:
+    modrinth: savemyxp
+    curseforge: savemyxp
 
 - name: screenshot-manager
   repoName: ScreenshotManager
@@ -215,18 +243,22 @@
 - name: signwarper
   repoName: SignWarper
   title: "SignWarper"
-  extName: signwarper
   category: minecraft-plugins
   startDate: "2019-08-25"
   description: "A Minecraft Bukkit plugin to warp using signs"
+  sites:
+    modrinth: signwarper
+    curseforge: signwarper
 
 - name: talkingmobs
   repoName: TalkingMobs
   title: "TalkingMobs"
-  extName: talkingmobs
   category: minecraft-plugins
   startDate: "2013-06-30"
   description: "A Minecraft Bukkit plugin which lets mobs talk to the player"
+  sites:
+    modrinth: talkingmobs
+    curseforge: talkingmobs
 
 - name: teamplaner
   repoName: TeamPlaner
@@ -241,11 +273,15 @@
   category: applications
   startDate: "2020-03-18"
   description: "A simple Telegram client writing chat messages to an Elasticsearch instance in realtime"
+  sites:
+    dockerhub: programie/telegram2elastic
 
 - name: xpdispenser
   repoName: XPDispenser
   title: "XPDispenser"
-  extName: xpdispenser
   category: minecraft-plugins
   startDate: "2021-01-20"
   description: "A Minecraft Bukkit plugin to throw your XP at yourself (e.g. to repair your mending tools)"
+  sites:
+    modrinth: xpdispenser
+    curseforge: xpdispenser

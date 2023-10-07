@@ -21,14 +21,9 @@
                 <a class="ms-2 btn btn-primary" href="{{ project.downloads[0].url }}" target="_blank"><i class="fa-solid fa-download"></i> Download</a>
             {% endif %}
         {% endif %}
-        <a class="ms-2 btn btn-secondary" href="{{ project.repoUrl }}" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
-        {% if project.extName %}
-            {% if project.category == "minecraft-plugins" %}
-                <a class="ms-2 btn btn-secondary" href="https://modrinth.com/plugin/{{ project.extName }}" target="_blank">View on Modrinth</a>
-            {% elseif project.category == "php-libraries" %}
-                <a class="ms-2 btn btn-secondary" href="https://packagist.org/packages/programie/{{ project.extName }}" target="_blank">View on Packagist</a>
-            {% endif %}
-        {% endif %}
+        {% for site in project.sites %}
+            <a class="ms-2 btn btn-secondary" href="{{ site.url }}" target="_blank">{% if site.iconClasses %}<i class="{{ site.iconClasses|join(" ") }}"></i> {% endif %}View on {{ site.title }}</a>
+        {% endfor %}
     </div>
 
     {% if project.lastUpdate %}

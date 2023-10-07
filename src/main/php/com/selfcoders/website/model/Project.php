@@ -10,7 +10,6 @@ class Project
     public string $name;
     public string $title;
     public string $category;
-    public ?string $extName;
     public DateTime $startDate;
     public ?DateTime $lastUpdate = null;
     public ?DateTime $forceLastUpdate = null;
@@ -19,6 +18,7 @@ class Project
     public string $repoName;
     public bool $useSourceAsDownload;
     public string $sourceBranch;
+    public array $sites = [];
     public ?Downloads $downloads = null;
 
     /**
@@ -33,12 +33,17 @@ class Project
         $project->name = $data["name"];
         $project->title = $data["title"];
         $project->category = $data["category"];
-        $project->extName = $data["extName"] ?? null;
         $project->startDate = new DateTime($data["startDate"]);
         $project->description = $data["description"];
         $project->repoName = $data["repoName"];
         $project->useSourceAsDownload = $data["useSourceAsDownload"] ?? false;
         $project->sourceBranch = $data["sourceBranch"] ?? "master";
+
+        $project->sites[] = Site::fromTypeValue("github", sprintf("Programie/%s", $project->repoName));
+
+        foreach ($data["sites"] ?? [] as $siteType => $siteValue) {
+            $project->sites[] = Site::fromTypeValue($siteType, $siteValue);
+        }
 
         $forceLastUpdate = $data["forceLastUpdate"] ?? null;
         if ($forceLastUpdate !== null) {
