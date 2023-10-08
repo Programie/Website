@@ -12,16 +12,19 @@ class Project
     public string $title;
     public string $category;
     public DateTime $startDate;
-    public ?DateTime $lastUpdate = null;
     public ?DateTime $forceLastUpdate = null;
-    public ?string $lastRelease = null;
-    public ?string $releaseNotes = null;
+    public Release $lastRelease;
     public string $description;
     public string $repoName;
     public bool $useSourceAsDownload;
     public string $sourceBranch;
     public array $sites = [];
     public ?Downloads $downloads = null;
+
+    public function __construct()
+    {
+        $this->lastRelease = new Release;
+    }
 
     /**
      * @param array $data
@@ -86,7 +89,7 @@ class Project
 
         if ($this->useSourceAsDownload) {
             $this->setLastUpdate($gitHubApi->getLastUpdate($this->repoName, $this->sourceBranch));
-            $this->lastRelease = $this->sourceBranch;
+            $this->lastRelease->name = $this->sourceBranch;
 
             $this->downloads = new Downloads;
             $this->downloads->append(new Download($gitHubApi->getSourceDownloadUrl($this->repoName, $this->sourceBranch), $this->sourceBranch));
@@ -103,10 +106,10 @@ class Project
             }
 
             $this->setLastUpdate($date);
-            $this->lastRelease = $release["name"];
+            $this->lastRelease->name = $release["name"];
 
             $parsedown = new Parsedown;
-            $this->releaseNotes = $parsedown->text($release["body"] ?? "");
+            $this->lastRelease->notes = $parsedown->text($release["body"] ?? "");
 
             $this->downloads = new Downloads;
 
@@ -124,10 +127,10 @@ class Project
     private function setLastUpdate(DateTime $dateTime): void
     {
         if ($this->forceLastUpdate !== null) {
-            $this->lastUpdate = $this->forceLastUpdate;
+            $this->lastRelease->date = $this->forceLastUpdate;
             return;
         }
 
-        $this->lastUpdate = $dateTime;
+        $this->lastRelease->date = $dateTime;
     }
 }
