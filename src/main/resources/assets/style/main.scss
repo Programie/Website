@@ -1,6 +1,9 @@
 @import "~bootswatch/dist/darkly/variables";
 
-$link-color: $yellow;
+$link-color-dark: $yellow;
+$carousel-dark-caption-color: $white;
+$carousel-dark-indicator-active-bg: $white;
+$carousel-dark-control-icon-filter: unset;
 
 @import "~bootstrap/scss/bootstrap";
 
