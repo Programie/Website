@@ -9,7 +9,7 @@ function updateProject(Project $project)
 {
     printf("\n*** %s ***\n", $project->title);
 
-    $project->updateDownloads();
+    $project->updateData();
     printf("Found %d download(s)\n", $project->downloads === null ? 0 : count($project->downloads));
 }
 

@@ -4,6 +4,7 @@ namespace com\selfcoders\website\model;
 use com\selfcoders\website\GitHubAPI;
 use DateTime;
 use Exception;
+use Parsedown;
 
 class Project
 {
@@ -14,6 +15,7 @@ class Project
     public ?DateTime $lastUpdate = null;
     public ?DateTime $forceLastUpdate = null;
     public ?string $lastRelease = null;
+    public ?string $releaseNotes = null;
     public string $description;
     public string $repoName;
     public bool $useSourceAsDownload;
@@ -78,7 +80,7 @@ class Project
         return sprintf("https://github.com/Programie/%s", $this->repoName);
     }
 
-    public function updateDownloads(): void
+    public function updateData(): void
     {
         $gitHubApi = new GitHubAPI;
 
@@ -102,6 +104,9 @@ class Project
 
             $this->setLastUpdate($date);
             $this->lastRelease = $release["name"];
+
+            $parsedown = new Parsedown;
+            $this->releaseNotes = $parsedown->text($release["body"] ?? "");
 
             $this->downloads = new Downloads;
 

@@ -92,7 +92,7 @@ class ProjectsController extends AbstractController
             throw new NotFoundException;
         }
 
-        $project->updateDownloads();
+        $project->updateData();
         $this->projects->saveSerialized();
 
         return sprintf("Updated project %s with %d downloads", $project->name, count($project->downloads));
