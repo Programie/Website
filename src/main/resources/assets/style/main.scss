@@ -36,14 +36,6 @@ $project-categories: "applications", "minecraft-plugins", "php-libraries";
     min-width: 100%;
 }
 
-.project-cover-text {
-    text-shadow: 1px 1px 1px black;
-}
-
-.project-latest-download-badge {
-    font-size: small;
-}
-
 .project-carousel-inner {
     overflow: visible;
 }
@@ -55,30 +47,6 @@ $project-categories: "applications", "minecraft-plugins", "php-libraries";
     height: 400px;
     min-height: 400px;
     min-width: 100%;
-}
-
-.badge-group {
-    display: inline-block;
-    white-space: nowrap;
-
-    &:not(:last-child) {
-        @extend .me-1
-    }
-}
-
-.badge-group .badge {
-    border-radius: 0;
-    padding: 0.5em 0.7em;
-}
-
-.badge-group .badge:first-child {
-    border-top-left-radius: $badge-border-radius;
-    border-bottom-left-radius: $badge-border-radius;
-}
-
-.badge-group .badge:last-child {
-    border-top-right-radius: $badge-border-radius;
-    border-bottom-right-radius: $badge-border-radius;
 }
 
 .social-icon {
