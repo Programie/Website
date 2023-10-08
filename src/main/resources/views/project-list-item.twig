@@ -11,16 +11,10 @@
 
     {% if project.lastRelease.notes %}
         <div class="card-body">
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#release-notes-{{ project.name }}">Release notes</button>
-                    </h2>
-                    <div class="accordion-collapse collapse" id="release-notes-{{ project.name }}">
-                        <div class="accordion-body">
-                            {{ project.lastRelease.notes|raw }}
-                        </div>
-                    </div>
+            <div class="card release-notes">
+                <div class="card-header p-3">Release notes</div>
+                <div class="card-body p-3">
+                    {{ project.lastRelease.notes|raw }}
                 </div>
             </div>
         </div>

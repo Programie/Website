@@ -122,6 +122,14 @@ nav.navbar > .container {
     scroll-margin-top: 85px;
 }
 
+.release-notes .card-header {
+    background-color: var(--bs-primary-bg-subtle);
+}
+
+.release-notes .card-body {
+    background-color: var(--bs-dark-bg-subtle);
+}
+
 @media (min-width: 768px) {
     .nav-item, #navbar-collapse {
         display: inline-block !important;
