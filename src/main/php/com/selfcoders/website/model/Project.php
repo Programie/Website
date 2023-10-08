@@ -1,10 +1,10 @@
 <?php
 namespace com\selfcoders\website\model;
 
+use com\selfcoders\website\CustomizedParsedown;
 use com\selfcoders\website\GitHubAPI;
 use DateTime;
 use Exception;
-use Parsedown;
 
 class Project
 {
@@ -108,7 +108,9 @@ class Project
             $this->setLastUpdate($date);
             $this->lastRelease->name = $release["name"];
 
-            $parsedown = new Parsedown;
+            $parsedown = new CustomizedParsedown;
+            $parsedown->baseUrl = sprintf("https://github.com/Programie/%s/blob/%s", $this->repoName, $release["tag_name"]);
+            $parsedown->openLinksInNewTab = true;
             $this->lastRelease->notes = $parsedown->text($release["body"] ?? "");
 
             $this->downloads = new Downloads;
