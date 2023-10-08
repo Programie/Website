@@ -130,6 +130,10 @@ nav.navbar > .container {
     background-color: var(--bs-primary-bg-subtle);
 }
 
+.release-notes .card-body > *:last-child {
+    margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
     .nav-item, #navbar-collapse {
         display: inline-block !important;
