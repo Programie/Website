@@ -13,11 +13,11 @@ function updateProject(Project $project)
     printf("Found %d download(s)\n", $project->downloads === null ? 0 : count($project->downloads));
 }
 
-$projects = Projects::load();
-
 $projectsToUpdate = array_slice($argv, 1);
 
 if (empty($projectsToUpdate)) {
+    $projects = Projects::load();
+
     /**
      * @var $project Project
      */
@@ -25,6 +25,8 @@ if (empty($projectsToUpdate)) {
         updateProject($project);
     }
 } else {
+    $projects = Projects::loadSerialized();
+
     foreach ($projectsToUpdate as $projectName) {
         $project = $projects->byName($projectName);
         if ($project === null) {
