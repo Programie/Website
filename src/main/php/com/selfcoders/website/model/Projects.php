@@ -128,9 +128,9 @@ class Projects extends ArrayObject
         $projects = clone $this;
 
         $projects->uasort(function (Project $project1, Project $project2) {
-            if ($project1->lastUpdate < $project2->lastUpdate) {
+            if ($project1->lastRelease->date < $project2->lastRelease->date) {
                 return 1;
-            } elseif ($project1->lastUpdate > $project2->lastUpdate) {
+            } elseif ($project1->lastRelease->date > $project2->lastRelease->date) {
                 return -1;
             } else {
                 return strcmp($project1->title, $project2->title);
