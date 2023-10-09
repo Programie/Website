@@ -32,7 +32,7 @@ module.exports = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: function() {
+                                plugins: function () {
                                     return [
                                         require("autoprefixer")
                                     ];
@@ -44,9 +44,7 @@ module.exports = {
                 ]
             }, {
                 test: /.(png|jpg|ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                use: [
-                    "file-loader"
-                ]
+                type: "asset/resource"
             }
         ]
     }
