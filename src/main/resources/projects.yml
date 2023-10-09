@@ -216,7 +216,7 @@
 
 - name: rssfilter
   repoName: RSSFilter
-  title: "RSSFilter"
+  title: "RSS Filter"
   category: applications
   startDate: "2022-01-04"
   description: "A simple proxy allowing to filter RSS feeds"
