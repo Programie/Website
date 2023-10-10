@@ -12,21 +12,18 @@ RUN npm run build
 
 FROM composer AS composer
 
-COPY composer.* /app/
-
 WORKDIR /app
 
-RUN composer install --no-dev --ignore-platform-reqs && \
-    rm /app/composer.json /app/composer.lock
+COPY composer.* /app/
+RUN composer install --no-dev --ignore-platform-reqs
 
 
-FROM php:8.1-apache
+FROM ghcr.io/programie/dockerimages/php
 
-RUN sed -ri -e 's!/var/www/html!/app/httpdocs!g' /etc/apache2/sites-available/*.conf && \
-    sed -ri -e 's!/var/www/!/app/httpdocs!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf && \
-    echo "ServerTokens Prod" > /etc/apache2/conf-enabled/z-server-tokens.conf && \
+ENV WEB_ROOT=/app/httpdocs
+
+RUN install-php 8.1 && \
     a2enmod rewrite && \
-    mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
     mkdir -p /app/cache && \
     chown www-data: /app/cache
 
