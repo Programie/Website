@@ -33,7 +33,7 @@
 
     <div class="container">
         <h2>Latest projects</h2>
-        {% for project in projects.latest(3) %}
+        {% for project in projects.latest(10) %}
             {{ include("project-list-item.twig") }}
         {% endfor %}
     </div>
