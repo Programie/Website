@@ -276,6 +276,15 @@
   sites:
     dockerhub: programie/telegram2elastic
 
+- name: tracky
+  repoName: Tracky
+  title: Tracky
+  category: applications
+  startDate: "2023-10-20"
+  description: "Track your watched movies and TV shows"
+  sites:
+    dockerhub: programie/tracky
+
 - name: xpdispenser
   repoName: XPDispenser
   title: "XPDispenser"
