@@ -22,7 +22,7 @@ FROM ghcr.io/programie/php-docker
 
 ENV WEB_ROOT=/app/httpdocs
 
-RUN install-php 8.1 && \
+RUN install-php 8.4 && \
     a2enmod rewrite && \
     mkdir -p /app/cache && \
     chown www-data: /app/cache
