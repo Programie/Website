@@ -2,6 +2,7 @@
 namespace com\selfcoders\website;
 
 use DateTime;
+use Github\AuthMethod;
 use Github\Client;
 use Github\Exception\RuntimeException;
 
@@ -12,6 +13,11 @@ class GitHubAPI
     public function __construct()
     {
         $this->client = new Client;
+
+        $token = getenv("GITHUB_TOKEN");
+        if ($token !== false and $token !== "") {
+            $this->client->authenticate($token, null, AuthMethod::ACCESS_TOKEN);
+        }
     }
 
     public function getLatestReleaseForRepository(string $repository): ?array
