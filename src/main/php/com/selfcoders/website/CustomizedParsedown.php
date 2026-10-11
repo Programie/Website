@@ -12,7 +12,11 @@ class CustomizedParsedown extends Parsedown
     {
         $link = parent::inlineLink($Excerpt);
 
-        $url = $link["element"]["attributes"]["href"];
+        $url = $link["element"]["attributes"]["href"] ?? null;
+
+        if ($url === null) {
+            return $link;
+        }
 
         $isAbsoluteUrl = parse_url($url, PHP_URL_HOST) !== null;
 
